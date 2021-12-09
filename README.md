@@ -1,6 +1,6 @@
 # FlutterAppAutomation
  
-Ongoing automation project dedicated to 'TC' App testing (since December 2021).
+Ongoing automation project dedicated to the 'TC' App testing (since December 2021).
 
 In this project the 'TC' app became a victim of my automation efforts in Android and iOS environments, mostly on real devices.
 
