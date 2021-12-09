@@ -14,4 +14,3 @@ The most stable set of instruments successfully used in this project:
 + selenium-driver-standalone-3.14.0
 + plus: IntelliJ IDEA, Maven, Jenkins & Allure
 + plus: iOS simulators (Xcode) & Android emulators (Android Studio)
-+ 
