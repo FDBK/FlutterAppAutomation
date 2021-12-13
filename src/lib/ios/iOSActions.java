@@ -15,8 +15,9 @@ public class iOSActions extends TrCardActions
         EMAIL_PATTERN ="\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*\\.\\w{2,10}";
         // связанным с вводом пароля
         PASSWORD_FIELD ="xpath://android.widget.EditText[contains(@text, 'Введите пароль')]";
-        PASSWORD_FIELD_WITH_WARNING ="xpath://android.widget.EditText[contains(@text, 'Длина пароля минимум')]";
-        INCORRECT_PASSWORD_TEXT ="Длина пароля минимум 8 символов";
+        PASSWORD_FIELD_WITH_WARNING ="xpath://android.widget.EditText[contains(@text, 'Длина пароля минимум') or contains(@text, 'Пароль должен содержать')]";
+        INCORRECT_PASSWORD_TEXT_v1 ="Длина пароля минимум 8 символов";
+        INCORRECT_PASSWORD_TEXT_v2 ="Пароль должен содержать не менее 8 символов";
         // связанным с вводом номера карты
         CARD_NUMBER_FIELD ="xpath://android.widget.EditText[@text='Номер карты']";
         CARD_NUMBER_FIELD_WITH_WARNING ="xpath://android.widget.EditText[contains(@text, 'Укажите 19-значный номер карты')]";

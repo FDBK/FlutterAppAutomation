@@ -22,7 +22,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
             // связанным с вводом пароля
             PASSWORD_FIELD,
             PASSWORD_FIELD_WITH_WARNING,
-            INCORRECT_PASSWORD_TEXT,
+            INCORRECT_PASSWORD_TEXT_v1,
+            INCORRECT_PASSWORD_TEXT_v2,
             // связанным с вводом номера карты
             CARD_NUMBER_FIELD,
             CARD_NUMBER_FIELD_WITH_WARNING,
@@ -815,15 +816,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String text = element.getAttribute("text");
 
         if (input.length() < 8) {
-            Assert.assertTrue(
-                    "Ошибка! Не отображено предупреждение о недостаточной длине введённого пароля.",
-                    text.contains(INCORRECT_PASSWORD_TEXT)
-            );
+            if (!(text.contains(INCORRECT_PASSWORD_TEXT_v1) || (text.contains(INCORRECT_PASSWORD_TEXT_v2)))) {
+            throw new AssertionError("Ошибка! Не отображено предупреждение о недостаточной длине введённого пароля.");
+            }
         } else {
-            Assert.assertFalse(
-                    "Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.",
-                    text.contains(INCORRECT_PASSWORD_TEXT)
-            );
+            if (text.contains(INCORRECT_PASSWORD_TEXT_v1) || (text.contains(INCORRECT_PASSWORD_TEXT_v2))) {
+            throw new AssertionError("Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.");
+            }
         }
     }
 
@@ -839,15 +838,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String text = element.getAttribute("text");
 
         if (input.length() < 8) {
-            Assert.assertTrue(
-                    "Ошибка! Не отображено предупреждение о недостаточной длине введённого пароля.",
-                    text.contains(INCORRECT_PASSWORD_TEXT)
-            );
+            if (!(text.contains(INCORRECT_PASSWORD_TEXT_v1) || (text.contains(INCORRECT_PASSWORD_TEXT_v2)))) {
+                throw new AssertionError("Ошибка! Не отображено предупреждение о недостаточной длине введённого пароля.");
+            }
         } else {
-            Assert.assertFalse(
-                    "Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.",
-                    text.contains(INCORRECT_PASSWORD_TEXT)
-            );
+            if (text.contains(INCORRECT_PASSWORD_TEXT_v1) || (text.contains(INCORRECT_PASSWORD_TEXT_v2))) {
+                throw new AssertionError("Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.");
+            }
         }
     }
     /* Ввод пароля и проверка отображения предупреждений */

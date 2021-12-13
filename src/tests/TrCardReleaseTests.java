@@ -3195,7 +3195,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterEmailAndCheckText("i.judin@cft.ru");
 
         // Получение пароля для учётной записи
-        String password = TrCardPass.getPasswordByLogin("i_judin@cft.ru");
+        String password = TrCardPass.getPasswordByLogin("i.judin@cft.ru");
 
         // Закрытие клавиатуры
         TrCardAct.tapTheUpperEdgeOfTheScreen();
