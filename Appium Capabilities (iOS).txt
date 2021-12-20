@@ -1,0 +1,22 @@
+Flutter Transport Card - Live.Inhouse:
+
+{
+  "platformName": "iOS",
+  "deviceName": "iPhone SE",
+  "platformVersion": "13.0",
+  "app": "/Volumes/500/TrCardAutomation/apks/T-Card.live.inhouse.362.ipa"
+}
+
+bundleId = ru.ftc.zk.tc.TCard-inhouse
+
+
+Flutter Transport Card - Develop.Inhouse:
+
+{
+  "platformName": "iOS",
+  "deviceName": "iPhone SE",
+  "platformVersion": "13.0",
+  "app": "/Volumes/500/TrCardAutomation/apks/T-Card.develop.inhouse.362.ipa"
+}
+
+bundleId = ru.ftc.zk.tc.TransportCard-Dev-inhouse
