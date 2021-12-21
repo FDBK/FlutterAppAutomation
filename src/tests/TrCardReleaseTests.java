@@ -972,6 +972,146 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка механизма отображения элементов функции "Транспортный роуминг"
+    @Test
+    public void testTransportRoaming()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("allcards@test.test");
+
+        // Закрытие клавиатуры
+        TrCardAct.tapTheUpperEdgeOfTheScreen();
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Установка кода доступа
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+
+        // Пропуск установки входа по отпечатку пальца или по FaceID при появлении соответствующего предложения
+        TrCardAct.checkAndSkipFingerprintsOrFaceID();
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (без функции "Транспортный роуминг")
+        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ БЕЗ РОУМИНГА");
+
+        // Проверка отсутствия баннера "Транспортный роуминг" и соответствующего пункта меню
+        TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.waitForButtonToDisappear("Транспортный роуминг");
+        TrCardAct.tapTheLowerEdgeOfTheScreen();
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
+        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ С РОУМИНГОМ");
+
+        // Проверка наличия баннера "Транспортный роуминг"
+        TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
+
+        // Просмотр информации о функции "Транспортный роуминг" через меню, копирование текста со списком регионов
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheButton("Транспортный роуминг");
+        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее"
+        TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
+        TrCardAct.clickTheButton("Подробнее");
+        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForTextToAppear(roaming_text);
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Закрытие баннера, оповещающего о подключенной функции "Транспортный роуминг"
+        TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
+        TrCardAct.clickTheButton("Закрыть");
+        TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
+
+        // Перезапуск приложения без потери пользовательских данных
+        TrCardAct.restartApp();
+
+        // Повторный вход в приложение с использованием кода доступа
+        TrCardAct.waitForTextToAppear("allcards@test.test");
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+
+        // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Проверка отсутствия баннера, оповещающего о подключенной функции "Транспортный роуминг"
+        TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
+
+        // Просмотр информации о функции "Транспортный роуминг" через меню
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheButton("Транспортный роуминг");
+        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForTextToAppear(roaming_text);
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Выход из приложения через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Выйти");
+        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта allcards@test.test?");
+        TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка возврата на экран входа по логину и паролю
+        TrCardAct.waitForTextToAppear("указанные при регистрации");
+
+        // Ввод логина для повторного входа в приложение
+        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+
+        // Закрытие клавиатуры
+        TrCardAct.tapTheUpperEdgeOfTheScreen();
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Установка кода доступа
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+
+        // Пропуск установки входа по отпечатку пальца или по FaceID при появлении соответствующего предложения
+        TrCardAct.checkAndSkipFingerprintsOrFaceID();
+
+        // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
+        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ С РОУМИНГОМ");
+
+        // Проверка наличия баннера и просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее"
+        TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
+        TrCardAct.clickTheButton("Подробнее");
+        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForTextToAppear(roaming_text);
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
     // Проверка отображения информации об операциях типа *_TRANSFER
     @Test
     public void testFindAndCheckTransferOperations()
