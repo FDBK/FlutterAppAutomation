@@ -310,6 +310,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         return element.getAttribute(attribute);
     }
 
+    public String waitForButtonWithPicToAppearAndGetAttribute(String attribute, String button_text)
+    {
+        String locator = replaceButtonWithPicTextAndGetLocator(button_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить текст '" + button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        return element.getAttribute(attribute);
+    }
+
     public String waitForBigButtonToAppearAndGetAttribute(String attribute, String big_button_text)
     {
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
