@@ -319,7 +319,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
         TrCardAct.waitForTextToAppear("Мои карты");
 
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("***6139");
 
         // Переход в раздел "Поездки" и проверка наличия поездок
@@ -720,7 +720,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
         TrCardAct.waitForTextToAppear("Мои карты");
 
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("***4714");
 
         // Просмотр информации о карте через меню, копирование параметров карты
@@ -938,7 +938,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
         TrCardAct.waitForTextToAppear("Мои карты");
 
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("***9794");
 
         // Изменение региона карты (выбор из всего списка)
@@ -1248,11 +1248,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("3906");
         TrCardAct.waitForTextToAppear("Карта заблокирована");
 
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("[-услуги]");
         TrCardAct.waitForButtonWithPicToDisappear("Льготы");
 
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("[+услуги]");
 
         // Открытие списка подключенных к карте льгот и проверка отображения информации о них
@@ -2745,6 +2745,72 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonWithPicToDisappear("Поездка выполнена по услуге");
 
         // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
+    // Проверка корректности отображения скидочных поездок (кнопка "%")
+    @Test
+    public void testTripDiscountTooltip()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("allcards@test.test");
+
+        // Закрытие клавиатуры
+        TrCardAct.tapTheUpperEdgeOfTheScreen();
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
+        TrCardAct.swipeLeftToFindBigButtonByText("***ВСТАВИТЬ НОМЕР ИЛИ ИМЯ БАНКОВСКОЙ КАРТЫ СО СКИДКОЙ");
+
+        // Переход в раздел "Поездки"
+        TrCardAct.clickTheButtonWithPic("Поездки");
+        TrCardAct.waitForTextToAppear("Поездки");
+
+        // Поиск поездки со скидкой по платёжной системе, нажатие на кнопку "%" и проверка отображения всплывающего сообщения
+        TrCardAct.swipeUpToFindTooltipButtonByText("ВСТАВИТЬ ВРЕМЯ ПОЕЗДКИ СО СКИДКОЙ");
+        TrCardAct.clickTheTooltipButton("ВСТАВИТЬ ВРЕМЯ ПОЕЗДКИ СО СКИДКОЙ");
+        TrCardAct.waitForButtonWithPicToAppear("Скидка по платежной системе");
+
+        // Закрытие всплывающего сообщения и проверка его исчезновения
+        TrCardAct.tapTheLowerEdgeOfTheScreen();
+        TrCardAct.waitForButtonWithPicToDisappear("Скидка по платежной системе");
+
+        // Открытие детальной информации о поездке по времени
+        TrCardAct.clickTheButtonWithPic("ВСТАВИТЬ ВРЕМЯ ПОЕЗДКИ СО СКИДКОЙ");
+
+        // Проверка отображения некоторых параметров поездки, в том числе "нажимаемой" стоимости поездки со скидкой
+        TrCardAct.waitForTextToAppear("Дата и время поездки");
+        TrCardAct.waitForTextToAppear("Маршрут");
+        String is_clickable = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки со скидкой");
+        assertEquals(
+                "Ошибка! 'Стоимость поездки со скидкой' не является кнопкой для открытия всплывающего сообщения.",
+                "true",
+                is_clickable
+        );
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
         TrCardAct.waitForTextToAppear("Мои карты");
 
