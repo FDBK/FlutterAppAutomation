@@ -1004,23 +1004,23 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (без функции "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ БЕЗ РОУМИНГА");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1375");
 
         // Проверка отсутствия баннера "Транспортный роуминг" и соответствующего пункта меню
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.waitForButtonToDisappear("Транспортный роуминг");
+        TrCardAct.waitForButtonToDisappear("роуминг");
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ С РОУМИНГОМ");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
 
         // Проверка наличия баннера "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
 
         // Просмотр информации о функции "Транспортный роуминг" через меню, копирование текста со списком регионов
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Транспортный роуминг");
+        TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForTextToAppear("Транспортный роуминг");
         String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
 
@@ -1040,7 +1040,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Закрытие баннера, оповещающего о подключенной функции "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
-        TrCardAct.clickTheButton("Закрыть");
+        TrCardAct.clickTheButtonWithPic("Закрыть");
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
 
         // Перезапуск приложения без потери пользовательских данных
@@ -1058,7 +1058,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Просмотр информации о функции "Транспортный роуминг" через меню
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Транспортный роуминг");
+        TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForTextToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear(roaming_text);
 
@@ -1096,7 +1096,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ С РОУМИНГОМ");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
 
         // Проверка наличия баннера и просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
