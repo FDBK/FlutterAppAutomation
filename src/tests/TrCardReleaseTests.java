@@ -3021,14 +3021,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("ВСТАВИТЬ **** НОМЕР КАРТЫ С РОУМИНГОМ");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
 
         // Проверка наличия баннера "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
 
         // Просмотр информации о функции "Транспортный роуминг" через меню, копирование текста со списком регионов
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Транспортный роуминг");
+        TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForTextToAppear("Транспортный роуминг");
         String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
 
