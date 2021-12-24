@@ -2781,15 +2781,15 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("***ВСТАВИТЬ НОМЕР ИЛИ ИМЯ БАНКОВСКОЙ КАРТЫ СО СКИДКОЙ");
+        TrCardAct.swipeLeftToFindBigButtonByText("is_discount_1");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
         TrCardAct.waitForTextToAppear("Поездки");
 
         // Поиск поездки со скидкой по платёжной системе, нажатие на кнопку "%" и проверка отображения всплывающего сообщения
-        TrCardAct.swipeUpToFindTooltipButtonByText("ВСТАВИТЬ ВРЕМЯ ПОЕЗДКИ СО СКИДКОЙ");
-        TrCardAct.clickTheTooltipButton("ВСТАВИТЬ ВРЕМЯ ПОЕЗДКИ СО СКИДКОЙ");
+        TrCardAct.swipeUpToFindTooltipButtonByText("19:23:42");
+        TrCardAct.clickTheTooltipButton("19:23:42");
         TrCardAct.waitForButtonWithPicToAppear("Скидка по платежной системе");
 
         // Закрытие всплывающего сообщения и проверка его исчезновения
@@ -2797,16 +2797,22 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonWithPicToDisappear("Скидка по платежной системе");
 
         // Открытие детальной информации о поездке по времени
-        TrCardAct.clickTheButtonWithPic("ВСТАВИТЬ ВРЕМЯ ПОЕЗДКИ СО СКИДКОЙ");
+        TrCardAct.clickTheBigButton("19:23:42");
 
-        // Проверка отображения некоторых параметров поездки, в том числе "нажимаемой" стоимости поездки со скидкой
+        // Проверка отображения некоторых параметров поездки, в том числе "нажимаемых" значений стоимости поездки со скидкой и без скидки
         TrCardAct.waitForTextToAppear("Дата и время поездки");
         TrCardAct.waitForTextToAppear("Маршрут");
-        String is_clickable = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки со скидкой");
+        String is_clickable_discount = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки со скидкой");
         assertEquals(
                 "Ошибка! 'Стоимость поездки со скидкой' не является кнопкой для открытия всплывающего сообщения.",
                 "true",
-                is_clickable
+                is_clickable_discount
+        );
+        String is_clickable_full = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки без скидки");
+        assertEquals(
+                "Ошибка! 'Стоимость поездки без скидки' не является кнопкой для открытия всплывающего сообщения.",
+                "true",
+                is_clickable_full
         );
 
         // Возврат на экран "Мои карты"
