@@ -3468,6 +3468,65 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка работоспособности функции "Вопросы / Ответы" без доступа к сети
+    @Test
+    public void testNoConnectionQuestionsAnswers()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test");
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Закрытие клавиатуры
+        TrCardAct.tapTheUpperEdgeOfTheScreen();
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        // Активация режима полёта для имитации отсутствия подключения к сети
+        TrCardAct.toggleAirplaneMode();
+
+        // Переход на экран "Вопрос/Ответ" через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
+        TrCardAct.waitForTextToAppear("Вопрос/ответ");
+
+        // Проверка появления сообщения об ошибке загрузки списка вопросов и ответов
+        TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка вопросов");
+        TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
+        TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
+        TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка вопросов");
+
+        // Отключение режима полёта для восстановления подключения к сети
+        TrCardAct.toggleAirplaneMode();
+
+        // Проверка корректности отображения списка вопросов и ответов после восстановления соединения с сетью
+        TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
+        TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
+        TrCardAct.waitForTextToDisappear("Произошла ошибка загрузки списка вопросов");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForTextToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
     // Проверка корректности работы приложения при наличии в аккаунте карты с несуществующим регионом
     @Test
     public void testCardFromNonExistentRegion()
