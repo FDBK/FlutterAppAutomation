@@ -3517,6 +3517,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.waitForTextToDisappear("Произошла ошибка загрузки списка вопросов");
+        TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
+        TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
+        TrCardAct.swipeUpToFindBigButtonByText("актуальной информации");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3623,6 +3627,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
         TrCardAct.waitForTextToAppear("Вопрос/ответ");
+        TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
+        TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
+        TrCardAct.swipeUpToFindBigButtonByText("актуальной информации");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3664,6 +3672,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
         TrCardAct.waitForTextToAppear("Вопрос/ответ");
+        TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
+        TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
+        TrCardAct.swipeUpToFindBigButtonByText("актуальной информации");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
