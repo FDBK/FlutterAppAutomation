@@ -149,7 +149,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToDisappear("Карта удалена");
 
         // Проверка отображения экрана без подключенных карт
-        TrCardAct.waitForTextToAppear("У вас пока нет карты");
+        TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
 
         System.out.println("Тест пройден без ошибок!");
@@ -210,7 +210,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Мои карты");
 
         // Проверка отображения экрана без подключенных карт
-        TrCardAct.waitForTextToAppear("У вас пока нет карты");
+        TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
 
         System.out.println("Тест пройден без ошибок!");
@@ -550,7 +550,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Мои карты");
 
         // Проверка отображения экрана без подключенных карт
-        TrCardAct.waitForTextToAppear("У вас пока нет карты");
+        TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
         TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
 
@@ -604,7 +604,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДА");
 
         // Проверка отображения экрана без подключенных карт
-        TrCardAct.waitForTextToAppear("У вас пока нет карты");
+        TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
         TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
 
