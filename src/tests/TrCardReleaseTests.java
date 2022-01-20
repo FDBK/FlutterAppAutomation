@@ -150,7 +150,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
-        TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
+        TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -211,7 +211,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
-        TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
+        TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
 
         System.out.println("Тест пройден без ошибок!");
         System.out.println("Зарегистрирован новый пользователь: " + random_email + " (пароль - 11111111).");
@@ -551,7 +551,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
-        TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
+        TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
         TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
 
         // Переход в раздел "Поездки" и проверка корректности отображения экрана в аккаунте без карт
@@ -605,7 +605,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
-        TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
+        TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
         TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
 
         // Переход в раздел "Поездки" и проверка корректности отображения экрана в аккаунте без карт
