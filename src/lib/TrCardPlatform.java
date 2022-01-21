@@ -85,10 +85,10 @@ public class TrCardPlatform
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("deviceName","8-84-Phone");
+        capabilities.setCapability("deviceName","iPhone 12");
         capabilities.setCapability("udid","auto");
         capabilities.setCapability("platformName","iOS");
-        capabilities.setCapability("platformVersion","15.2.1");
+        capabilities.setCapability("platformVersion","14.8");
         capabilities.setCapability("app", APP_IOS);
 
         return capabilities;
