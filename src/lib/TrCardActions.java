@@ -782,7 +782,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Ввод e-mail и проверка отображения предупреждений */
     public void enterEmailAndCheckText(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 EMAIL_FIELD,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода e-mail.",
@@ -811,7 +811,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
     public void enterEmailAndCheckTextAgain(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 EMAIL_FIELD_WITH_WARNING,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода e-mail.",
@@ -843,7 +843,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Ввод пароля и проверка отображения предупреждений */
     public void enterPasswordAndCheckText(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 PASSWORD_FIELD,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода пароля.",
@@ -870,7 +870,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
     public void enterPasswordAndCheckTextAgain(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 PASSWORD_FIELD_WITH_WARNING,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода пароля.",
@@ -961,7 +961,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Ввод номера карты и проверка отображения предупреждений */
     public void enterCardNumberAndCheckText(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 CARD_NUMBER_FIELD,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода номера карты.",
@@ -990,7 +990,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
     public void enterCardNumberAndCheckTextAgain(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 CARD_NUMBER_FIELD_WITH_WARNING,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода номера карты.",
@@ -1022,7 +1022,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Ввод номера банковской карты и проверка отображения предупреждений */
     public void enterCreditCardNumberAndCheckText(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 CREDIT_CARD_NUMBER_FIELD,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода номера банковской карты.",
@@ -1051,7 +1051,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
     public void enterCreditCardNumberAndCheckTextAgain(String input)
     {
-        WebElement element = this.waitForElementClickAndSendKeys(
+        WebElement element = this.waitForElementClickClearAndSendKeys(
                 CREDIT_CARD_NUMBER_FIELD_WITH_WARNING,
                 input,
                 "Ошибка! Не удалось обнаружить поле для ввода номера банковской карты.",
@@ -1090,10 +1090,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
-        this.waitForElementClickAndSendKeys(
+        this.waitForElementClickClearAndSendKeys(
                 locator,
                 input,
-                "Ошибка! Не удалось обнаружить поле для ввода '" + field_name +"'.",
+                "Ошибка! Не удалось обнаружить поле для ввода '" + field_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
