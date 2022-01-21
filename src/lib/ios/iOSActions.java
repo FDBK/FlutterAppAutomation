@@ -34,6 +34,7 @@ public class iOSActions extends TrCardActions
         PERMISSION_ALLOW_BUTTON ="xpath://XCUIElementTypeButton[contains(@name, 'НАСТРОЙКИ')]";
         // связанным с шаблонами для поиска элементов
         TEXT_TEMPLATE ="xpath://XCUIElementTypeStaticText[contains(@name, '{TEXT}')]";
+        SCREEN_TITLE_TEMPLATE = "xpath://XCUIElementTypeOther[contains(@name, '{SCREEN_TITLE}')]";
         INPUT_FIELD_TEMPLATE ="xpath://XCUIElementTypeTextField[contains(@name, '{INPUT_FIELD_TEXT}')]";
         BUTTON_TEMPLATE ="xpath://XCUIElementTypeButton[contains(@name, '{BUTTON_NAME}')]";
         BUTTON_WITH_PIC_TEMPLATE ="xpath://XCUIElementTypeImage[contains(@name, '{BUTTON_TEXT}')]";

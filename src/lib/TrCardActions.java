@@ -40,6 +40,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             PERMISSION_ALLOW_BUTTON,
             // связанным с шаблонами для поиска элементов
             TEXT_TEMPLATE,
+            SCREEN_TITLE_TEMPLATE,
             INPUT_FIELD_TEMPLATE,
             BUTTON_TEMPLATE,
             BUTTON_WITH_PIC_TEMPLATE,
@@ -68,6 +69,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceTextAndGetLocator(String text)
     {
         return TEXT_TEMPLATE.replace("{TEXT}", text);
+    }
+
+    private static String replaceScreenTitleAndGetLocator(String screen_title)
+    {
+        return SCREEN_TITLE_TEMPLATE.replace("{SCREEN_TITLE}", screen_title);
     }
 
     private static String replaceInputFieldTextAndGetLocator(String input_field_text)
@@ -119,6 +125,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementPresent(
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForScreenTitleToAppear(String screen_title)
+    {
+        String locator = replaceScreenTitleAndGetLocator(screen_title);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить текст '" + screen_title + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
