@@ -789,7 +789,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (!checkEmail(input)) {
             Assert.assertTrue(
@@ -813,7 +818,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (!checkEmail(input)) {
             Assert.assertTrue(
@@ -840,7 +850,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() < 8) {
             if (!(text.contains(INCORRECT_PASSWORD_TEXT_v1) || (text.contains(INCORRECT_PASSWORD_TEXT_v2)))) {
@@ -862,7 +877,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() < 8) {
             if (!(text.contains(INCORRECT_PASSWORD_TEXT_v1) || (text.contains(INCORRECT_PASSWORD_TEXT_v2)))) {
@@ -887,7 +907,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() == 0) {
             Assert.assertTrue(
@@ -911,7 +936,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() == 0) {
             Assert.assertTrue(
@@ -938,7 +968,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() < 19) {
             Assert.assertTrue(
@@ -962,7 +997,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() < 19) {
             Assert.assertTrue(
@@ -989,7 +1029,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() < 16) {
             Assert.assertTrue(
@@ -1013,7 +1058,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = element.getAttribute("text");
+        String text = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            text = element.getAttribute("name");
+        } else {
+            text = element.getAttribute("text");
+        }
 
         if (input.length() < 16) {
             Assert.assertTrue(
@@ -1220,7 +1270,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String auth_type = "";
         int notifications = this.getAmountOfElements(text_locator);
         if (notifications > 0) {
-            String auth_text = waitForTextToAppearAndGetAttribute("content-desc", "Нажмите ОК для подключения");
+            String auth_text = "";
+            if (TrCardPlatform.getInstance().isIOS()) {
+                auth_text = waitForTextToAppearAndGetAttribute("name", "Нажмите ОК для подключения");
+            } else {
+                auth_text = waitForTextToAppearAndGetAttribute("content-desc", "Нажмите ОК для подключения");
+            }
+
             if (auth_text.contains("отпечатку")) {
                 auth_type = "Fingerprint";
             } else if (auth_text.contains("Face Id")) {
