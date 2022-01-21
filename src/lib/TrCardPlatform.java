@@ -14,8 +14,8 @@ public class TrCardPlatform
             APPIUM_URL = "http://127.0.0.1:4723/wd/hub",
             PLATFORM_ANDROID = "android",
             PLATFORM_IOS = "ios",
-            APP_ANDROID = "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.release.368.apk",
-            APP_IOS = "/Volumes/500/TrCardAutomation/apks/Build.app",
+            APP_ANDROID = "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.release.380.apk",
+            APP_IOS = "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.380.ipa",
             PACKAGE = "ru.ftc.tc",
             ACTIVITY = "io.flutter.embedding.android.FlutterFragmentActivity";
 
@@ -72,7 +72,7 @@ public class TrCardPlatform
 
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","11");
+        capabilities.setCapability("platformVersion","10");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage", PACKAGE);
         capabilities.setCapability("appActivity", ACTIVITY);
@@ -85,9 +85,10 @@ public class TrCardPlatform
     {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
+        capabilities.setCapability("deviceName","8-84-Phone");
+        capabilities.setCapability("udid","auto");
         capabilities.setCapability("platformName","iOS");
-        capabilities.setCapability("deviceName","iPhone SE 13.0");
-        capabilities.setCapability("platformVersion","13.0");
+        capabilities.setCapability("platformVersion","15.2.1");
         capabilities.setCapability("app", APP_IOS);
 
         return capabilities;
