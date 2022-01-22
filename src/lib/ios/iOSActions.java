@@ -31,7 +31,7 @@ public class iOSActions extends TrCardActions
         CREDIT_CARD_NUMBER_FIELD_WITH_WARNING ="xpath://XCUIElementTypeTextField[contains(@name, 'Укажите 16-значный номер карты')]";
         INCORRECT_CREDIT_CARD_NUMBER_TEXT ="Укажите 16-значный номер карты";
         // связанным с предоставлением приложению разрешений
-        PERMISSION_ALLOW_BUTTON ="xpath://XCUIElementTypeButton[contains(@name, 'НАСТРОЙКИ')]";
+        PERMISSION_ALLOW_BUTTON ="xpath://XCUIElementTypeButton[contains(@name, 'Разрешить')]";
         // связанным с шаблонами для поиска элементов
         TEXT_TEMPLATE ="xpath://XCUIElementTypeStaticText[contains(@name, '{TEXT}')]";
         SCREEN_TITLE_TEMPLATE = "xpath://XCUIElementTypeOther[contains(@name, '{SCREEN_TITLE}')]";
