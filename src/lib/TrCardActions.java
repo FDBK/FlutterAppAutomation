@@ -1232,6 +1232,21 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Предоставление приложению необходимых разрешений */
 
 
+    /* Проверка появления сообщения об отсутствии SIM-карты (iOS) и нажатие на кнопку "ОК" */
+    public void checkForSIMNotificationAndPressOK()
+    {
+        int notifications = this.getAmountOfElements("xpath://*[contains(@name, 'не вставлена')]");
+        if (notifications > 0) {
+            this.waitForElementAndClick(
+                    "xpath://XCUIElementTypeButton[contains(@name, 'OK')]",
+                    "Ошибка! Не удалось обнаружить кнопку 'OK'.",
+                    TIMEOUT_IN_SECONDS
+            );
+        }
+    }
+    /* Проверка появления сообщения об отсутствии SIM-карты (iOS) и нажатие на кнопку "ОК" */
+
+
     /* Перезапуск приложения */
     public void restartApp()
     {
@@ -1326,7 +1341,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
     public void toggleAirplaneModeOnIOS()
     {
         driver.activateApp("com.apple.Preferences");
-        clickTheSwitch("Airplane') or contains(@name, 'Авиарежим')");
+        clickTheSwitch("Airplane') or contains(@name, 'Авиарежим");
+        checkForSIMNotificationAndPressOK();
         this.sleepFor(3000);
         driver.activateApp("ru.ftc.zk.tc.TCard-inhouse");
     }
