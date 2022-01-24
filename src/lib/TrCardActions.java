@@ -1237,7 +1237,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     {
         String app_id = "ru.ftc.tc";
         if (TrCardPlatform.getInstance().isIOS()) {
-            app_id = "ru.ftc.zk.tc.inhouse";
+            app_id = "ru.ftc.zk.tc.TCard-inhouse";
         }
         driver.terminateApp(app_id);
         driver.activateApp(app_id);
@@ -1326,9 +1326,9 @@ abstract public class TrCardActions extends TrCardCoreMethods
     public void toggleAirplaneModeOnIOS()
     {
         driver.activateApp("com.apple.Preferences");
-
+        clickTheSwitch("Airplane') or contains(@name, 'Авиарежим')");
         this.sleepFor(3000);
-        driver.activateApp("ru.ftc.zk.tc.inhouse");
+        driver.activateApp("ru.ftc.zk.tc.TCard-inhouse");
     }
     /* Включение и выключение режима полёта */
 
