@@ -1238,8 +1238,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
         int notifications = this.getAmountOfElements("xpath://*[contains(@name, 'не вставлена')]");
         if (notifications > 0) {
             this.waitForElementAndClick(
-                    "xpath://XCUIElementTypeButton[contains(@name, 'OK')]",
-                    "Ошибка! Не удалось обнаружить кнопку 'OK'.",
+                    "xpath://XCUIElementTypeButton[contains(@name, 'ОК')]",
+                    "Ошибка! Не удалось обнаружить кнопку 'ОК'.",
                     TIMEOUT_IN_SECONDS
             );
         }
