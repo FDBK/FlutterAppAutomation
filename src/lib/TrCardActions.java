@@ -1235,8 +1235,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Проверка появления сообщения об отсутствии SIM-карты (iOS) и нажатие на кнопку "ОК" */
     public void checkForSIMNotificationAndPressOK()
     {
-        String text_locator = replaceTextAndGetLocator("не вставлена");
-        String skip_button_locator = replaceButtonTextAndGetLocator("ОК");
+        String text_locator = replaceTextAndGetLocator("Installed') or contains(@name, 'не вставлена");
+        String skip_button_locator = replaceButtonTextAndGetLocator("OK') or contains(@name, 'ОК");
         int notifications = this.getAmountOfElements(text_locator);
         if (notifications > 0) {
             this.waitForElementAndClick(
