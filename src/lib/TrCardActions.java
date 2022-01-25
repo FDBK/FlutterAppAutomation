@@ -144,7 +144,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceInputFieldTextAndGetLocator(input_field_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить поле ввода '" + input_field_text + "'.",
+                "Ошибка! Не удалось обнаружить поле для ввода с текстом '" + input_field_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -174,7 +174,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceInputFieldTextAndGetLocator(input_field_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Поле ввода '" + input_field_text + "' всё ещё отображается на экране.",
+                "Ошибка! Поле для ввода с текстом '" + input_field_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
