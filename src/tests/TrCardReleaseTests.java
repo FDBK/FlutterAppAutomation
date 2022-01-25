@@ -51,7 +51,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Назад");
         TrCardAct.enterPassCode("5", "8", "3", "5");
         TrCardAct.enterPassCode("5", "8", "3", "6");
-        TrCardAct.waitForTextToAppear("Код доступа");
+        TrCardAct.waitForScreenTitleToAppear("Код доступа");
         TrCardAct.enterPassCode("5", "8", "3", "5");
 
         // Пропуск установки входа по отпечатку пальца или по FaceID при появлении соответствующего предложения
