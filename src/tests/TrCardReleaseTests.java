@@ -58,7 +58,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
@@ -72,7 +72,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Проездной");
         TrCardAct.waitForTextToAppear("Срок действия карты");
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Выход из приложения через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
@@ -99,7 +99,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
@@ -207,7 +207,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
@@ -235,7 +235,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheButton("Добавить карту");
@@ -269,11 +269,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheButton("Добавить карту");
-        TrCardAct.waitForTextToAppear("Новая карта");
+        TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Переход на вкладку "Банковская"
         TrCardAct.clickTheBigButton("БАНКОВСКАЯ");
@@ -317,7 +317,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("***6139");
@@ -329,7 +329,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Удаление карты и проверка перехода на предыдущую карту
         TrCardAct.clickTheButton("Показать меню");
@@ -337,7 +337,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
         TrCardAct.clickTheBigButton("ДА");
         TrCardAct.waitForTextToDisappear("***6139");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -360,7 +360,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Пополнение карты"
         TrCardAct.clickTheBigButton("ПОПОЛНИТЬ");
@@ -390,7 +390,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка корректности перехода на нужную карту, проверка доступности пополнения
         TrCardAct.waitForButtonWithPicToAppear("3568");
@@ -400,7 +400,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -423,7 +423,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Подключить услугу"
         TrCardAct.clickTheBigButton("КУПИТЬ УСЛУГУ");
@@ -453,7 +453,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка корректности перехода на нужную карту, проверка доступности подключения услуги
         TrCardAct.waitForButtonWithPicToAppear("8314");
@@ -464,7 +464,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -495,7 +495,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("8322");
@@ -503,7 +503,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Переход на экран пополнения карты
         TrCardAct.waitForBigButtonToAppear("ПОПОЛНИТЬ");
         TrCardAct.clickTheBigButton("ПОПОЛНИТЬ");
-        TrCardAct.waitForTextToAppear("Пополнение карты");
+        TrCardAct.waitForScreenTitleToAppear("Пополнение карты");
         TrCardAct.waitForInputFieldToAppear("Сумма пополнения");
 
         // Получение текста с указанием ограничений при пополнении карты
@@ -515,7 +515,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -547,7 +547,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
@@ -556,22 +556,22 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Поездки" и проверка корректности отображения экрана в аккаунте без карт
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
         TrCardAct.waitForTextToAppear("У вас пока нет поездок");
         TrCardAct.waitForTextToAppear("Список карт пуст");
 
         // Переход в раздел "Операции" и проверка корректности отображения экрана в аккаунте без карт
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
         TrCardAct.waitForTextToAppear("У вас пока нет операций");
         TrCardAct.waitForTextToAppear("Список карт пуст");
 
         // Возврат на экран "Мои карты" и переход к добавлению карты
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
         TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
         TrCardAct.clickTheBigButton("Добавить карту");
-        TrCardAct.waitForTextToAppear("Новая карта");
+        TrCardAct.waitForScreenTitleToAppear("Новая карта");
         TrCardAct.waitForTextToAppear("Введите номер карты");
 
         // Добавление карты
@@ -580,7 +580,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности добавления карты (отображение информации о карте и т.п.)
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
         String card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
@@ -595,7 +595,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Удаление карты
         TrCardAct.clickTheButton("Показать меню");
@@ -610,19 +610,19 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Поездки" и проверка корректности отображения экрана в аккаунте без карт
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
         TrCardAct.waitForTextToAppear("У вас пока нет поездок");
         TrCardAct.waitForTextToAppear("Список карт пуст");
 
         // Переход в раздел "Операции" и проверка корректности отображения экрана в аккаунте без карт
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
         TrCardAct.waitForTextToAppear("У вас пока нет операций");
         TrCardAct.waitForTextToAppear("Список карт пуст");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -654,7 +654,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
@@ -666,7 +666,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Перезапуск приложения без потери пользовательских данных
         TrCardAct.restartApp();
@@ -677,7 +677,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню, проверка номера карты
         TrCardAct.clickTheButton("Показать меню");
@@ -686,7 +686,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -718,7 +718,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("***4714");
@@ -734,7 +734,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Перезапуск приложения без потери пользовательских данных
         TrCardAct.restartApp();
@@ -745,7 +745,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню, проверка параметров карты
         TrCardAct.clickTheButton("Показать меню");
@@ -757,7 +757,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -789,14 +789,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheButton("Добавить карту");
-        TrCardAct.waitForTextToAppear("Новая карта");
+        TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Добавление карты
         String card_number_1 = "9643 10540 33105 07452";
@@ -812,7 +812,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Перейти");
 
         // Проверка успешности перехода на уже существующую карту при её повторном добавлении
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
         TrCardAct.waitForButtonWithPicToAppear("7452");
         TrCardAct.waitForTextToAppear("Новосибирск");
 
@@ -832,7 +832,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -884,11 +884,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheButton("Добавить карту");
-        TrCardAct.waitForTextToAppear("Новая карта");
+        TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Попытка добавить в учётную запись несуществующую карту
         TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714");
@@ -901,7 +901,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -936,7 +936,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("***9794");
@@ -951,7 +951,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Изменение региона карты (использование поиска по списку)
         TrCardAct.clickTheLeftQuarterOfTheBigButton("Челябинская область");
@@ -961,12 +961,12 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Поездки" и проверка наличия поездок
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
         TrCardAct.swipeUpToFindButtonWithPicByText("Автобус 72");
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1001,7 +1001,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (без функции "Транспортный роуминг")
         TrCardAct.swipeLeftToFindButtonWithPicByText("1375");
@@ -1021,22 +1021,22 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Просмотр информации о функции "Транспортный роуминг" через меню, копирование текста со списком регионов
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
-        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
         TrCardAct.clickTheButton("Подробнее");
-        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear(roaming_text);
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Закрытие баннера, оповещающего о подключенной функции "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
@@ -1051,7 +1051,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPassCode("5", "8", "3", "5");
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка отсутствия баннера, оповещающего о подключенной функции "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
@@ -1059,12 +1059,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Просмотр информации о функции "Транспортный роуминг" через меню
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
-        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear(roaming_text);
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Выход из приложения через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
@@ -1093,7 +1093,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
         TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
@@ -1101,12 +1101,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка наличия баннера и просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
         TrCardAct.clickTheButton("Подробнее");
-        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear(roaming_text);
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1141,7 +1141,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("7902");
@@ -1152,7 +1152,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Поиск операции с кнопкой "i", нажатие на эту кнопку и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("Пополнение");
@@ -1165,7 +1165,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("1716");
@@ -1176,7 +1176,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Поиск операции с кнопкой "i", нажатие на эту кнопку и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("Подключение услуги");
@@ -1189,14 +1189,14 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("0987");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Поиск операции с кнопкой "i", нажатие на эту кнопку и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("Пополнение");
@@ -1209,14 +1209,14 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("1308");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Поиск операции с кнопкой "i", нажатие на эту кнопку и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("Подключение услуги");
@@ -1238,7 +1238,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("6994");
@@ -1258,18 +1258,18 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Открытие списка подключенных к карте льгот и проверка отображения информации о них
         TrCardAct.waitForButtonWithPicToAppear("Льготы");
         TrCardAct.clickTheButtonWithPic("Льготы");
-        TrCardAct.waitForTextToDisappear("Мои карты");
-        TrCardAct.waitForTextToAppear("Подключенные льготы");
+        TrCardAct.waitForScreenTitleToDisappear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Подключенные льготы");
         TrCardAct.waitForButtonWithPicToAppear("Ветеран труда");
         TrCardAct.waitForTextToAppear("Во вкладке представлена информация");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Поиск операции с кнопкой "i", нажатие на эту кнопку и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("Подключение услуги");
@@ -1282,7 +1282,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1317,14 +1317,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Прокручивание истории поездок и поиск конкретной даты, а затем открытие поездки по времени
         TrCardAct.swipeUpToFindButtonWithPicByText("17 августа");
@@ -1343,7 +1343,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1378,14 +1378,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Прокручивание истории операций и поиск конкретной даты, а затем открытие операции по времени
         TrCardAct.swipeUpToFindButtonWithPicByText("26 октября");
@@ -1404,7 +1404,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1439,7 +1439,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
@@ -1465,7 +1465,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1497,11 +1497,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Нажатие на селектор
         TrCardAct.clickTheButtonWithPic("Транспортная карта");
@@ -1509,7 +1509,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Прокручивание списка карт и поиск конкретной карты, а затем открытие списка поездок
         TrCardAct.swipeUpToFindButtonWithPicByText("2210");
         TrCardAct.clickTheButtonWithPic("2210");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Прокручивание истории поездок и поиск конкретной даты, а затем открытие поездки по времени
         TrCardAct.swipeUpToFindButtonWithPicByText("17 августа");
@@ -1533,7 +1533,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindButtonWithPicByText("7452");
         TrCardAct.clickTheButtonWithPic("7452");
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Нажатие на селектор
         TrCardAct.clickTheButtonWithPic("7452");
@@ -1541,7 +1541,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Прокручивание списка карт и поиск конкретной карты, а затем открытие списка операций
         TrCardAct.swipeUpToFindButtonWithPicByText("2210");
         TrCardAct.clickTheButtonWithPic("2210");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Прокручивание истории операций и поиск конкретной даты, а затем открытие операции по времени
         TrCardAct.swipeUpToFindButtonWithPicByText("26 октября");
@@ -1560,7 +1560,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1592,11 +1592,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Нажатие на селектор и проверка открытия списка карт
         TrCardAct.clickTheButtonWithPic("Транспортная карта");
@@ -1606,11 +1606,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButtonWithPic("Операции");
         TrCardAct.waitForButtonWithPicToDisappear("Банковская карта");
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1642,28 +1642,28 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Поиск карты с подключенными услугами, открытие списка подключенных к карте услуг
         TrCardAct.swipeLeftToFindButtonWithPicByText("Подключенные услуги");
         TrCardAct.clickTheButtonWithPic("Подключенные услуги");
-        TrCardAct.waitForTextToDisappear("Мои карты");
-        TrCardAct.waitForTextToAppear("Подключенные услуги");
+        TrCardAct.waitForScreenTitleToDisappear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Подключенные услуги");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Поиск карты с подключенными льготами, открытие списка подключенных к карте льгот
         TrCardAct.swipeLeftToFindButtonWithPicByText("Льготы");
         TrCardAct.clickTheButtonWithPic("Льготы");
-        TrCardAct.waitForTextToDisappear("Мои карты");
-        TrCardAct.waitForTextToAppear("Подключенные льготы");
+        TrCardAct.waitForScreenTitleToDisappear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Подключенные льготы");
         TrCardAct.waitForTextToAppear("Во вкладке представлена информация");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1699,7 +1699,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Обработка значений массива: проверка корректности отображения кнопок "Пополнить" и "Купить услугу"
         for (int i = 0; i < card_parameters.length; i++) {
@@ -1715,7 +1715,7 @@ public class TrCardReleaseTests extends TrCardTestCase
             if (is_replenishable.equals("Y")) {
                 TrCardAct.waitForBigButtonToAppear("ПОПОЛНИТЬ");
                 TrCardAct.clickTheBigButton("ПОПОЛНИТЬ");
-                TrCardAct.waitForTextToAppear("Пополнение карты");
+                TrCardAct.waitForScreenTitleToAppear("Пополнение карты");
                 TrCardAct.waitForInputFieldToAppear("Сумма пополнения");
                 TrCardAct.waitForTextToDisappear("Произошла ошибка");
                 TrCardAct.waitForTextToDisappear("Не удалось получить информацию о пополнении");
@@ -1728,7 +1728,7 @@ public class TrCardReleaseTests extends TrCardTestCase
             if (has_available_purchases.equals("Y")) {
                 TrCardAct.waitForBigButtonToAppear("КУПИТЬ УСЛУГУ");
                 TrCardAct.clickTheBigButton("КУПИТЬ УСЛУГУ");
-                TrCardAct.waitForTextToAppear("Подключить услугу");
+                TrCardAct.waitForScreenTitleToAppear("Подключить услугу");
                 TrCardAct.waitForButtonWithPicToAppear("₽");
                 TrCardAct.waitForTextToDisappear("Ошибка при совершении операции");
                 TrCardAct.clickTheButton("Назад");
@@ -1780,14 +1780,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Получение чека" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Получение чека");
         TrCardAct.checkForPermissionNotification();
         TrCardAct.clickTheBigButton("ВВЕСТИ ПАРАМЕТРЫ ВРУЧНУЮ");
-        TrCardAct.waitForTextToAppear("Кассовый чек");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
 
         // Обработка значений массива: выбор города, способа оплаты поездки, заполнение полей данными
         for (int i = 0; i < real_tickets.length; i++) {
@@ -1884,7 +1884,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -1919,7 +1919,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Перезапуск приложения без потери пользовательских данных
         TrCardAct.restartApp();
@@ -1931,12 +1931,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPassCode("5", "8", "3", "5");
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Настройки");
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть активен)
         String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
@@ -1965,12 +1965,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Настройки");
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть неактивен)
         visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
@@ -1983,7 +1983,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат в главное меню и переход на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2015,12 +2015,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Настройки");
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть неактивен)
         String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
@@ -2045,7 +2045,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Установка кода доступа (правильный код > неправильный код > правильный код)
         TrCardAct.enterPassCode("5", "8", "3", "5");
         TrCardAct.enterPassCode("5", "8", "3", "6");
-        TrCardAct.waitForTextToAppear("Код доступа");
+        TrCardAct.waitForScreenTitleToAppear("Код доступа");
         TrCardAct.enterPassCode("5", "8", "3", "5");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть активен)
@@ -2057,7 +2057,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Возврат в главное меню
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
         TrCardAct.clickTheButton("Назад");
 
         // Перезапуск приложения без потери пользовательских данных
@@ -2073,12 +2073,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Настройки");
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть активен)
         visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
@@ -2091,7 +2091,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат в главное меню и переход на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2126,7 +2126,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Перезапуск приложения без потери пользовательских данных
         TrCardAct.restartApp();
@@ -2156,7 +2156,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Перезапуск приложения без потери пользовательских данных
         TrCardAct.restartApp();
@@ -2167,7 +2167,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPassCode("1", "2", "3", "4");
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2210,12 +2210,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         }
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Настройки");
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по отпечатку пальца / Вход по FaceID" (переключатель должен быть активен)
         String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", switch_text);
@@ -2229,7 +2229,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheSwitch(switch_text);
 
         // Возврат в главное меню
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
         TrCardAct.clickTheButton("Назад");
 
         // Перезапуск приложения без потери пользовательских данных
@@ -2243,12 +2243,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Настройки");
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по отпечатку пальца / Вход по FaceID" (переключатель должен быть неактивен)
         visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", switch_text);
@@ -2259,7 +2259,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Возврат в главное меню
-        TrCardAct.waitForTextToAppear("Настройки");
+        TrCardAct.waitForScreenTitleToAppear("Настройки");
         TrCardAct.clickTheButton("Назад");
 
         // Перезапуск приложения без потери пользовательских данных
@@ -2270,7 +2270,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPassCode("5", "8", "3", "5");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2302,7 +2302,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Перезапуск приложения без потери пользовательских данных
         TrCardAct.restartApp();
@@ -2350,14 +2350,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.checkAndSkipFingerprintsOrFaceID();
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Получение чека" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Получение чека");
         TrCardAct.checkForPermissionNotification();
         TrCardAct.clickTheBigButton("ВВЕСТИ ПАРАМЕТРЫ ВРУЧНУЮ");
-        TrCardAct.waitForTextToAppear("Кассовый чек");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
 
         // Тестирование механизма поиска по списку городов (существующие в базе города)
         TrCardAct.clickTheBigButton("Город");
@@ -2379,7 +2379,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2411,7 +2411,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
@@ -2438,7 +2438,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Выход из приложения через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
@@ -2467,7 +2467,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
@@ -2530,7 +2530,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2562,7 +2562,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
@@ -2602,7 +2602,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Выход из приложения через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
@@ -2631,7 +2631,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
@@ -2694,7 +2694,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2726,14 +2726,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("0509");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Поиск поездки с кнопкой "i", нажатие на эту кнопку и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("Автобус");
@@ -2746,7 +2746,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2778,14 +2778,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("is_discount_1");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Поиск поездки со скидкой по платёжной системе, нажатие на кнопку "%" и проверка отображения всплывающего сообщения
         TrCardAct.swipeUpToFindTooltipButtonByText("19:23:42");
@@ -2818,7 +2818,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2866,7 +2866,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2904,7 +2904,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -2936,7 +2936,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -2992,7 +2992,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Проездной");
         TrCardAct.waitForTextToAppear("Срок действия карты");
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3024,7 +3024,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
         TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
@@ -3035,12 +3035,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Просмотр информации о функции "Транспортный роуминг" через меню, копирование текста со списком регионов
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
-        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -3048,7 +3048,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее" (без подключения к сети)
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
         TrCardAct.clickTheButton("Подробнее");
-        TrCardAct.waitForTextToAppear("Транспортный роуминг");
+        TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка регионов");
         TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
@@ -3065,7 +3065,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3097,14 +3097,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Проверка отображения списка поездок
         TrCardAct.swipeUpToFindButtonWithPicByText("30 октября");
@@ -3129,7 +3129,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3161,14 +3161,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Проверка отображения списка операций
         TrCardAct.swipeUpToFindButtonWithPicByText("14 августа");
@@ -3193,7 +3193,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3225,11 +3225,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheButton("Добавить карту");
-        TrCardAct.waitForTextToAppear("Новая карта");
+        TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -3267,7 +3267,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Добавление карты, проверка успешности перехода на добавленную карту (экран "Мои карты")
         TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
         TrCardAct.waitForTextToAppear("***6139");
         TrCardAct.waitForBigButtonToAppear("Новосибирск");
 
@@ -3277,7 +3277,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
         TrCardAct.clickTheBigButton("ДА");
         TrCardAct.waitForTextToDisappear("***6139");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3309,19 +3309,19 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Поездки", проверка наличия данных о поездках
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
         TrCardAct.swipeUpToFindButtonWithPicByText("Автобус");
 
         // Переход в раздел "Операции", проверка наличия данных об операциях
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
         TrCardAct.swipeUpToFindButtonWithPicByText("Пополнение");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
@@ -3333,7 +3333,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Поездки", обновление списка поездок, проверка появления баннера с ошибкой
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
         TrCardAct.swipeDownToRefresh();
         TrCardAct.waitForButtonWithPicToAppear("Ошибка обновления поездок");
 
@@ -3350,7 +3350,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Операции", попытка загрузить данные ещё раз (свайп), проверка исчезновения баннера
         TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
         TrCardAct.swipeDownToRefresh();
         TrCardAct.waitForButtonWithPicToDisappear("Ошибка обновления операций");
         TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
@@ -3360,7 +3360,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3392,7 +3392,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Кассовый чек на e-mail" через меню
         TrCardAct.clickTheButton("Показать меню");
@@ -3462,7 +3462,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3494,7 +3494,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -3502,7 +3502,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Переход на экран "Вопрос/Ответ" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
-        TrCardAct.waitForTextToAppear("Вопрос/ответ");
+        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
 
         // Проверка появления сообщения об ошибке загрузки списка вопросов и ответов
         TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка вопросов");
@@ -3525,7 +3525,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3557,7 +3557,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка полноценности отображения информации о "нормальной" карте при наличии в аккаунте "проблемной" карты
         TrCardAct.clickTheButton("Показать меню");
@@ -3589,7 +3589,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3621,12 +3621,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран "Вопрос/Ответ" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
-        TrCardAct.waitForTextToAppear("Вопрос/ответ");
+        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
         TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
         TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
         TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
@@ -3635,7 +3635,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
@@ -3646,7 +3646,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Выход из приложения через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
@@ -3666,12 +3666,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран "Вопрос/Ответ" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
-        TrCardAct.waitForTextToAppear("Вопрос/ответ");
+        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
         TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
         TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
         TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
@@ -3680,7 +3680,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -3695,7 +3695,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Захват информации о версии приложения с экрана-заставки
-        //TrCardAct.waitForTextToAppear("История поездок, баланс");
         String app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "V");
         String app_version_start = app_version_temp.replace("V ", "");
 
@@ -3717,12 +3716,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "О программе" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("О программе");
-        TrCardAct.waitForTextToAppear("О программе");
+        TrCardAct.waitForScreenTitleToAppear("О программе");
 
         // Проверка отображения информации о приложении и получение его версии
         TrCardAct.waitForTextToAppear("Техническая поддержка");
@@ -3749,12 +3748,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "О программе" через главное меню и получение версии приложения
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("О программе");
-        TrCardAct.waitForTextToAppear("О программе");
+        TrCardAct.waitForScreenTitleToAppear("О программе");
 
         // Проверка отображения информации о приложении и получение его версии
         TrCardAct.waitForTextToAppear("Техническая поддержка");
@@ -3767,7 +3766,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка корректности отображения версии приложения на всех экранах
         assertEquals("Ошибка! Номер версии отличается.", app_version_start, app_version_login);
