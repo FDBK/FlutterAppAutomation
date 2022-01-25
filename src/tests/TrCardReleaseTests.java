@@ -65,7 +65,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number_1 = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Проверка отображения параметров карты и возврат на экран "Мои карты"
         TrCardAct.waitForTextToAppear("Статус");
@@ -106,7 +111,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number_2 = "";
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Проверка отображения параметров карты
         TrCardAct.waitForTextToAppear("Статус");
@@ -508,7 +518,12 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение текста с указанием ограничений при пополнении карты
         TrCardAct.swipeUpToFindText("На сумму от");
-        String replenishment_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "На сумму от");
+        String replenishment_text;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            replenishment_text = TrCardAct.waitForTextToAppearAndGetAttribute("name", "На сумму от");
+        } else {
+            replenishment_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "На сумму от");
+        }
 
         // Определение ограничений, создание списка граничных значений, проверка корректности работы приложения
         TrCardAct.testReplenishmentLimits(replenishment_text);
@@ -583,7 +598,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
-        String card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
         TrCardAct.waitForTextToAppear("Статус");
         TrCardAct.waitForTextToAppear("Проездной");
         TrCardAct.waitForTextToAppear("Срок действия карты");
@@ -662,7 +682,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Просмотр информации о карте через меню, копирование номера карты
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
-        String card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -727,10 +752,21 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
         String
-                card_name = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "***4714"),
-                card_status = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Статус"),
-                card_system = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Тип платежной системы"),
-                card_restrictions = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ограничения");
+                card_name,
+                card_status,
+                card_system,
+                card_restrictions;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_name = TrCardAct.waitForTextToAppearAndGetAttribute("name", "***4714");
+            card_status = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Статус");
+            card_system = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Тип платежной системы");
+            card_restrictions = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Ограничения");
+        } else {
+            card_name = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "***4714");
+            card_status = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Статус");
+            card_system = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Тип платежной системы");
+            card_restrictions = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ограничения");
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -821,7 +857,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "7452");
+        String card_number_2;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "7452");
+        } else {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "7452");
+        }
 
         // Проверка соответствия "второго" номера карты "первому" номеру
         assertEquals(
@@ -1022,7 +1063,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
-        String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
+        String roaming_text;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Ваша карта подключена");
+        } else {
+            roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -1449,7 +1495,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "2210");
+        String card_number;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("name", "2210");
+        } else {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "2210");
+        }
 
         // Проверка отображения параметров карты
         TrCardAct.waitForTextToAppear("Статус");
@@ -1939,7 +1990,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть активен)
-        String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Вход по коду доступа");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Вход по коду доступа' (должен быть активен).",
                 "true",
@@ -1973,7 +2030,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть неактивен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Вход по коду доступа");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Вход по коду доступа' (должен быть неактивен).",
                 "false",
@@ -2023,7 +2085,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть неактивен)
-        String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Вход по коду доступа");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Вход по коду доступа' (должен быть неактивен).",
                 "false",
@@ -2049,7 +2117,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPassCode("5", "8", "3", "5");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть активен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Вход по коду доступа");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Вход по коду доступа' (должен быть активен).",
                 "true",
@@ -2081,7 +2154,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по коду доступа" (переключатель должен быть активен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Вход по коду доступа");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Вход по коду доступа");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Вход по коду доступа' (должен быть активен).",
                 "true",
@@ -2218,7 +2296,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по отпечатку пальца / Вход по FaceID" (переключатель должен быть активен)
-        String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", switch_text);
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", switch_text);
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", switch_text);
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя '" + switch_text + "' (должен быть активен).",
                 "true",
@@ -2251,7 +2335,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки");
 
         // Проверка состояния функции "Вход по отпечатку пальца / Вход по FaceID" (переключатель должен быть неактивен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", switch_text);
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", switch_text);
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", switch_text);
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя '" + switch_text + "' (должен быть неактивен).",
                 "false",
@@ -2418,7 +2507,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number_1;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Возврат на экран "Мои карты" и переход в раздел "Кассовый чек на e-mail" через меню
         TrCardAct.clickTheButton("Назад");
@@ -2427,9 +2521,20 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("включить функцию получения");
 
         // Копирование почтового адреса, включение функции "Получать кассовый чек...", проверка состояния переключателя
-        String e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        String e_mail_step_1;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
         TrCardAct.clickTheSwitch("Получать кассовый чек");
-        String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть активен).",
                 "true",
@@ -2477,7 +2582,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number_2;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Проверка соответствия "второго" номера карты "первому" номеру
         assertEquals(
@@ -2493,7 +2603,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("включить функцию получения");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
-        String e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        String e_mail_step_2;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
         assertEquals(
                 "Ошибка! Некорректно отображается скрытый почтовый адрес ('" + e_mail_step_2 + "' вместо '" + hidden_email + "').",
@@ -2502,7 +2617,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Проверка состояния функции "Получать кассовый чек..." (переключатель должен быть активен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть активен).",
                 "true",
@@ -2513,7 +2633,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheSwitch("Получать кассовый чек");
 
         // Проверка состояния функции "Получать кассовый чек..." (переключатель должен быть неактивен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть неактивен).",
                 "false",
@@ -2521,7 +2646,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Копирование почтового адреса, проверка корректности его отображения (должен отображаться адрес текущей учётной записи)
-        String e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        String e_mail_step_3;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
         assertEquals(
                 "Ошибка! Некорректно отображается почтовый адрес ('" + e_mail_step_3 + "' вместо 'allcards@test.test').",
                 "allcards@test.test",
@@ -2569,7 +2699,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number_1;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Возврат на экран "Мои карты" и переход в раздел "Кассовый чек на e-mail" через меню
         TrCardAct.clickTheButton("Назад");
@@ -2587,8 +2722,19 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("включить функцию получения");
 
         // Копирование почтового адреса, проверка корректности его отображения, проверка состояния переключателя
-        String e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
-        String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        String e_mail_step_1;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректно отображается почтовый адрес ('" + e_mail_step_1 + "' вместо 'nikola-ag@ya.ru').",
                 "nikola-ag@ya.ru",
@@ -2641,7 +2787,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number_2;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Проверка соответствия "второго" номера карты "первому" номеру
         assertEquals(
@@ -2657,7 +2808,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("включить функцию получения");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
-        String e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        String e_mail_step_2;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
         assertEquals(
                 "Ошибка! Некорректно отображается скрытый почтовый адрес ('" + e_mail_step_2 + "' вместо '" + hidden_email + "').",
@@ -2666,7 +2822,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Проверка состояния функции "Получать кассовый чек..." (переключатель должен быть активен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть активен).",
                 "true",
@@ -2677,7 +2838,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheSwitch("Получать кассовый чек");
 
         // Проверка состояния функции "Получать кассовый чек..." (переключатель должен быть неактивен)
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть неактивен).",
                 "false",
@@ -2685,7 +2851,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Копирование почтового адреса, проверка корректности его отображения (должен отображаться адрес текущей учётной записи)
-        String e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        String e_mail_step_3;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
         assertEquals(
                 "Ошибка! Некорректно отображается почтовый адрес ('" + e_mail_step_3 + "' вместо 'allcards@test.test').",
                 "allcards@test.test",
@@ -2802,18 +2973,23 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка отображения некоторых параметров поездки, в том числе "нажимаемых" значений стоимости поездки со скидкой и без скидки
         TrCardAct.waitForTextToAppear("Дата и время поездки");
         TrCardAct.waitForTextToAppear("Маршрут");
-        String is_clickable_discount = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки со скидкой");
-        assertEquals(
-                "Ошибка! 'Стоимость поездки со скидкой' не является кнопкой для открытия всплывающего сообщения.",
-                "true",
-                is_clickable_discount
-        );
-        String is_clickable_full = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки без скидки");
-        assertEquals(
-                "Ошибка! 'Стоимость поездки без скидки' не является кнопкой для открытия всплывающего сообщения.",
-                "true",
-                is_clickable_full
-        );
+        if (TrCardPlatform.getInstance().isIOS()) {
+            TrCardAct.waitForButtonWithPicToAppear("Стоимость поездки со скидкой");
+            TrCardAct.waitForButtonWithPicToAppear("Стоимость поездки без скидки");
+        } else {
+            String is_clickable_discount = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки со скидкой");
+            assertEquals(
+                    "Ошибка! 'Стоимость поездки со скидкой' не является кнопкой для открытия всплывающего сообщения.",
+                    "true",
+                    is_clickable_discount
+            );
+            String is_clickable_full = TrCardAct.waitForButtonWithPicToAppearAndGetAttribute("clickable", "Стоимость поездки без скидки");
+            assertEquals(
+                    "Ошибка! 'Стоимость поездки без скидки' не является кнопкой для открытия всплывающего сообщения.",
+                    "true",
+                    is_clickable_full
+            );
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3036,7 +3212,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
-        String roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
+        String roaming_text;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Ваша карта подключена");
+        } else {
+            roaming_text = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Ваша карта подключена");
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3403,10 +3584,21 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.toggleAirplaneMode();
 
         // Копирование почтового адреса, включение функции "Получать кассовый чек...", проверка состояния переключателя
-        String e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        String e_mail_step_1;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
         TrCardAct.clickTheSwitch("Получать кассовый чек");
         TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка включения/выключения функции");
-        String visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть неактивен).",
                 "false",
@@ -3423,8 +3615,18 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Копирование и проверка почтового адреса, проверка состояния переключателя
-        String e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        String e_mail_step_2;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+        } else {
+            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+        }
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть неактивен).",
                 "false",
@@ -3444,7 +3646,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Включение функции "Получать кассовый чек..." после восстановления доступа к сети, проверка состояния переключателя
         TrCardAct.clickTheSwitch("Получать кассовый чек");
         TrCardAct.waitForButtonWithPicToDisappear("Произошла ошибка включения/выключения функции");
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть активен).",
                 "true",
@@ -3453,7 +3660,12 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Отключение функции "Получать кассовый чек...", проверка состояния переключателя
         TrCardAct.clickTheSwitch("Получать кассовый чек");
-        visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Получать кассовый чек");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Получать кассовый чек");
+        }
         assertEquals(
                 "Ошибка! Некорректное состояние переключателя 'Получать кассовый чек...' (должен быть неактивен).",
                 "false",
@@ -3642,7 +3854,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        String card_number;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3695,7 +3912,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Захват информации о версии приложения с экрана-заставки
-        String app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "V");
+        String app_version_temp;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "V");
+        } else {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "V");
+        }
         String app_version_start = app_version_temp.replace("V ", "");
 
         // Ввод логина
@@ -3728,8 +3950,17 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("E-mail службы поддержки");
         TrCardAct.waitForTextToAppear("E-mail для обратной связи");
         TrCardAct.waitForTextToAppear("Сайт системы");
-        app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
-        String app_version_login = app_version_temp.replace("Версия приложения\n", "");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Версия приложения");
+        } else {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
+        }
+        String app_version_login;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_login = app_version_temp.replace("Версия приложения ", "");
+        } else {
+            app_version_login = app_version_temp.replace("Версия приложения\n", "");
+        }
 
         // Возврат в главное меню и выход из учётной записи
         TrCardAct.clickTheButton("Назад");
@@ -3760,8 +3991,17 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("E-mail службы поддержки");
         TrCardAct.waitForTextToAppear("E-mail для обратной связи");
         TrCardAct.waitForTextToAppear("Сайт системы");
-        app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
-        String app_version_card = app_version_temp.replace("Версия приложения\n", "");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Версия приложения");
+        } else {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
+        }
+        String app_version_card;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_card = app_version_temp.replace("Версия приложения ", "");
+        } else {
+            app_version_card = app_version_temp.replace("Версия приложения\n", "");
+        }
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
