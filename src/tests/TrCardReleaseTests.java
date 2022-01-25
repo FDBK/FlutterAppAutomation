@@ -39,8 +39,8 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Попытка войти в приложение с неправильным паролем
         TrCardAct.clickTheBigButton("ВОЙТИ");
-        TrCardAct.waitForTextToAppear("Вы неверно ввели e-mail или пароль");
-        TrCardAct.waitForTextToDisappear("Вы неверно ввели e-mail или пароль");
+        TrCardAct.waitForBottomBannerToAppear("Вы неверно ввели e-mail или пароль");
+        TrCardAct.waitForBottomBannerToDisappear("Вы неверно ввели e-mail или пароль");
 
         // Ввод правильного пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -155,8 +155,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheBigButton("ДА");
 
         // Проверка отображения баннера с сообщением об удалении карты
-        TrCardAct.waitForTextToAppear("Карта удалена");
-        TrCardAct.waitForTextToDisappear("Карта удалена");
+        TrCardAct.waitForBottomBannerToAppear("Карта удалена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта удалена");
 
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
