@@ -55,11 +55,11 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка отображения экрана без подключенных карт
-        TrCardAct.waitForTextToAppear("У вас пока нет карты");
-        TrCardAct.waitForTextToAppear("Здесь будет отображаться информация об услугах");
+        TrCardAct.waitForTextToAppear("У вас пока нет карт");
+        TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
 
         System.out.println("Тест пройден без ошибок!");
         System.out.println("Зарегистрирован новый пользователь: " + random_email + " (пароль - 11111111).");
@@ -96,14 +96,14 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Получение чека" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Получение чека");
         TrCardAct.checkForPermissionNotification();
         TrCardAct.clickTheBigButton("ВВЕСТИ ПАРАМЕТРЫ ВРУЧНУЮ");
-        TrCardAct.waitForTextToAppear("Кассовый чек");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
 
         // Обработка значений массива: выбор города, способа оплаты поездки, заполнение полей данными
         for (int i = 0; i < tkpunk_tickets.length; i++) {
@@ -200,7 +200,7 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
     }
@@ -236,14 +236,14 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Получение чека" через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Получение чека");
         TrCardAct.checkForPermissionNotification();
         TrCardAct.clickTheBigButton("ВВЕСТИ ПАРАМЕТРЫ ВРУЧНУЮ");
-        TrCardAct.waitForTextToAppear("Кассовый чек");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
 
         // Переход на вкладку "Рулонный билет" (и ожидание, чтобы не перепутались поля "Город" на разных вкладках)
         TrCardAct.clickTheBigButton("РУЛОННЫЙ БИЛЕТ");
@@ -326,7 +326,7 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForTextToAppear("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
 
