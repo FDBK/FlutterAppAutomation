@@ -41,6 +41,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             // связанным с шаблонами для поиска элементов
             TEXT_TEMPLATE,
             SCREEN_TITLE_TEMPLATE,
+            BOTTOM_BANNER_TEMPLATE,
             INPUT_FIELD_TEMPLATE,
             BUTTON_TEMPLATE,
             BUTTON_WITH_PIC_TEMPLATE,
@@ -74,6 +75,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceScreenTitleAndGetLocator(String screen_title)
     {
         return SCREEN_TITLE_TEMPLATE.replace("{SCREEN_TITLE}", screen_title);
+    }
+
+    private static String replaceBottomBannerTextAndGetLocator(String bottom_banner_text)
+    {
+        return BOTTOM_BANNER_TEMPLATE.replace("{BOTTOM_BANNER_TEXT}", bottom_banner_text);
     }
 
     private static String replaceInputFieldTextAndGetLocator(String input_field_text)
@@ -139,6 +145,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForBottomBannerToAppear(String bottom_banner_text)
+    {
+        String locator = replaceBottomBannerTextAndGetLocator(bottom_banner_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить баннер с текстом '" + bottom_banner_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForInputFieldToAppear(String input_field_text)
     {
         String locator = replaceInputFieldTextAndGetLocator(input_field_text);
@@ -165,6 +181,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementNotPresent(
                 locator,
                 "Ошибка! Заголовок '" + screen_title + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForBottomBannerToDisappear(String bottom_banner_text)
+    {
+        String locator = replaceBottomBannerTextAndGetLocator(bottom_banner_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Баннер с текстом '" + bottom_banner_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
