@@ -134,7 +134,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceScreenTitleAndGetLocator(screen_title);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить текст '" + screen_title + "'.",
+                "Ошибка! Не удалось обнаружить заголовок '" + screen_title + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -144,7 +144,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceInputFieldTextAndGetLocator(input_field_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить текст '" + input_field_text + "'.",
+                "Ошибка! Не удалось обнаружить поле ввода '" + input_field_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -159,12 +159,22 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForScreenTitleToDisappear(String screen_title)
+    {
+        String locator = replaceScreenTitleAndGetLocator(screen_title);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Заголовок '" + screen_title + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForInputFieldToDisappear(String input_field_text)
     {
         String locator = replaceInputFieldTextAndGetLocator(input_field_text);
-        this.waitForElementPresent(
+        this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Текст '" + input_field_text + "' всё ещё отображается на экране.",
+                "Ошибка! Поле ввода '" + input_field_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -177,7 +187,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -187,7 +197,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -197,7 +207,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -207,7 +217,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceRadioButtonTextAndGetLocator(radio_button_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + radio_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -217,7 +227,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceSwitchTextAndGetLocator(switch_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + switch_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -227,17 +237,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTooltipButtonTextAndGetLocator(tooltip_button_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + tooltip_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент TooltipButton с текстом '" + tooltip_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
 
     public void waitForAnyElementToAppear(String any_element_text)
     {
-        String locator = replaceTooltipButtonTextAndGetLocator(any_element_text);
+        String locator = replaceAnyElementTextAndGetLocator(any_element_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + any_element_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент с текстом '" + any_element_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -247,7 +257,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + button_name + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент Button с текстом '" + button_name + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -257,7 +267,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + button_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент ButtonWithPic с текстом '" + button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -267,7 +277,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + big_button_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент BigButton с текстом '" + big_button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -277,7 +287,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceRadioButtonTextAndGetLocator(radio_button_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + radio_button_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент RadioButton с текстом '" + radio_button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -287,7 +297,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceSwitchTextAndGetLocator(switch_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + switch_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент Switch с текстом '" + switch_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -297,17 +307,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTooltipButtonTextAndGetLocator(tooltip_button_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + tooltip_button_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент TooltipButton с текстом '" + tooltip_button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
 
     public void waitForAnyElementToDisappear(String any_element_text)
     {
-        String locator = replaceTooltipButtonTextAndGetLocator(any_element_text);
+        String locator = replaceAnyElementTextAndGetLocator(any_element_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Кнопка с текстом '" + any_element_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент с текстом '" + any_element_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -331,7 +341,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить текст '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic '" + button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         return element.getAttribute(attribute);
@@ -342,7 +352,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить текст '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton '" + big_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         return element.getAttribute(attribute);
@@ -353,7 +363,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceSwitchTextAndGetLocator(switch_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить текст '" + switch_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент Switch '" + switch_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         return element.getAttribute(attribute);
@@ -367,7 +377,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -377,7 +387,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -387,7 +397,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -397,7 +407,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceRadioButtonTextAndGetLocator(radio_button_text);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + radio_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -407,7 +417,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceSwitchTextAndGetLocator(switch_text);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + switch_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -417,7 +427,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTooltipButtonTextAndGetLocator(tooltip_button_text);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + tooltip_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент TooltipButton с текстом '" + tooltip_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -427,7 +437,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceAnyElementTextAndGetLocator(any_element_text);
         this.waitForElementAndClick(
                 locator,
-                "Ошибка! Не удалось обнаружить кнопку с текстом '" + any_element_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент с текстом '" + any_element_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -440,7 +450,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTextAndGetLocator(text);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + text + "'.",
+                "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -451,7 +461,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -462,7 +472,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -473,7 +483,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -484,7 +494,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceRadioButtonTextAndGetLocator(radio_button_text);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + radio_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -495,7 +505,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceSwitchTextAndGetLocator(switch_text);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + switch_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -506,7 +516,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTooltipButtonTextAndGetLocator(tooltip_button_text);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + tooltip_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент TooltipButton с текстом '" + tooltip_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -520,7 +530,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTextAndGetLocator(text);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + text + "'.",
+                "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -531,7 +541,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -542,7 +552,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -553,7 +563,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -564,7 +574,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceRadioButtonTextAndGetLocator(radio_button_text);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + radio_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -575,7 +585,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceSwitchTextAndGetLocator(switch_text);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + switch_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -586,7 +596,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTooltipButtonTextAndGetLocator(tooltip_button_text);
         this.swipeDownToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + tooltip_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент TooltipButton с текстом '" + tooltip_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -600,7 +610,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTextAndGetLocator(text);
         this.swipeLeftToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + text + "'.",
+                "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -611,7 +621,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.swipeLeftToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -622,7 +632,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.swipeLeftToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -633,7 +643,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.swipeLeftToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -647,7 +657,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceTextAndGetLocator(text);
         this.swipeRightToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + text + "'.",
+                "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -658,7 +668,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.swipeRightToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -669,7 +679,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
         this.swipeRightToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -680,7 +690,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.swipeRightToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -734,7 +744,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceButtonTextAndGetLocator(button_name);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + button_name + "'.",
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
         int
@@ -758,7 +768,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         int
@@ -1086,14 +1096,14 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String locator = replaceInputFieldTextAndGetLocator(field_name);
         this.swipeUpToFindElement(
                 locator,
-                "Ошибка! Не удалось обнаружить поле для ввода '" + field_name + "'.",
+                "Ошибка! Не удалось обнаружить поле для ввода с текстом '" + field_name + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
         this.waitForElementClickClearAndSendKeys(
                 locator,
                 input,
-                "Ошибка! Не удалось обнаружить поле для ввода '" + field_name + "'.",
+                "Ошибка! Не удалось обнаружить поле для ввода с текстом '" + field_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -1119,7 +1129,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             String locator = replaceBigButtonTextAndGetLocator(code_buttons[i]);
             this.waitForElementAndClick(
                     locator,
-                    "Ошибка! Не удалось обнаружить кнопку '" + code_buttons[i] + "'.",
+                    "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + code_buttons[i] + "'.",
                     TIMEOUT_IN_SECONDS
             );
         }
@@ -1241,7 +1251,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         if (notifications > 0) {
             this.waitForElementAndClick(
                     skip_button_locator,
-                    "Ошибка! Не удалось обнаружить кнопку 'ОК'.",
+                    "Ошибка! Не удалось обнаружить кнопку для закрытия уведомления.",
                     TIMEOUT_IN_SECONDS
             );
         }
