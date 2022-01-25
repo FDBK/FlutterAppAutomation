@@ -825,7 +825,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -854,7 +854,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -886,7 +886,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -913,7 +913,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -943,7 +943,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -972,7 +972,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -1004,7 +1004,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -1033,7 +1033,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -1065,7 +1065,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -1094,7 +1094,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 TIMEOUT_IN_SECONDS
         );
         this.sleepFor(TIMEOUT_IN_MILLISECONDS);
-        String text = "";
+        String text;
         if (TrCardPlatform.getInstance().isIOS()) {
             text = element.getAttribute("name");
         } else {
@@ -1321,9 +1321,9 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String text_locator = replaceTextAndGetLocator("Нажмите ОК для подключения");
         String accept_button_locator = replaceButtonTextAndGetLocator("ОК");
         String auth_type = "";
+        String auth_text;
         int notifications = this.getAmountOfElements(text_locator);
         if (notifications > 0) {
-            String auth_text = "";
             if (TrCardPlatform.getInstance().isIOS()) {
                 auth_text = waitForTextToAppearAndGetAttribute("name", "Нажмите ОК для подключения");
             } else {

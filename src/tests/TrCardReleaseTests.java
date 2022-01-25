@@ -65,7 +65,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_1 = "";
+        String card_number_1;
         if (TrCardPlatform.getInstance().isIOS()) {
             card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
         } else {
@@ -111,7 +111,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
-        String card_number_2 = "";
+        String card_number_2;
         if (TrCardPlatform.getInstance().isIOS()) {
             card_number_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
         } else {
@@ -2278,7 +2278,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Установка входа по отпечатку пальца или по FaceID при появлении соответствующего предложения
         String auth_type = TrCardAct.checkAndAcceptFingerprintsOrFaceID();
-        String switch_text = "";
+        String switch_text;
         if (auth_type.equals("Fingerprint")) {
             switch_text = "Вход по отпечатку пальца";
         } else if (auth_type.equals("FaceID")) {
