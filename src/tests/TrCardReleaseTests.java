@@ -3955,12 +3955,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
         }
-        String app_version_login;
-        if (TrCardPlatform.getInstance().isIOS()) {
-            app_version_login = app_version_temp.replace("Версия приложения ", "");
-        } else {
-            app_version_login = app_version_temp.replace("Версия приложения\n", "");
-        }
+        String app_version_login = app_version_temp.replace("Версия приложения\n", "");
 
         // Возврат в главное меню и выход из учётной записи
         TrCardAct.clickTheButton("Назад");
@@ -3996,12 +3991,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
         }
-        String app_version_card;
-        if (TrCardPlatform.getInstance().isIOS()) {
-            app_version_card = app_version_temp.replace("Версия приложения ", "");
-        } else {
-            app_version_card = app_version_temp.replace("Версия приложения\n", "");
-        }
+        String app_version_card = app_version_temp.replace("Версия приложения\n", "");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
