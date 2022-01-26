@@ -249,7 +249,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheButton("Добавить карту");
-        TrCardAct.waitForTextToAppear("Новая карта");
+        TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Переход на вкладку "Банковская"
         TrCardAct.clickTheBigButton("БАНКОВСКАЯ");
@@ -334,18 +334,24 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Переход в раздел "Поездки" и проверка наличия поездок
         TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
         TrCardAct.swipeUpToFindButtonWithPicByText("Автобус 72");
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
-        // Удаление карты и проверка перехода на предыдущую карту
+        // Удаление карты
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
         TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка отображения баннера с сообщением об удалении карты
+        TrCardAct.waitForBottomBannerToAppear("Карта удалена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта удалена");
+
+        // Проверка перехода на предыдущую карту
         TrCardAct.waitForTextToDisappear("***6139");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
