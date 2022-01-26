@@ -861,6 +861,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Понятно");
         TrCardAct.waitForTextToAppear("Введите номер карты");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
+        TrCardAct.waitForTextToAppear("уже добавлена");
         TrCardAct.clickTheButton("Перейти");
 
         // Проверка успешности перехода на уже существующую карту при её повторном добавлении
@@ -1384,23 +1385,23 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("7452");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
         TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Прокручивание истории поездок и поиск конкретной даты, а затем открытие поездки по времени
-        TrCardAct.swipeUpToFindButtonWithPicByText("15 ноября");
-        TrCardAct.swipeUpToFindButtonWithPicByText("15:53:39");
-        TrCardAct.clickTheButtonWithPic("15:53:39");
+        TrCardAct.swipeUpToFindButtonWithPicByText("20 января");
+        TrCardAct.swipeUpToFindButtonWithPicByText("18:22:09");
+        TrCardAct.clickTheButtonWithPic("18:22:09");
 
         // Проверка отображения некоторых параметров поездки
-        TrCardAct.waitForTextToAppear("Троллейбус 24");
+        TrCardAct.waitForTextToAppear("Метро");
         TrCardAct.waitForTextToAppear("Дата и время поездки");
-        TrCardAct.waitForTextToAppear("15:53 15.11.2021");
+        TrCardAct.waitForTextToAppear("18:22 20.01.2022");
         TrCardAct.waitForTextToAppear("Маршрут");
-        TrCardAct.waitForTextToAppear("ж.м Станиславский - ул. Учительская");
+        TrCardAct.waitForTextToAppear("Речной вокзал");
 
         // Возврат к списку поездок
         TrCardAct.clickTheButton("Назад");
@@ -1445,23 +1446,23 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
         TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Прокручивание истории операций и поиск конкретной даты, а затем открытие операции по времени
-        TrCardAct.swipeUpToFindButtonWithPicByText("26 октября");
-        TrCardAct.swipeUpToFindButtonWithPicByText("17:05:41");
-        TrCardAct.clickTheButtonWithPic("17:05:41");
+        TrCardAct.swipeUpToFindButtonWithPicByText("24 декабря");
+        TrCardAct.swipeUpToFindButtonWithPicByText("08:16:55");
+        TrCardAct.clickTheButtonWithPic("08:16:55");
 
-        // Проверка отображения некоторых параметров поездки
+        // Проверка отображения некоторых параметров операции
         TrCardAct.waitForTextToAppear("Пополнение");
         TrCardAct.waitForTextToAppear("Дата и время пополнения");
-        TrCardAct.waitForTextToAppear("17:05 26.10.2020");
+        TrCardAct.waitForTextToAppear("08:16 24.12.2021");
         TrCardAct.waitForTextToAppear("Терминал");
-        TrCardAct.waitForTextToAppear("J049142");
+        TrCardAct.waitForTextToAppear("J065210");
 
         // Возврат к списку поездок
         TrCardAct.clickTheButton("Назад");
@@ -1576,27 +1577,27 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButtonWithPic("Транспортная карта");
 
         // Прокручивание списка карт и поиск конкретной карты, а затем открытие списка поездок
-        TrCardAct.swipeUpToFindButtonWithPicByText("7452");
-        TrCardAct.clickTheButtonWithPic("7452");
+        TrCardAct.swipeUpToFindButtonWithPicByText("1370");
+        TrCardAct.clickTheButtonWithPic("1370");
         TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Прокручивание истории поездок и поиск конкретной даты, а затем открытие поездки по времени
-        TrCardAct.swipeUpToFindButtonWithPicByText("15 ноября");
-        TrCardAct.swipeUpToFindButtonWithPicByText("15:53:39");
-        TrCardAct.clickTheButtonWithPic("15:53:39");
+        TrCardAct.swipeUpToFindButtonWithPicByText("20 января");
+        TrCardAct.swipeUpToFindButtonWithPicByText("18:22:09");
+        TrCardAct.clickTheButtonWithPic("18:22:09");
 
         // Проверка отображения некоторых параметров поездки
-        TrCardAct.waitForTextToAppear("Троллейбус 24");
+        TrCardAct.waitForTextToAppear("Метро");
         TrCardAct.waitForTextToAppear("Дата и время поездки");
-        TrCardAct.waitForTextToAppear("15:53 15.11.2021");
+        TrCardAct.waitForTextToAppear("18:22 20.01.2022");
         TrCardAct.waitForTextToAppear("Маршрут");
-        TrCardAct.waitForTextToAppear("ж.м Станиславский - ул. Учительская");
+        TrCardAct.waitForTextToAppear("Речной вокзал");
 
         // Возврат к списку поездок
         TrCardAct.clickTheButton("Назад");
 
         // Нажатие на селектор
-        TrCardAct.clickTheButtonWithPic("7452");
+        TrCardAct.clickTheButtonWithPic("1370");
 
         // Прокручивание списка карт и поиск конкретной карты, а затем переход в раздел "Операции"
         TrCardAct.swipeUpToFindButtonWithPicByText("2210");
@@ -1608,21 +1609,21 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButtonWithPic("2210");
 
         // Прокручивание списка карт и поиск конкретной карты, а затем открытие списка операций
-        TrCardAct.swipeUpToFindButtonWithPicByText("7452");
-        TrCardAct.clickTheButtonWithPic("7452");
+        TrCardAct.swipeUpToFindButtonWithPicByText("1370");
+        TrCardAct.clickTheButtonWithPic("1370");
         TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Прокручивание истории операций и поиск конкретной даты, а затем открытие операции по времени
-        TrCardAct.swipeUpToFindButtonWithPicByText("15 октября");
-        TrCardAct.swipeUpToFindButtonWithPicByText("17:46:01");
-        TrCardAct.clickTheButtonWithPic("17:46:01");
+        TrCardAct.swipeUpToFindButtonWithPicByText("24 декабря");
+        TrCardAct.swipeUpToFindButtonWithPicByText("08:16:55");
+        TrCardAct.clickTheButtonWithPic("08:16:55");
 
-        // Проверка отображения некоторых параметров поездки
+        // Проверка отображения некоторых параметров операции
         TrCardAct.waitForTextToAppear("Пополнение");
         TrCardAct.waitForTextToAppear("Дата и время пополнения");
-        TrCardAct.waitForTextToAppear("17:46 15.10.2021");
+        TrCardAct.waitForTextToAppear("08:16 24.12.2021");
         TrCardAct.waitForTextToAppear("Терминал");
-        TrCardAct.waitForTextToAppear("J555180");
+        TrCardAct.waitForTextToAppear("J065210");
 
         // Возврат к списку поездок
         TrCardAct.clickTheButton("Назад");
@@ -3142,7 +3143,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.toggleAirplaneMode();
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
 
         // Проверка появления сообщения "Ошибка загрузки..." на экране с информацией о карте
         TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
@@ -3166,7 +3167,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.waitForTextToDisappear("Произошла ошибка загрузки списка операций");
-        TrCardAct.swipeUpToFindButtonWithPicByText("18 мая");
+        TrCardAct.swipeUpToFindButtonWithPicByText("24 декабря");
 
         // Проверка корректности отображения списка поездок после восстановления соединения с сетью
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -3174,7 +3175,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.waitForTextToDisappear("Произошла ошибка загрузки списка поездок");
-        TrCardAct.swipeUpToFindButtonWithPicByText("17 августа");
+        TrCardAct.swipeUpToFindButtonWithPicByText("20 января");
 
         // Проверка корректности отображения информации о карте после восстановления соединения с сетью
         TrCardAct.clickTheButtonWithPic("Мои карты");
@@ -3307,14 +3308,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("7452");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
         TrCardAct.waitForScreenTitleToAppear("Поездки");
 
         // Проверка отображения списка поездок
-        TrCardAct.swipeUpToFindButtonWithPicByText("15 ноября");
+        TrCardAct.swipeUpToFindButtonWithPicByText("20 января");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -3332,7 +3333,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
 
         // Пролистывание списка поездок через несколько страниц, чтобы убедиться в корректности работы приложения
-        TrCardAct.swipeUpToFindButtonWithPicByText("8 октября");
+        TrCardAct.swipeUpToFindButtonWithPicByText("15 декабря");
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
@@ -3371,14 +3372,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("7452");
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
         TrCardAct.waitForScreenTitleToAppear("Операции");
 
         // Проверка отображения списка операций
-        TrCardAct.swipeUpToFindButtonWithPicByText("15 января");
+        TrCardAct.swipeUpToFindButtonWithPicByText("24 декабря");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -3396,7 +3397,90 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
 
         // Пролистывание списка операций через несколько страниц, чтобы убедиться в корректности работы приложения
-        TrCardAct.swipeUpToFindButtonWithPicByText("11 февраля");
+        TrCardAct.swipeUpToFindButtonWithPicByText("25 октября");
+
+        // Переход на экран "Мои карты"
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
+    // Проверка отображения баннера c ошибкой обновления данных при потере соединения с сетью
+    @Test
+    public void testNoConnectionRefreshErrorBanner()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test");
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Закрытие клавиатуры
+        TrCardAct.tapTheUpperEdgeOfTheScreen();
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+
+        // Переход в раздел "Поездки", проверка наличия данных о поездках
+        TrCardAct.clickTheButtonWithPic("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Метро");
+
+        // Переход в раздел "Операции", проверка наличия данных об операциях
+        TrCardAct.clickTheButtonWithPic("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Пополнение");
+
+        // Активация режима полёта для имитации отсутствия подключения к сети
+        TrCardAct.toggleAirplaneMode();
+
+        // Обновление списка операций с помощью свайпа, проверка появления баннера с ошибкой
+        TrCardAct.swipeDownToRefresh();
+        TrCardAct.waitForButtonWithPicToAppear("Ошибка обновления операций");
+
+        // Переход в раздел "Поездки", обновление списка поездок, проверка появления баннера с ошибкой
+        TrCardAct.clickTheButtonWithPic("Поездки");
+        TrCardAct.waitForScreenTitleToAppear("Поездки");
+        TrCardAct.swipeDownToRefresh();
+        TrCardAct.waitForButtonWithPicToAppear("Ошибка обновления поездок");
+
+        // Отключение режима полёта для восстановления подключения к сети
+        TrCardAct.toggleAirplaneMode();
+
+        // Попытка загрузить данные ещё раз (кнопка "Попробовать ещё раз"), проверка исчезновения баннера
+        TrCardAct.clickTheButton("Попробовать еще раз");
+        TrCardAct.waitForButtonWithPicToDisappear("Ошибка загрузки поездок");
+        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+
+        // Пролистывание списка поездок через несколько страниц, чтобы убедиться в корректности работы приложения
+        TrCardAct.swipeUpToFindButtonWithPicByText("15 декабря");
+
+        // Переход в раздел "Операции", попытка загрузить данные ещё раз (свайп), проверка исчезновения баннера
+        TrCardAct.clickTheButtonWithPic("Операции");
+        TrCardAct.waitForScreenTitleToAppear("Операции");
+        TrCardAct.swipeDownToRefresh();
+        TrCardAct.waitForButtonWithPicToDisappear("Ошибка обновления операций");
+        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+
+        // Пролистывание списка операций через несколько страниц, чтобы убедиться в корректности работы приложения
+        TrCardAct.swipeUpToFindButtonWithPicByText("25 октября");
 
         // Переход на экран "Мои карты"
         TrCardAct.clickTheButtonWithPic("Мои карты");
@@ -3484,89 +3568,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
         TrCardAct.clickTheBigButton("ДА");
         TrCardAct.waitForTextToDisappear("***6139");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        System.out.println("Тест пройден без ошибок!");
-    }
-
-
-    // Проверка отображения баннера c ошибкой обновления данных при потере соединения с сетью
-    @Test
-    public void testNoConnectionRefreshErrorBanner()
-    {
-        // Инициализация библиотек методов, необходимых для прохождения теста
-        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
-        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
-
-        // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
-
-        // Получение пароля для учётной записи
-        String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
-        // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
-        TrCardAct.clickTheBigButton("ВОЙТИ");
-
-        // Отказ от установки кода доступа
-        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
-        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
-
-        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("7452");
-
-        // Переход в раздел "Поездки", проверка наличия данных о поездках
-        TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForScreenTitleToAppear("Поездки");
-        TrCardAct.swipeUpToFindButtonWithPicByText("Автобус");
-
-        // Переход в раздел "Операции", проверка наличия данных об операциях
-        TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForScreenTitleToAppear("Операции");
-        TrCardAct.swipeUpToFindButtonWithPicByText("Пополнение");
-
-        // Активация режима полёта для имитации отсутствия подключения к сети
-        TrCardAct.toggleAirplaneMode();
-
-        // Обновление списка операций с помощью свайпа, проверка появления баннера с ошибкой
-        TrCardAct.swipeDownToRefresh();
-        TrCardAct.waitForButtonWithPicToAppear("Ошибка обновления операций");
-
-        // Переход в раздел "Поездки", обновление списка поездок, проверка появления баннера с ошибкой
-        TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForScreenTitleToAppear("Поездки");
-        TrCardAct.swipeDownToRefresh();
-        TrCardAct.waitForButtonWithPicToAppear("Ошибка обновления поездок");
-
-        // Отключение режима полёта для восстановления подключения к сети
-        TrCardAct.toggleAirplaneMode();
-
-        // Попытка загрузить данные ещё раз (кнопка "Попробовать ещё раз"), проверка исчезновения баннера
-        TrCardAct.clickTheButton("Попробовать еще раз");
-        TrCardAct.waitForButtonWithPicToDisappear("Ошибка загрузки поездок");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
-
-        // Пролистывание списка поездок через несколько страниц, чтобы убедиться в корректности работы приложения
-        TrCardAct.swipeUpToFindButtonWithPicByText("8 октября");
-
-        // Переход в раздел "Операции", попытка загрузить данные ещё раз (свайп), проверка исчезновения баннера
-        TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForScreenTitleToAppear("Операции");
-        TrCardAct.swipeDownToRefresh();
-        TrCardAct.waitForButtonWithPicToDisappear("Ошибка обновления операций");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
-
-        // Пролистывание списка операций через несколько страниц, чтобы убедиться в корректности работы приложения
-        TrCardAct.swipeUpToFindButtonWithPicByText("11 февраля");
-
-        // Переход на экран "Мои карты"
-        TrCardAct.clickTheButtonWithPic("Мои карты");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
