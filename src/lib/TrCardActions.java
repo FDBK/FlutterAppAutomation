@@ -1232,9 +1232,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 waitForWarningTextToDisappear("Минимальная сумма");
                 waitForWarningTextToDisappear("Максимальная сумма");
             }
-            if (TrCardPlatform.getInstance().isIOS()) {
-                return;
-            } else {
+            if (!TrCardPlatform.getInstance().isIOS()) {
                 Assert.assertEquals(
                         "Ошибка! Некорректный статус кнопки 'Оплатить'.",
                         button_clickability[i],
