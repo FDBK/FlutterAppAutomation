@@ -40,6 +40,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             PERMISSION_ALLOW_BUTTON,
             // связанным с шаблонами для поиска элементов
             TEXT_TEMPLATE,
+            WARNING_TEXT_TEMPLATE,
             SCREEN_TITLE_TEMPLATE,
             BOTTOM_BANNER_TEMPLATE,
             INPUT_FIELD_TEMPLATE,
@@ -70,6 +71,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceTextAndGetLocator(String text)
     {
         return TEXT_TEMPLATE.replace("{TEXT}", text);
+    }
+
+    private static String replaceWarningTextAndGetLocator(String warning_text)
+    {
+        return WARNING_TEXT_TEMPLATE.replace("{WARNING_TEXT}", warning_text);
     }
 
     private static String replaceScreenTitleAndGetLocator(String screen_title)
@@ -135,6 +141,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForWarningTextToAppear(String warning_text)
+    {
+        String locator = replaceWarningTextAndGetLocator(warning_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить текст '" + warning_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForScreenTitleToAppear(String screen_title)
     {
         String locator = replaceScreenTitleAndGetLocator(screen_title);
@@ -171,6 +187,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementNotPresent(
                 locator,
                 "Ошибка! Текст '" + text + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForWarningTextToDisappear(String warning_text)
+    {
+        String locator = replaceWarningTextAndGetLocator(warning_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Текст '" + warning_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -1197,20 +1223,24 @@ abstract public class TrCardActions extends TrCardCoreMethods
             enterText("Сумма пополнения", limits[i]);
             swipeUpToFindBigButtonByText("ОПЛАТИТЬ");
             if (warning[i].equals("Минимальная сумма")) {
-                waitForTextToAppear("Минимальная сумма");
-                waitForTextToDisappear("Максимальная сумма");
+                waitForWarningTextToAppear("Минимальная сумма");
+                waitForWarningTextToDisappear("Максимальная сумма");
             } else if (warning[i].equals("Максимальная сумма")) {
-                waitForTextToDisappear("Минимальная сумма");
-                waitForTextToAppear("Максимальная сумма");
+                waitForWarningTextToDisappear("Минимальная сумма");
+                waitForWarningTextToAppear("Максимальная сумма");
             } else {
-                waitForTextToDisappear("Минимальная сумма");
-                waitForTextToDisappear("Максимальная сумма");
+                waitForWarningTextToDisappear("Минимальная сумма");
+                waitForWarningTextToDisappear("Максимальная сумма");
             }
-            Assert.assertEquals(
-                    "Ошибка! Некорректный статус кнопки 'Оплатить'.",
-                    button_clickability[i],
-                    waitForBigButtonToAppearAndGetAttribute("clickable", "ОПЛАТИТЬ")
-            );
+            if (TrCardPlatform.getInstance().isIOS()) {
+                return;
+            } else {
+                Assert.assertEquals(
+                        "Ошибка! Некорректный статус кнопки 'Оплатить'.",
+                        button_clickability[i],
+                        waitForBigButtonToAppearAndGetAttribute("clickable", "ОПЛАТИТЬ")
+                );
+            }
         }
     }
 

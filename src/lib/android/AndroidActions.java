@@ -34,6 +34,7 @@ public class AndroidActions extends TrCardActions
         PERMISSION_ALLOW_BUTTON = "xpath://android.widget.Button[contains(@resource-id, 'permission_allow')]";
         // связанным с шаблонами для поиска элементов
         TEXT_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{TEXT}')]";
+        WARNING_TEXT_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{WARNING_TEXT}')]";
         SCREEN_TITLE_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{SCREEN_TITLE}')]";
         BOTTOM_BANNER_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{BOTTOM_BANNER_TEXT}')]";
         INPUT_FIELD_TEMPLATE = "xpath://android.widget.EditText[contains(@text, '{INPUT_FIELD_TEXT}')]";
