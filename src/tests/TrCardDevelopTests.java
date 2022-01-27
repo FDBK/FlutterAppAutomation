@@ -169,7 +169,11 @@ public class TrCardDevelopTests extends TrCardTestCase {
             }
 
             // Проверка работоспособности кнопки "Поделиться чеком"
-            TrCardAct.clickTheButtonWithPic("Поделиться");
+            if (TrCardPlatform.getInstance().isIOS()) {
+                TrCardAct.clickTheButton("Поделиться");
+            } else {
+                TrCardAct.clickTheButtonWithPic("Поделиться");
+            }
             TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
             // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
@@ -298,7 +302,11 @@ public class TrCardDevelopTests extends TrCardTestCase {
             }
 
             // Проверка работоспособности кнопки "Поделиться чеком"
-            TrCardAct.clickTheButtonWithPic("Поделиться");
+            if (TrCardPlatform.getInstance().isIOS()) {
+                TrCardAct.clickTheButton("Поделиться");
+            } else {
+                TrCardAct.clickTheButtonWithPic("Поделиться");
+            }
             TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
             // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
