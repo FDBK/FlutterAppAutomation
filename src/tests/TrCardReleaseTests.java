@@ -1881,6 +1881,7 @@ public class TrCardReleaseTests extends TrCardTestCase
             // Выбор города
             TrCardAct.clickTheBigButton("Город");
             TrCardAct.chooseTheCity(trip_city);
+            TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
             // Определение и выбор способа оплаты поездки
             String trip_payment_method = "Транспортная карта";
@@ -1949,8 +1950,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterText("Номер транзакции", "1318624554");
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
-        TrCardAct.waitForTextToAppear("Поездка не найдена, проверьте корректность введенных данных");
-        TrCardAct.waitForTextToDisappear("Поездка не найдена, проверьте корректность введенных данных");
+        TrCardAct.waitForBottomBannerToAppear("Поездка не найдена, проверьте корректность введенных данных");
+        TrCardAct.waitForBottomBannerToDisappear("Поездка не найдена, проверьте корректность введенных данных");
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
 
         // Проверка поведения приложения в случае нажатия кнопки "Получить чек" без ввода данных
