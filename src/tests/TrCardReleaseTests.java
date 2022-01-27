@@ -1218,7 +1218,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("7902");
-        TrCardAct.waitForTextToAppear("Карта заблокирована");
+        TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("6930");
@@ -1242,7 +1242,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("1716");
-        TrCardAct.waitForTextToAppear("Карта заблокирована");
+        TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("7150");
@@ -1315,11 +1315,11 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("6994");
-        TrCardAct.waitForTextToAppear("Карта заблокирована");
+        TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
         TrCardAct.swipeLeftToFindButtonWithPicByText("3906");
-        TrCardAct.waitForTextToAppear("Карта заблокирована");
+        TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
         TrCardAct.swipeLeftToFindBigButtonByText("[-услуги]");
