@@ -635,6 +635,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту Транспортная карта?");
         TrCardAct.clickTheBigButton("ДА");
 
+        // Проверка отображения баннера с сообщением об удалении карты
+        TrCardAct.waitForBottomBannerToAppear("Карта удалена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта удалена");
+
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
