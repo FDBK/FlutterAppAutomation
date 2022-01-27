@@ -1,11 +1,11 @@
 Flutter Transport Card - Live.Inhouse:
 
 {
-  "deviceName": "8-84-Phone",
+  "deviceName": "iPhone 12",
   "udid": "auto",
   "platformName": "iOS",
-  "platformVersion": "15.2.1",
-  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.380.ipa"
+  "platformVersion": "14.8",
+  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.385.ipa"
 }
 
 bundleId = ru.ftc.zk.tc.TCard-inhouse
@@ -14,11 +14,11 @@ bundleId = ru.ftc.zk.tc.TCard-inhouse
 Flutter Transport Card - Develop.Inhouse:
 
 {
-  "deviceName": "8-84-Phone",
+  "deviceName": "iPhone 12",
   "udid": "auto",
   "platformName": "iOS",
-  "platformVersion": "15.2.1",
-  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.develop.inhouse.380.ipa"
+  "platformVersion": "14.8",
+  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.develop.inhouse.385.ipa"
 }
 
 bundleId = ru.ftc.zk.tc.TransportCard-Dev-inhouse
