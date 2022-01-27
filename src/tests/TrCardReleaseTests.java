@@ -1103,8 +1103,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear(roaming_text);
 
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButton("Назад");
+        // Возврат на экран "Мои карты" (с помощью кнопки "Понятно")
+        TrCardAct.swipeUpToFindBigButtonByText("ПОНЯТНО");
+        TrCardAct.clickTheBigButton("ПОНЯТНО");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Закрытие баннера, оповещающего о подключенной функции "Транспортный роуминг"
@@ -1747,9 +1748,9 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
-    // Проверка отображения кнопок "Пополнить" и "Купить услугу"
+    // Проверка отображения кнопок "Пополнить" и "Купить услугу", а также флажка "Online" и сообщения о невозможности онлайн-пополнения карты
     @Test
-    public void testCheckReplenishButtons()
+    public void testCheckReplenishButtonsAndText()
     {
         // Инициализация библиотек методов, необходимых для прохождения теста
         TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
@@ -1784,7 +1785,8 @@ public class TrCardReleaseTests extends TrCardTestCase
             String
                     card_number = card_parameters[i][0],
                     is_replenishable = card_parameters[i][1],
-                    has_available_purchases = card_parameters[i][2];
+                    has_available_purchases = card_parameters[i][2],
+                    is_online = card_parameters[i][3];
 
             // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
             TrCardAct.swipeLeftToFindButtonWithPicByText(card_number);
@@ -1812,6 +1814,20 @@ public class TrCardReleaseTests extends TrCardTestCase
                 TrCardAct.clickTheButton("Назад");
             } else {
                 TrCardAct.waitForBigButtonToDisappear("КУПИТЬ УСЛУГУ");
+            }
+
+            // Проверка наличия флажка "Online" (или отсутствия этого флажка)
+            if (is_online.equals("Y")) {
+                TrCardAct.waitForTextToAppear("Online");
+            } else {
+                TrCardAct.waitForTextToDisappear("Online");
+            }
+
+            // Проверка наличия сообщения о невозможности онлайн-пополнения карты (или отсутствия этого сообщения)
+            if (is_replenishable.equals("N") & has_available_purchases.equals("N") & is_online.equals("Y")) {
+                TrCardAct.waitForTextToAppear("К сожалению, в вашем регионе недоступно онлайн-пополнение транспортной карты");
+            } else {
+                TrCardAct.waitForTextToDisappear("К сожалению, в вашем регионе недоступно онлайн-пополнение транспортной карты");
             }
         }
 
