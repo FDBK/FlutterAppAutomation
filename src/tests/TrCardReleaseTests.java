@@ -1109,7 +1109,11 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Закрытие баннера, оповещающего о подключенной функции "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
-        TrCardAct.clickTheButtonWithPic("Закрыть");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            TrCardAct.clickTheButton("Закрыть");
+        } else {
+            TrCardAct.clickTheButtonWithPic("Закрыть");
+        }
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
 
         // Перезапуск приложения без потери пользовательских данных
