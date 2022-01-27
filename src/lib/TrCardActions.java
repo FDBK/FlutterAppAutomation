@@ -1142,7 +1142,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Ввод номера банковской карты и проверка отображения предупреждений */
 
 
-    /* Поиск поля для ввода данных и ввод текста */
+    /* Поиск поля для ввода данных и ввод текста (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
     public void enterText(String field_name, String input)
     {
         String locator = replaceInputFieldTextAndGetLocator(field_name);
@@ -1158,8 +1158,9 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 "Ошибка! Не удалось обнаружить поле для ввода с текстом '" + field_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
+        tapTheUpperEdgeOfTheScreen();
     }
-    /* Поиск поля для ввода данных и ввод текста */
+    /* Поиск поля для ввода данных и ввод текста (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
     /* Поиск поля для выбора данных и выбор значения */
