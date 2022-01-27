@@ -575,7 +575,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
-        TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
+        TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ КАРТУ");
 
         // Переход в раздел "Поездки" и проверка корректности отображения экрана в аккаунте без карт
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -592,8 +592,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты" и переход к добавлению карты
         TrCardAct.clickTheButtonWithPic("Мои карты");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
-        TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
-        TrCardAct.clickTheBigButton("Добавить карту");
+        TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ КАРТУ");
+        TrCardAct.clickTheBigButton("ДОБАВИТЬ КАРТУ");
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
         TrCardAct.waitForTextToAppear("Введите номер карты");
 
@@ -638,7 +638,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка отображения экрана без подключенных карт
         TrCardAct.waitForTextToAppear("У вас пока нет карт");
         TrCardAct.waitForTextToAppear("Для получения информации по карте добавьте");
-        TrCardAct.swipeUpToFindBigButtonByText("Добавить карту");
+        TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ КАРТУ");
 
         // Переход в раздел "Поездки" и проверка корректности отображения экрана в аккаунте без карт
         TrCardAct.clickTheButtonWithPic("Поездки");
