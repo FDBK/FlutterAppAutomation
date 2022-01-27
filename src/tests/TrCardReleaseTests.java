@@ -915,11 +915,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Попытка войти в приложение по номеру несуществующей карты
         TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-        TrCardAct.waitForTextToAppear("Карта не найдена");
-        TrCardAct.waitForTextToDisappear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToAppear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта не найдена");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-        TrCardAct.waitForTextToAppear("Карта не найдена");
-        TrCardAct.waitForTextToDisappear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToAppear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта не найдена");
 
         // Переход на экран входа по логину и паролю
         TrCardAct.swipeUpToFindButtonByText("ВОЙТИ ПО ЛОГИНУ");
@@ -955,11 +955,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Попытка добавить в учётную запись несуществующую карту
         TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-        TrCardAct.waitForTextToAppear("Карта не найдена");
-        TrCardAct.waitForTextToDisappear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToAppear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта не найдена");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-        TrCardAct.waitForTextToAppear("Карта не найдена");
-        TrCardAct.waitForTextToDisappear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToAppear("Карта не найдена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта не найдена");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
