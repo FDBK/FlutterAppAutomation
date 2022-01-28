@@ -2064,8 +2064,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7));
         TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"));
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
-        TrCardAct.waitForTextToAppear("Вы неверно ввели e-mail или пароль");
-        TrCardAct.waitForTextToDisappear("Вы неверно ввели e-mail или пароль");
+        TrCardAct.waitForBottomBannerToAppear("Вы неверно ввели e-mail или пароль");
+        TrCardAct.waitForBottomBannerToDisappear("Вы неверно ввели e-mail или пароль");
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
@@ -2153,8 +2153,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7));
         TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"));
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
-        TrCardAct.waitForTextToAppear("Вы неверно ввели e-mail или пароль");
-        TrCardAct.waitForTextToDisappear("Вы неверно ввели e-mail или пароль");
+        TrCardAct.waitForBottomBannerToAppear("Вы неверно ввели e-mail или пароль");
+        TrCardAct.waitForBottomBannerToDisappear("Вы неверно ввели e-mail или пароль");
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
