@@ -45,6 +45,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             BOTTOM_BANNER_TEMPLATE,
             INPUT_FIELD_TEMPLATE,
             BUTTON_TEMPLATE,
+            BUTTON_LINK_TEMPLATE,
             BUTTON_WITH_PIC_TEMPLATE,
             BIG_BUTTON_TEMPLATE,
             RADIO_BUTTON_TEMPLATE,
@@ -96,6 +97,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceButtonTextAndGetLocator(String button_name)
     {
         return BUTTON_TEMPLATE.replace("{BUTTON_NAME}", button_name);
+    }
+
+    private static String replaceButtonLinkTextAndGetLocator(String button_link_text)
+    {
+        return BUTTON_TEMPLATE.replace("{BUTTON_LINK_TEXT}", button_link_text);
     }
 
     private static String replaceButtonWithPicTextAndGetLocator(String button_text)
@@ -244,6 +250,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForButtonLinkToAppear(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForButtonWithPicToAppear(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
@@ -310,6 +326,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementNotPresent(
                 locator,
                 "Ошибка! Элемент Button с текстом '" + button_name + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForButtonLinkToDisappear(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Элемент ButtonLink с текстом '" + button_link_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }

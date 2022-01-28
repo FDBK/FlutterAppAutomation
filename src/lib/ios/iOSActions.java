@@ -39,6 +39,7 @@ public class iOSActions extends TrCardActions
         BOTTOM_BANNER_TEMPLATE = "xpath://XCUIElementTypeOther[contains(@name, '{BOTTOM_BANNER_TEXT}')]";
         INPUT_FIELD_TEMPLATE = "xpath://XCUIElementTypeTextField[contains(@name, '{INPUT_FIELD_TEXT}')]";
         BUTTON_TEMPLATE = "xpath://XCUIElementTypeButton[contains(@name, '{BUTTON_NAME}')]";
+        BUTTON_LINK_TEMPLATE = "xpath://XCUIElementTypeLink[contains(@name, '{BUTTON_LINK_TEXT}')]";
         BUTTON_WITH_PIC_TEMPLATE = "xpath://XCUIElementTypeImage[contains(@name, '{BUTTON_TEXT}')]";
         BIG_BUTTON_TEMPLATE = "xpath://XCUIElementTypeStaticText[contains(@name, '{BIG_BUTTON_TEXT}')]";
         RADIO_BUTTON_TEMPLATE = "xpath://XCUIElementTypeSwitch[contains(@name, '{RADIO_BUTTON_TEXT}')]";
