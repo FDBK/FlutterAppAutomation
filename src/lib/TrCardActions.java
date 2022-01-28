@@ -460,6 +460,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void clickTheButtonLink(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.waitForElementAndClick(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void clickTheButtonWithPic(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
