@@ -3795,10 +3795,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.clickTheBigButton("ПОПРОБОВАТЬ ЕЩЕ РАЗ");
         TrCardAct.waitForTextToDisappear("Произошла ошибка загрузки списка вопросов");
-        TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
-        TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
-        TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
-        TrCardAct.swipeUpToFindBigButtonByText("актуальной информации");
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если транспортная карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
+        TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
+        TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
+        TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3905,10 +3909,16 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButtonWithPic("Меню");
         TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
         TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
-        TrCardAct.swipeUpToFindBigButtonByText("заблокирована");
-        TrCardAct.swipeUpToFindBigButtonByText("случае поломки");
-        TrCardAct.swipeUpToFindBigButtonByText("неверный баланс");
-        TrCardAct.swipeUpToFindBigButtonByText("актуальной информации");
+
+        // Проверка отображения вопросов и ответов
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если транспортная карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
+        TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
+        TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
+        TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
