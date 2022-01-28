@@ -101,7 +101,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
     private static String replaceButtonLinkTextAndGetLocator(String button_link_text)
     {
-        return BUTTON_TEMPLATE.replace("{BUTTON_LINK_TEXT}", button_link_text);
+        return BUTTON_LINK_TEMPLATE.replace("{BUTTON_LINK_TEXT}", button_link_text);
     }
 
     private static String replaceButtonWithPicTextAndGetLocator(String button_text)
