@@ -3467,6 +3467,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
         TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка отображения баннера с сообщением об удалении карты
+        TrCardAct.waitForBottomBannerToAppear("Карта удалена");
+        TrCardAct.waitForBottomBannerToDisappear("Карта удалена");
+
+        // Проверка перехода на предыдущую карту
         TrCardAct.waitForTextToDisappear("***6139");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
