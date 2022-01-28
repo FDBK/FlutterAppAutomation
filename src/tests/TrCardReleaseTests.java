@@ -3351,15 +3351,15 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Пролистывание списка поездок до момента возникновения баннера, сообщающего об ошибке загрузки данных
         TrCardAct.swipeUpToFindButtonWithPicByText("Ошибка загрузки поездок");
-        TrCardAct.clickTheButton("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
         TrCardAct.swipeUpToFindButtonWithPicByText("Ошибка загрузки поездок");
 
         // Отключение режима полёта для восстановления подключения к сети
         TrCardAct.toggleAirplaneMode();
 
         // Попытка загрузить данные ещё раз, проверка исчезновения баннера
-        TrCardAct.clickTheButton("Попробовать еще раз");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
+        TrCardAct.waitForButtonLinkToDisappear("Попробовать еще раз");
 
         // Пролистывание списка поездок через несколько страниц, чтобы убедиться в корректности работы приложения
         TrCardAct.swipeUpToFindButtonWithPicByText("15 декабря");
@@ -3415,15 +3415,15 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Пролистывание списка операций до момента возникновения баннера, сообщающего об ошибке загрузки данных
         TrCardAct.swipeUpToFindButtonWithPicByText("Ошибка загрузки операций");
-        TrCardAct.clickTheButton("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
         TrCardAct.swipeUpToFindButtonWithPicByText("Ошибка загрузки операций");
 
         // Отключение режима полёта для восстановления подключения к сети
         TrCardAct.toggleAirplaneMode();
 
         // Попытка загрузить данные ещё раз, проверка исчезновения баннера
-        TrCardAct.clickTheButton("Попробовать еще раз");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
+        TrCardAct.waitForButtonLinkToDisappear("Попробовать еще раз");
 
         // Пролистывание списка операций через несколько страниц, чтобы убедиться в корректности работы приложения
         TrCardAct.swipeUpToFindButtonWithPicByText("25 октября");
@@ -3494,9 +3494,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.toggleAirplaneMode();
 
         // Попытка загрузить данные ещё раз (кнопка "Попробовать ещё раз"), проверка исчезновения баннера
-        TrCardAct.clickTheButton("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
         TrCardAct.waitForButtonWithPicToDisappear("Ошибка загрузки поездок");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+        TrCardAct.waitForButtonLinkToDisappear("Попробовать еще раз");
 
         // Пролистывание списка поездок через несколько страниц, чтобы убедиться в корректности работы приложения
         TrCardAct.swipeUpToFindButtonWithPicByText("15 декабря");
@@ -3506,7 +3506,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Операции");
         TrCardAct.swipeDownToRefresh();
         TrCardAct.waitForButtonWithPicToDisappear("Ошибка обновления операций");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+        TrCardAct.waitForButtonLinkToDisappear("Попробовать еще раз");
 
         // Пролистывание списка операций через несколько страниц, чтобы убедиться в корректности работы приложения
         TrCardAct.swipeUpToFindButtonWithPicByText("25 октября");
@@ -3561,8 +3561,8 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка возникновения баннера, сообщающего об ошибке загрузки списка регионов
         TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка загрузки регионов");
-        TrCardAct.swipeUpToFindButtonByText("Попробовать еще раз");
-        TrCardAct.clickTheButton("Попробовать еще раз");
+        TrCardAct.swipeUpToFindButtonLinkByText("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
         TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка загрузки регионов");
 
         // Попытка добавить карту, несмотря на ошибку загрузки списка регионов
@@ -3574,10 +3574,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.toggleAirplaneMode();
 
         // Попытка загрузить список регионов ещё раз, проверка исчезновения баннера
-        TrCardAct.swipeUpToFindButtonByText("Попробовать еще раз");
-        TrCardAct.clickTheButton("Попробовать еще раз");
+        TrCardAct.swipeUpToFindButtonLinkByText("Попробовать еще раз");
+        TrCardAct.clickTheButtonLink("Попробовать еще раз");
         TrCardAct.waitForButtonWithPicToDisappear("Произошла ошибка загрузки регионов");
-        TrCardAct.waitForButtonToDisappear("Попробовать еще раз");
+        TrCardAct.waitForButtonLinkToDisappear("Попробовать еще раз");
 
         // Проверка восстановления работоспособности функции выбора региона
         TrCardAct.swipeUpToFindBigButtonByText("Город");
