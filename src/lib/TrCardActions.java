@@ -555,6 +555,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeUpToFindButtonLinkByText(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.swipeUpToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE
+        );
+    }
+
     public void swipeUpToFindButtonWithPicByText(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
@@ -630,6 +641,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.swipeDownToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE
+        );
+    }
+
+    public void swipeDownToFindButtonLinkByText(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.swipeDownToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
@@ -715,6 +737,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLeftToFindButtonLinkByText(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.swipeLeftToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE
+        );
+    }
+
     public void swipeLeftToFindButtonWithPicByText(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
@@ -757,6 +790,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.swipeRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE
+        );
+    }
+
+    public void swipeRightToFindButtonLinkByText(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.swipeRightToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
                 TIME_OF_SWIPE
         );
