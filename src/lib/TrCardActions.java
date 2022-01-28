@@ -921,7 +921,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Нажатия на экран */
 
 
-    /* Ввод e-mail и проверка отображения предупреждений */
+    /* Ввод e-mail и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
     public void enterEmailAndCheckText(String input)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
@@ -949,6 +949,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_EMAIL_TEXT)
             );
         }
+        tapTheUpperEdgeOfTheScreen();
     }
 
     public void enterEmailAndCheckTextAgain(String input)
@@ -978,11 +979,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_EMAIL_TEXT)
             );
         }
+        tapTheUpperEdgeOfTheScreen();
     }
-    /* Ввод e-mail и проверка отображения предупреждений */
+    /* Ввод e-mail и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
-    /* Ввод пароля и проверка отображения предупреждений */
+    /* Ввод пароля и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
     public void enterPasswordAndCheckText(String input)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
@@ -1008,6 +1010,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             throw new AssertionError("Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.");
             }
         }
+        tapTheUpperEdgeOfTheScreen();
     }
 
     public void enterPasswordAndCheckTextAgain(String input)
@@ -1035,8 +1038,9 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 throw new AssertionError("Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.");
             }
         }
+        tapTheUpperEdgeOfTheScreen();
     }
-    /* Ввод пароля и проверка отображения предупреждений */
+    /* Ввод пароля и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
     /* Ввод имени карты и проверка отображения предупреждений */
@@ -1100,7 +1104,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
     /* Ввод имени карты и проверка отображения предупреждений */
 
 
-    /* Ввод номера карты и проверка отображения предупреждений */
+    /* Ввод номера карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
     public void enterCardNumberAndCheckText(String input)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
@@ -1128,6 +1132,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CARD_NUMBER_TEXT)
             );
         }
+        tapTheUpperEdgeOfTheScreen();
     }
 
     public void enterCardNumberAndCheckTextAgain(String input)
@@ -1157,11 +1162,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CARD_NUMBER_TEXT)
             );
         }
+        tapTheUpperEdgeOfTheScreen();
     }
-    /* Ввод номера карты и проверка отображения предупреждений */
+    /* Ввод номера карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
-    /* Ввод номера банковской карты и проверка отображения предупреждений */
+    /* Ввод номера банковской карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
     public void enterCreditCardNumberAndCheckText(String input)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
@@ -1189,6 +1195,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CREDIT_CARD_NUMBER_TEXT)
             );
         }
+        tapTheUpperEdgeOfTheScreen();
     }
 
     public void enterCreditCardNumberAndCheckTextAgain(String input)
@@ -1218,8 +1225,9 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CREDIT_CARD_NUMBER_TEXT)
             );
         }
+        tapTheUpperEdgeOfTheScreen();
     }
-    /* Ввод номера банковской карты и проверка отображения предупреждений */
+    /* Ввод номера банковской карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
     /* Поиск поля для ввода данных и ввод текста (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */

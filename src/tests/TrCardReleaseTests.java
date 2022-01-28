@@ -26,9 +26,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Попытка войти в приложение без ввода пароля
         TrCardAct.clickTheBigButton("ВОЙТИ");
         TrCardAct.waitForTextToAppear("указанные при регистрации");
@@ -184,9 +181,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterEmailAndCheckTextAgain("automation@test.");
         TrCardAct.enterEmailAndCheckTextAgain("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Переход на экран ввода пароля для регистрируемой учётной записи
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForTextToAppear("для приложения");
@@ -267,9 +261,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -314,9 +305,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Ввод логина
         TrCardAct.enterEmailAndCheckText("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -394,9 +382,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -457,9 +442,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -498,9 +480,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -557,9 +536,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("nocards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -678,9 +654,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -748,9 +721,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -832,9 +802,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -931,9 +898,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -982,9 +946,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1047,9 +1008,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1152,9 +1110,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Ввод логина для повторного входа в приложение
         TrCardAct.enterEmailAndCheckText("allcards@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -1199,9 +1154,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("otherops@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1376,9 +1328,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -1437,9 +1386,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -1497,9 +1443,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1563,9 +1506,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1659,9 +1599,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -1708,9 +1645,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1765,9 +1699,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -1861,9 +1792,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -2003,9 +1931,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -2112,9 +2037,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -2237,9 +2159,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -2312,9 +2231,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -2427,9 +2343,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -2471,9 +2384,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -2535,9 +2445,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password_1 = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password_1);
@@ -2611,9 +2518,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password_2 = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password_2);
@@ -2732,9 +2636,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password_1 = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password_1);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -2818,9 +2719,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password_2 = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password_2);
@@ -2939,9 +2837,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -2990,9 +2885,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -3070,9 +2962,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -3153,9 +3042,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -3242,9 +3128,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -3322,9 +3205,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -3386,9 +3266,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -3449,9 +3326,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -3533,9 +3407,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -3616,9 +3487,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -3760,9 +3628,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -3827,9 +3692,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("i.judin@cft.ru");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -3890,9 +3752,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -4007,9 +3866,6 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);

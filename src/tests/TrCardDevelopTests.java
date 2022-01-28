@@ -22,9 +22,6 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.enterEmailAndCheckTextAgain("tk.punk@test.");
         TrCardAct.enterEmailAndCheckTextAgain("tk.punk@test.test");
 
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
-
         // Переход на экран ввода пароля для регистрируемой учётной записи
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForTextToAppear("для приложения");
@@ -83,9 +80,6 @@ public class TrCardDevelopTests extends TrCardTestCase {
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("tk.punk@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
@@ -228,9 +222,6 @@ public class TrCardDevelopTests extends TrCardTestCase {
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("tk.punk@test.test");
-
-        // Закрытие клавиатуры
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
 
         // Ввод пароля и попытка войти в приложение
         TrCardAct.enterPasswordAndCheckText(password);
