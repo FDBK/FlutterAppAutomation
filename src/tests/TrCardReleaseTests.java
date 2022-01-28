@@ -18,10 +18,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина (недостаточная длина > некорректный формат > корректный формат)
-        TrCardAct.enterEmailAndCheckText("auto");
-        TrCardAct.enterEmailAndCheckTextAgain("automation");
-        TrCardAct.enterEmailAndCheckTextAgain("automation@test.");
-        TrCardAct.enterEmailAndCheckTextAgain("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("auto", true);
+        TrCardAct.enterEmailAndCheckTextAgain("automation", true);
+        TrCardAct.enterEmailAndCheckTextAgain("automation@test.", true);
+        TrCardAct.enterEmailAndCheckTextAgain("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
@@ -31,8 +31,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод пароля (недостаточная длина > неверный пароль достаточной длины)
-        TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7));
-        TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"));
+        TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7), true);
+        TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"), true);
 
         // Попытка войти в приложение с неправильным паролем
         TrCardAct.clickTheBigButton("ВОЙТИ");
@@ -40,7 +40,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForBottomBannerToDisappear("Вы неверно ввели e-mail или пароль");
 
         // Ввод правильного пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа ("неудачный" код и его изменение > неправильный код > правильный код)
@@ -93,11 +93,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Попытка войти с помощью номера недостаточной длины
-        TrCardAct.enterCardNumberAndCheckText("9643");
+        TrCardAct.enterCardNumberAndCheckText("9643", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Попытка войти с помощью номера достаточной длины
-        TrCardAct.enterCardNumberAndCheckTextAgain(card_number_1);
+        TrCardAct.enterCardNumberAndCheckTextAgain(card_number_1, true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -176,18 +176,18 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("для регистрации");
 
         // Ввод логина (недостаточная длина > некорректный формат > корректный формат)
-        TrCardAct.enterEmailAndCheckText("auto");
-        TrCardAct.enterEmailAndCheckTextAgain("automation");
-        TrCardAct.enterEmailAndCheckTextAgain("automation@test.");
-        TrCardAct.enterEmailAndCheckTextAgain("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("auto", true);
+        TrCardAct.enterEmailAndCheckTextAgain("automation", true);
+        TrCardAct.enterEmailAndCheckTextAgain("automation@test.", true);
+        TrCardAct.enterEmailAndCheckTextAgain("automation@test.test", true);
 
         // Переход на экран ввода пароля для регистрируемой учётной записи
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForTextToAppear("для приложения");
 
         // Ввод пароля (недостаточная длина > достаточная длина)
-        TrCardAct.enterPasswordAndCheckText("1111111");
-        TrCardAct.enterPasswordAndCheckTextAgain("11111111");
+        TrCardAct.enterPasswordAndCheckText("1111111", true);
+        TrCardAct.enterPasswordAndCheckTextAgain("11111111", true);
 
         // Попытка зарегистрировать уже существующего пользователя, возврат на экран ввода логина для регистрации
         TrCardAct.clickTheBigButton("ЗАРЕГИСТРИРОВАТЬСЯ");
@@ -198,12 +198,12 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Ввод "свободного" логина
         String random_email = "test-" + TrCardAct.makeRandomString() + "@test.test";
-        TrCardAct.enterEmailAndCheckText(random_email);
+        TrCardAct.enterEmailAndCheckText(random_email, true);
 
         // Переход на экран ввода пароля для регистрируемой учётной записи с последующей регистрацией
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForTextToAppear("для приложения");
-        TrCardAct.enterPasswordAndCheckText("11111111");
+        TrCardAct.enterPasswordAndCheckText("11111111", true);
         TrCardAct.clickTheBigButton("ЗАРЕГИСТРИРОВАТЬСЯ");
 
         // Отказ от установки кода доступа
@@ -235,7 +235,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210");
+        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -256,13 +256,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -281,8 +281,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Введите 16-значный номер");
 
         // Ввод номера карты, проверка поведения поля при недостаточной длине введённого номера
-        TrCardAct.enterCreditCardNumberAndCheckText("4276");
-        TrCardAct.enterCreditCardNumberAndCheckTextAgain("4276 4407 9598 6139");
+        TrCardAct.enterCreditCardNumberAndCheckText("4276", true);
+        TrCardAct.enterCreditCardNumberAndCheckTextAgain("4276 4407 9598 6139", true);
 
         // Выбор города
         TrCardAct.swipeUpToFindBigButtonByText("Город");
@@ -304,10 +304,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -360,7 +360,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText("9643 10220 33100 83568");
+        TrCardAct.enterCardNumberAndCheckText("9643 10220 33100 83568", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -377,13 +377,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -396,7 +396,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка корректности перехода на нужную карту, проверка доступности пополнения
         TrCardAct.waitForButtonWithPicToAppear("3568");
         TrCardAct.clickTheBigButton("ПОПОЛНИТЬ");
-        TrCardAct.enterText("Сумма пополнения", "100");
+        TrCardAct.enterText("Сумма пополнения", "100", true);
         TrCardAct.swipeUpToFindBigButtonByText("ОПЛАТИТЬ");
 
         // Возврат на экран "Мои карты"
@@ -420,7 +420,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText("9643 10220 33106 18314");
+        TrCardAct.enterCardNumberAndCheckText("9643 10220 33106 18314", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -437,13 +437,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -476,13 +476,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -532,13 +532,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("nocards@test.test");
+        TrCardAct.enterEmailAndCheckText("nocards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("nocards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -574,7 +574,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Введите номер карты");
 
         // Добавление карты
-        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210");
+        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210", true);
         TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
@@ -649,13 +649,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -689,7 +689,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Повторный вход в учётную запись после перезапуска приложения
         TrCardAct.waitForTextToAppear("Введите пароль");
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -717,13 +717,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -767,7 +767,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Повторный вход в учётную запись после перезапуска приложения
         TrCardAct.waitForTextToAppear("Введите пароль");
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -798,13 +798,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -823,7 +823,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Добавление карты
         String card_number_1 = "9643 10540 33105 07452";
-        TrCardAct.enterCardNumberAndCheckText(card_number_1);
+        TrCardAct.enterCardNumberAndCheckText(card_number_1, true);
         TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
@@ -880,7 +880,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Попытка войти в приложение по номеру несуществующей карты
-        TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714");
+        TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
         TrCardAct.waitForBottomBannerToAppear("Карта не найдена");
         TrCardAct.waitForBottomBannerToDisappear("Карта не найдена");
@@ -893,13 +893,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ВОЙТИ ПО ЛОГИНУ");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -917,7 +917,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Попытка добавить в учётную запись несуществующую карту
-        TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714");
+        TrCardAct.enterCardNumberAndCheckText("9643 10540 66613 77714", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
         TrCardAct.waitForBottomBannerToAppear("Карта не найдена");
         TrCardAct.waitForBottomBannerToDisappear("Карта не найдена");
@@ -942,13 +942,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -978,7 +978,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Изменение региона карты (использование поиска по списку)
         TrCardAct.clickTheLeftQuarterOfTheBigButton("Челябинская область");
-        TrCardAct.enterText("Выбор города", "ово");
+        TrCardAct.enterText("Выбор города", "ово", false);
         TrCardAct.waitForTextToAppear("Новосибирск");
         TrCardAct.clickTheBigButton("Новосибирск");
 
@@ -1004,13 +1004,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1108,10 +1108,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина для повторного входа в приложение
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1150,13 +1150,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("otherops@test.test");
+        TrCardAct.enterEmailAndCheckText("otherops@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("otherops@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1323,13 +1323,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1381,13 +1381,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1439,13 +1439,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1502,13 +1502,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -1594,13 +1594,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -1641,13 +1641,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -1695,13 +1695,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         String[][] card_parameters = TrCardData.getRealCardParameters();
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -1788,13 +1788,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         String[][] real_tickets = TrCardData.getRealTickets();
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -1838,10 +1838,10 @@ public class TrCardReleaseTests extends TrCardTestCase
             TrCardAct.clickTheRadioButton(trip_payment_method);
 
             // Поиск полей и ввод данных о поездке
-            TrCardAct.enterText("Дата поездки", trip_date);
-            TrCardAct.enterText("Время поездки", trip_time);
-            TrCardAct.enterText("Идентификатор терминала", trip_terminal);
-            TrCardAct.enterText("Номер транзакции", trip_transaction);
+            TrCardAct.enterText("Дата поездки", trip_date, true);
+            TrCardAct.enterText("Время поездки", trip_time, true);
+            TrCardAct.enterText("Идентификатор терминала", trip_terminal, true);
+            TrCardAct.enterText("Номер транзакции", trip_transaction, true);
 
             // Получение чека
             TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
@@ -1888,10 +1888,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         }
 
         // Проверка поведения приложения в случае ввода данных о несуществующей поездке
-        TrCardAct.enterText("Дата поездки", "29.07.2021");
-        TrCardAct.enterText("Время поездки", "13:31:12");
-        TrCardAct.enterText("Идентификатор терминала", "T020931");
-        TrCardAct.enterText("Номер транзакции", "1318624554");
+        TrCardAct.enterText("Дата поездки", "29.07.2021", true);
+        TrCardAct.enterText("Время поездки", "13:31:12", true);
+        TrCardAct.enterText("Идентификатор терминала", "T020931", true);
+        TrCardAct.enterText("Номер транзакции", "1318624554", true);
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForBottomBannerToAppear("Поездка не найдена, проверьте корректность введенных данных");
@@ -1899,10 +1899,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
 
         // Проверка поведения приложения в случае нажатия кнопки "Получить чек" без ввода данных
-        TrCardAct.enterText("Дата поездки", "");
-        TrCardAct.enterText("Время поездки", "");
-        TrCardAct.enterText("Идентификатор терминала", "");
-        TrCardAct.enterText("Номер транзакции", "");
+        TrCardAct.enterText("Дата поездки", "", true);
+        TrCardAct.enterText("Время поездки", "", true);
+        TrCardAct.enterText("Идентификатор терминала", "", true);
+        TrCardAct.enterText("Номер транзакции", "", true);
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
@@ -1926,13 +1926,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -1986,12 +1986,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка отключения входа по коду доступа и проверка корректности обработки введённого пароля
         TrCardAct.waitForTextToAppear("Введите пароль");
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
-        TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7));
-        TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"));
+        TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7), true);
+        TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"), true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForBottomBannerToAppear("Вы неверно ввели e-mail или пароль");
         TrCardAct.waitForBottomBannerToDisappear("Вы неверно ввели e-mail или пароль");
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
@@ -2033,13 +2033,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2072,12 +2072,12 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheSwitch("Вход по коду доступа");
         TrCardAct.waitForTextToAppear("Введите пароль");
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
-        TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7));
-        TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"));
+        TrCardAct.enterPasswordAndCheckTextAgain(password.substring(0, 7), true);
+        TrCardAct.enterPasswordAndCheckTextAgain(password.replace("1", "0"), true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForBottomBannerToAppear("Вы неверно ввели e-mail или пароль");
         TrCardAct.waitForBottomBannerToDisappear("Вы неверно ввели e-mail или пароль");
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Установка кода доступа (правильный код > неправильный код > правильный код)
@@ -2154,13 +2154,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -2190,7 +2190,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Вход с использованием пароля
         TrCardAct.waitForTextToAppear("Введите пароль");
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
 
         // Установка нового кода доступа
@@ -2227,13 +2227,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -2338,13 +2338,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2380,13 +2380,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Установка кода доступа
@@ -2408,17 +2408,17 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Тестирование механизма поиска по списку городов (существующие в базе города)
         TrCardAct.clickTheBigButton("Город");
-        TrCardAct.enterText("Выбор города", "ово");
+        TrCardAct.enterText("Выбор города", "ово", false);
         TrCardAct.waitForTextToAppear("Новосибирск");
         TrCardAct.waitForTextToAppear("Новокузнецк");
         TrCardAct.waitForTextToDisappear("Горно-Алтайск");
 
         // Тестирование механизма поиска по списку городов ("Ничего не найдено")
-        TrCardAct.enterText("Выбор города", "Мадрид");
+        TrCardAct.enterText("Выбор города", "Мадрид", false);
         TrCardAct.waitForTextToAppear("Ничего не найдено");
 
         // Тестирование механизма поиска по списку городов (возврат к полному списку городов)
-        TrCardAct.enterText("Выбор города", "");
+        TrCardAct.enterText("Выбор города", "", false);
         TrCardAct.waitForTextToAppear("Горно-Алтайск");
 
         // Возврат в главное меню и переход на экран "Мои карты"
@@ -2441,13 +2441,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password_1 = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password_1);
+        TrCardAct.enterPasswordAndCheckText(password_1, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2514,13 +2514,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password_2 = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password_2);
+        TrCardAct.enterPasswordAndCheckText(password_2, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2631,13 +2631,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password_1 = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password_1);
+        TrCardAct.enterPasswordAndCheckText(password_1, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2667,10 +2667,10 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Изменение почтового адреса для получения чека
         TrCardAct.clickTheBigButton("@");
-        TrCardAct.enterEmailAndCheckText("niko");
-        TrCardAct.enterEmailAndCheckTextAgain("nikola-ag");
-        TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.");
-        TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.ru");
+        TrCardAct.enterEmailAndCheckText("niko", false);
+        TrCardAct.enterEmailAndCheckTextAgain("nikola-ag", false);
+        TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.", false);
+        TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
         TrCardAct.waitForTextToAppear("включить функцию получения");
 
@@ -2715,13 +2715,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("указанные при регистрации");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password_2 = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password_2);
+        TrCardAct.enterPasswordAndCheckText(password_2, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2832,13 +2832,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2881,13 +2881,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -2958,13 +2958,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.toggleAirplaneMode();
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Проверка появления всплывающего сообщения о проблемах с сетью
@@ -3006,7 +3006,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Попытка войти в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210");
+        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка появления всплывающего сообщения о проблемах с сетью
@@ -3038,13 +3038,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3123,13 +3123,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("allcards@test.test");
+        TrCardAct.enterEmailAndCheckText("allcards@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("allcards@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3200,13 +3200,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3261,13 +3261,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3322,13 +3322,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3402,13 +3402,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3428,7 +3428,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Переход на вкладку "Банковская", ввод номера карты
         TrCardAct.clickTheBigButton("БАНКОВСКАЯ");
         TrCardAct.waitForTextToAppear("Введите 16-значный номер");
-        TrCardAct.enterCreditCardNumberAndCheckText("4276 4407 9598 6139");
+        TrCardAct.enterCreditCardNumberAndCheckText("4276 4407 9598 6139", true);
 
         // Проверка возникновения баннера, сообщающего об ошибке загрузки списка регионов
         TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка загрузки регионов");
@@ -3489,13 +3489,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3541,7 +3541,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Изменение почтового адреса для получения чека, проверка появления сообщения об ошибке
         TrCardAct.clickTheBigButton("@");
-        TrCardAct.enterEmailAndCheckText("nikola-ag@ya.ru");
+        TrCardAct.enterEmailAndCheckText("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
         TrCardAct.waitForButtonWithPicToAppear("На данный момент функция редактирования email недоступна");
 
@@ -3629,13 +3629,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3693,13 +3693,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("i.judin@cft.ru");
+        TrCardAct.enterEmailAndCheckText("i.judin@cft.ru", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("i.judin@cft.ru");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3754,13 +3754,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3820,7 +3820,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText(card_number);
+        TrCardAct.enterCardNumberAndCheckText(card_number, true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
@@ -3868,13 +3868,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         String app_version_start = app_version_temp.replace("V ", "");
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test");
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("automation@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -3914,7 +3914,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
 
         // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210");
+        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210", true);
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
 
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")

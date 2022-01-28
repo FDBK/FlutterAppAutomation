@@ -17,18 +17,18 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.waitForTextToAppear("для регистрации");
 
         // Ввод логина (недостаточная длина > некорректный формат > корректный формат)
-        TrCardAct.enterEmailAndCheckText("tk");
-        TrCardAct.enterEmailAndCheckTextAgain("tk.punk");
-        TrCardAct.enterEmailAndCheckTextAgain("tk.punk@test.");
-        TrCardAct.enterEmailAndCheckTextAgain("tk.punk@test.test");
+        TrCardAct.enterEmailAndCheckText("tk", true);
+        TrCardAct.enterEmailAndCheckTextAgain("tk.punk", true);
+        TrCardAct.enterEmailAndCheckTextAgain("tk.punk@test.", true);
+        TrCardAct.enterEmailAndCheckTextAgain("tk.punk@test.test", true);
 
         // Переход на экран ввода пароля для регистрируемой учётной записи
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForTextToAppear("для приложения");
 
         // Ввод пароля (недостаточная длина > достаточная длина)
-        TrCardAct.enterPasswordAndCheckText("1111111");
-        TrCardAct.enterPasswordAndCheckTextAgain("11111111");
+        TrCardAct.enterPasswordAndCheckText("1111111", true);
+        TrCardAct.enterPasswordAndCheckTextAgain("11111111", true);
 
         // Попытка зарегистрировать уже существующего пользователя, возврат на экран ввода логина для регистрации
         TrCardAct.clickTheBigButton("ЗАРЕГИСТРИРОВАТЬСЯ");
@@ -39,12 +39,12 @@ public class TrCardDevelopTests extends TrCardTestCase {
 
         // Ввод "свободного" логина
         String random_email = "test-" + TrCardAct.makeRandomString() + "@test.test";
-        TrCardAct.enterEmailAndCheckText(random_email);
+        TrCardAct.enterEmailAndCheckText(random_email, true);
 
         // Переход на экран ввода пароля для регистрируемой учётной записи с последующей регистрацией
         TrCardAct.clickTheBigButton("ДАЛЕЕ");
         TrCardAct.waitForTextToAppear("для приложения");
-        TrCardAct.enterPasswordAndCheckText("11111111");
+        TrCardAct.enterPasswordAndCheckText("11111111", true);
         TrCardAct.clickTheBigButton("ЗАРЕГИСТРИРОВАТЬСЯ");
 
         // Отказ от установки кода доступа
@@ -76,13 +76,13 @@ public class TrCardDevelopTests extends TrCardTestCase {
         String[][] tkpunk_tickets = TrCardData.getTKPunkTickets();
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("tk.punk@test.test");
+        TrCardAct.enterEmailAndCheckText("tk.punk@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("tk.punk@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -126,10 +126,10 @@ public class TrCardDevelopTests extends TrCardTestCase {
             TrCardAct.clickTheRadioButton(trip_payment_method);
 
             // Поиск полей и ввод данных о поездке
-            TrCardAct.enterText("Дата поездки", trip_date);
-            TrCardAct.enterText("Время поездки", trip_time);
-            TrCardAct.enterText("Идентификатор терминала", trip_terminal);
-            TrCardAct.enterText("Номер транзакции", trip_transaction);
+            TrCardAct.enterText("Дата поездки", trip_date, true);
+            TrCardAct.enterText("Время поездки", trip_time, true);
+            TrCardAct.enterText("Идентификатор терминала", trip_terminal, true);
+            TrCardAct.enterText("Номер транзакции", trip_transaction, true);
 
             // Получение чека
             TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
@@ -176,10 +176,10 @@ public class TrCardDevelopTests extends TrCardTestCase {
         }
 
         // Проверка поведения приложения в случае ввода данных о несуществующей поездке
-        TrCardAct.enterText("Дата поездки", "29.07.2021");
-        TrCardAct.enterText("Время поездки", "13:31:12");
-        TrCardAct.enterText("Идентификатор терминала", "T020931");
-        TrCardAct.enterText("Номер транзакции", "1318624554");
+        TrCardAct.enterText("Дата поездки", "29.07.2021", true);
+        TrCardAct.enterText("Время поездки", "13:31:12", true);
+        TrCardAct.enterText("Идентификатор терминала", "T020931", true);
+        TrCardAct.enterText("Номер транзакции", "1318624554", true);
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForBottomBannerToAppear("Поездка не найдена, проверьте корректность введенных данных");
@@ -187,10 +187,10 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
 
         // Проверка поведения приложения в случае нажатия кнопки "Получить чек" без ввода данных
-        TrCardAct.enterText("Дата поездки", "");
-        TrCardAct.enterText("Время поездки", "");
-        TrCardAct.enterText("Идентификатор терминала", "");
-        TrCardAct.enterText("Номер транзакции", "");
+        TrCardAct.enterText("Дата поездки", "", true);
+        TrCardAct.enterText("Время поездки", "", true);
+        TrCardAct.enterText("Идентификатор терминала", "", true);
+        TrCardAct.enterText("Номер транзакции", "", true);
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
@@ -218,13 +218,13 @@ public class TrCardDevelopTests extends TrCardTestCase {
         String[][] tkpunk_roll_tickets = TrCardData.getTKPunkRollTickets();
 
         // Ввод логина
-        TrCardAct.enterEmailAndCheckText("tk.punk@test.test");
+        TrCardAct.enterEmailAndCheckText("tk.punk@test.test", true);
 
         // Получение пароля для учётной записи
         String password = TrCardPass.getPasswordByLogin("tk.punk@test.test");
 
         // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password);
+        TrCardAct.enterPasswordAndCheckText(password, true);
         TrCardAct.clickTheBigButton("ВОЙТИ");
 
         // Отказ от установки кода доступа
@@ -260,9 +260,9 @@ public class TrCardDevelopTests extends TrCardTestCase {
             TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
             // Поиск полей и ввод данных о поездке
-            TrCardAct.enterText("Номер билета", ticket_number);
-            TrCardAct.enterText("Серия билета", ticket_series);
-            TrCardAct.enterText("ИНН перевозчика", transport_co_inn);
+            TrCardAct.enterText("Номер билета", ticket_number, true);
+            TrCardAct.enterText("Серия билета", ticket_series, true);
+            TrCardAct.enterText("ИНН перевозчика", transport_co_inn, true);
 
             // Получение чека
             TrCardAct.swipeUpToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
@@ -306,9 +306,9 @@ public class TrCardDevelopTests extends TrCardTestCase {
         }
 
         // Проверка поведения приложения в случае ввода данных о несуществующей поездке
-        TrCardAct.enterText("Номер билета", "000666");
-        TrCardAct.enterText("Серия билета", "0110");
-        TrCardAct.enterText("ИНН перевозчика", "6300551221");
+        TrCardAct.enterText("Номер билета", "000666", true);
+        TrCardAct.enterText("Серия билета", "0110", true);
+        TrCardAct.enterText("ИНН перевозчика", "6300551221", true);
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForBottomBannerToAppear("Поездка не найдена, проверьте корректность введенных данных");
@@ -316,9 +316,9 @@ public class TrCardDevelopTests extends TrCardTestCase {
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
 
         // Проверка поведения приложения в случае нажатия кнопки "Получить чек" без ввода данных
-        TrCardAct.enterText("Номер билета", "");
-        TrCardAct.enterText("Серия билета", "");
-        TrCardAct.enterText("ИНН перевозчика", "");
+        TrCardAct.enterText("Номер билета", "", true);
+        TrCardAct.enterText("Серия билета", "", true);
+        TrCardAct.enterText("ИНН перевозчика", "", true);
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");

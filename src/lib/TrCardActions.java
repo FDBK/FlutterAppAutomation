@@ -922,7 +922,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
 
     /* Ввод e-mail и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
-    public void enterEmailAndCheckText(String input)
+    public void enterEmailAndCheckText(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 EMAIL_FIELD,
@@ -949,10 +949,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_EMAIL_TEXT)
             );
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
 
-    public void enterEmailAndCheckTextAgain(String input)
+    public void enterEmailAndCheckTextAgain(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 EMAIL_FIELD_WITH_WARNING,
@@ -979,13 +982,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_EMAIL_TEXT)
             );
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
     /* Ввод e-mail и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
     /* Ввод пароля и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
-    public void enterPasswordAndCheckText(String input)
+    public void enterPasswordAndCheckText(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 PASSWORD_FIELD,
@@ -1010,10 +1016,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
             throw new AssertionError("Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.");
             }
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
 
-    public void enterPasswordAndCheckTextAgain(String input)
+    public void enterPasswordAndCheckTextAgain(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 PASSWORD_FIELD_WITH_WARNING,
@@ -1038,7 +1047,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 throw new AssertionError("Ошибка! При вводе корректного пароля отображено предупреждение о его недостаточной длине.");
             }
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
     /* Ввод пароля и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
@@ -1105,7 +1117,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
 
     /* Ввод номера карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
-    public void enterCardNumberAndCheckText(String input)
+    public void enterCardNumberAndCheckText(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 CARD_NUMBER_FIELD,
@@ -1132,10 +1144,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CARD_NUMBER_TEXT)
             );
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
 
-    public void enterCardNumberAndCheckTextAgain(String input)
+    public void enterCardNumberAndCheckTextAgain(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 CARD_NUMBER_FIELD_WITH_WARNING,
@@ -1162,13 +1177,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CARD_NUMBER_TEXT)
             );
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
     /* Ввод номера карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
     /* Ввод номера банковской карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
-    public void enterCreditCardNumberAndCheckText(String input)
+    public void enterCreditCardNumberAndCheckText(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 CREDIT_CARD_NUMBER_FIELD,
@@ -1195,10 +1213,13 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CREDIT_CARD_NUMBER_TEXT)
             );
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
 
-    public void enterCreditCardNumberAndCheckTextAgain(String input)
+    public void enterCreditCardNumberAndCheckTextAgain(String input, boolean tap)
     {
         WebElement element = this.waitForElementClickClearAndSendKeys(
                 CREDIT_CARD_NUMBER_FIELD_WITH_WARNING,
@@ -1225,13 +1246,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
                     text.contains(INCORRECT_CREDIT_CARD_NUMBER_TEXT)
             );
         }
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
     /* Ввод номера банковской карты и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
 
     /* Поиск поля для ввода данных и ввод текста (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
-    public void enterText(String field_name, String input)
+    public void enterText(String field_name, String input, boolean tap)
     {
         String locator = replaceInputFieldTextAndGetLocator(field_name);
         this.swipeUpToFindElement(
@@ -1246,7 +1270,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 "Ошибка! Не удалось обнаружить поле для ввода с текстом '" + field_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
-        tapTheUpperEdgeOfTheScreen();
+
+        if (tap) {
+            tapTheUpperEdgeOfTheScreen();
+        }
     }
     /* Поиск поля для ввода данных и ввод текста (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
 
@@ -1309,7 +1336,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
         String[] warning = {"Минимальная сумма", "", "", "", "", "Максимальная сумма"};
 
         for (int i = 0; i < limits.length; i++) {
-            enterText("Сумма пополнения", limits[i]);
+            enterText("Сумма пополнения", limits[i], true);
             swipeUpToFindBigButtonByText("ОПЛАТИТЬ");
             if (warning[i].equals("Минимальная сумма")) {
                 waitForWarningTextToAppear("Минимальная сумма");
