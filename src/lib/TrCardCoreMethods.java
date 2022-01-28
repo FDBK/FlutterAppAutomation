@@ -111,6 +111,9 @@ public class TrCardCoreMethods
         }
         action.release();
         action.perform();
+        if (TrCardPlatform.getInstance().isIOS()) {
+            sleepFor(500);
+        }
     }
 
     public void swipeDown(int time_of_swipe)
@@ -132,6 +135,9 @@ public class TrCardCoreMethods
         }
         action.release();
         action.perform();
+        if (TrCardPlatform.getInstance().isIOS()) {
+            sleepFor(500);
+        }
     }
 
     public void swipeLeft(int time_of_swipe)
@@ -153,6 +159,9 @@ public class TrCardCoreMethods
         }
         action.release();
         action.perform();
+        if (TrCardPlatform.getInstance().isIOS()) {
+            sleepFor(500);
+        }
     }
 
     public void swipeRight(int time_of_swipe)
@@ -174,6 +183,9 @@ public class TrCardCoreMethods
         }
         action.release();
         action.perform();
+        if (TrCardPlatform.getInstance().isIOS()) {
+            sleepFor(500);
+        }
     }
     /* Простые свайпы */
 
