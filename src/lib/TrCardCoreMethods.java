@@ -240,7 +240,8 @@ public class TrCardCoreMethods
         action.press(PointOption.point(x, start_y));
         action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(time_of_swipe)));
         if (TrCardPlatform.getInstance().isIOS()) {
-            int offset_y = (int) (size.height * 0.3);
+            // здесь 100% должно было быть умножение на 0.3, но оно никак не хотело работать... пришлось экспериментировать!
+            int offset_y = (int) (size.height * 0.9);
             action.moveTo(PointOption.point(0, offset_y));
         } else {
             action.moveTo(PointOption.point(x, end_y));
