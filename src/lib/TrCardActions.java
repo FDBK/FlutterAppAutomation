@@ -540,7 +540,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -551,7 +552,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -562,7 +564,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -573,7 +576,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -584,7 +588,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -595,7 +600,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -606,7 +612,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -617,7 +624,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент TooltipButton с текстом '" + tooltip_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
     /* Свайпы вверх для поиска элементов */
@@ -631,7 +639,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -642,7 +651,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -653,7 +663,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -664,7 +675,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -675,7 +687,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -686,7 +699,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -697,7 +711,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -708,7 +723,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент TooltipButton с текстом '" + tooltip_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
     /* Свайпы вниз для поиска элементов */
@@ -722,7 +738,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -733,7 +750,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -744,7 +762,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -755,7 +774,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -766,7 +786,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
     /* Свайпы влево для поиска элементов */
@@ -780,7 +801,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -791,7 +813,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -802,7 +825,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -813,7 +837,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
 
@@ -824,7 +849,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
     }
     /* Свайпы вправо для поиска элементов */
@@ -1262,7 +1288,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 locator,
                 "Ошибка! Не удалось обнаружить поле для ввода с текстом '" + field_name + "'.",
                 MAX_SWIPES,
-                TIME_OF_SWIPE
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
         );
         this.waitForElementClickClearAndSendKeys(
                 locator,

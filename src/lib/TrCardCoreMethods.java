@@ -24,7 +24,7 @@ public class TrCardCoreMethods
     /* Поиск элементов и взаимодействие с ними */
     public WebElement waitForElementPresent(String locator, String error_message, long timeout_in_seconds)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         WebDriverWait wait = new WebDriverWait(driver, timeout_in_seconds);
         wait.withMessage(error_message + "\n");
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
@@ -56,7 +56,7 @@ public class TrCardCoreMethods
 
     public boolean waitForElementNotPresent(String locator, String error_message, long timeout_in_seconds)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         WebDriverWait wait = new WebDriverWait(driver, timeout_in_seconds);
         wait.withMessage(error_message + "\n");
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
@@ -252,9 +252,9 @@ public class TrCardCoreMethods
 
 
     /* Свайпы для поиска элементов */
-    public void swipeUpToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe)
+    public void swipeUpToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         int already_swiped = 0;
         while (driver.findElements(by).size() == 0) {
 
@@ -262,7 +262,7 @@ public class TrCardCoreMethods
                 waitForElementPresent(
                         locator,
                         error_message,
-                        0
+                        timeout_in_seconds
                 );
                 return;
             }
@@ -272,9 +272,9 @@ public class TrCardCoreMethods
         }
     }
 
-    public void swipeDownToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe)
+    public void swipeDownToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         int already_swiped = 0;
         while (driver.findElements(by).size() == 0) {
 
@@ -282,7 +282,7 @@ public class TrCardCoreMethods
                 waitForElementPresent(
                         locator,
                         error_message,
-                        0
+                        timeout_in_seconds
                 );
                 return;
             }
@@ -292,9 +292,9 @@ public class TrCardCoreMethods
         }
     }
 
-    public void swipeLeftToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe)
+    public void swipeLeftToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         int already_swiped = 0;
         while (driver.findElements(by).size() == 0) {
 
@@ -302,7 +302,7 @@ public class TrCardCoreMethods
                 waitForElementPresent(
                         locator,
                         error_message,
-                        0
+                        timeout_in_seconds
                 );
                 return;
             }
@@ -312,9 +312,9 @@ public class TrCardCoreMethods
         }
     }
 
-    public void swipeRightToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe)
+    public void swipeRightToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         int already_swiped = 0;
         while (driver.findElements(by).size() == 0) {
 
@@ -322,7 +322,7 @@ public class TrCardCoreMethods
                 waitForElementPresent(
                         locator,
                         error_message,
-                        0
+                        timeout_in_seconds
                 );
                 return;
             }
@@ -337,7 +337,7 @@ public class TrCardCoreMethods
     /* Получение количества найденных элементов */
     public int getAmountOfElements(String locator)
     {
-        By by = this.getLocatorByString(locator);
+        By by = getLocatorByString(locator);
         sleepFor(500);
         return driver.findElements(by).size();
     }
