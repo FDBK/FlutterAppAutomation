@@ -281,8 +281,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Введите 16-значный номер");
 
         // Ввод номера карты, проверка поведения поля при недостаточной длине введённого номера
-        TrCardAct.enterCreditCardNumberAndCheckText("4276", true);
-        TrCardAct.enterCreditCardNumberAndCheckTextAgain("4276 4407 9598 6139", true);
+        TrCardAct.enterCreditCardNumberAndCheckText("5536", true);
+        TrCardAct.enterCreditCardNumberAndCheckTextAgain("5536 9140 5130 0915", true);
 
         // Выбор города
         TrCardAct.swipeUpToFindBigButtonByText("Город");
@@ -292,7 +292,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Добавление карты, проверка успешности перехода на добавленную карту (экран "Мои карты")
         TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-        TrCardAct.waitForTextToAppear("***6139");
+        TrCardAct.waitForTextToAppear("***0915");
 
         // Выход из приложения через главное меню
         TrCardAct.clickTheButtonWithPic("Меню");
@@ -318,7 +318,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("***6139");
+        TrCardAct.swipeLeftToFindBigButtonByText("***0915");
 
         // Переход в раздел "Поездки" и проверка наличия поездок
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -332,7 +332,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Удаление карты
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
-        TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
+        TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***0915?");
         TrCardAct.clickTheBigButton("ДА");
 
         // Проверка отображения баннера с сообщением об удалении карты
@@ -340,7 +340,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForBottomBannerToDisappear("Карта удалена");
 
         // Проверка перехода на предыдущую карту
-        TrCardAct.waitForTextToDisappear("***6139");
+        TrCardAct.waitForTextToDisappear("***0915");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
@@ -3428,7 +3428,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Переход на вкладку "Банковская", ввод номера карты
         TrCardAct.clickTheBigButton("БАНКОВСКАЯ");
         TrCardAct.waitForTextToAppear("Введите 16-значный номер");
-        TrCardAct.enterCreditCardNumberAndCheckText("4276 4407 9598 6139", true);
+        TrCardAct.enterCreditCardNumberAndCheckText("5536 9140 5130 0915", true);
 
         // Проверка возникновения баннера, сообщающего об ошибке загрузки списка регионов
         TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка загрузки регионов");
@@ -3459,13 +3459,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("ДОБАВИТЬ");
         TrCardAct.clickTheBigButton("ДОБАВИТЬ");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
-        TrCardAct.waitForTextToAppear("***6139");
+        TrCardAct.waitForTextToAppear("***0915");
         TrCardAct.waitForBigButtonToAppear("Новосибирск");
 
         // Удаление карты и проверка перехода на предыдущую карту
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
-        TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***6139?");
+        TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***0915?");
         TrCardAct.clickTheBigButton("ДА");
 
         // Проверка отображения баннера с сообщением об удалении карты
@@ -3473,7 +3473,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForBottomBannerToDisappear("Карта удалена");
 
         // Проверка перехода на предыдущую карту
-        TrCardAct.waitForTextToDisappear("***6139");
+        TrCardAct.waitForTextToDisappear("***0915");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
