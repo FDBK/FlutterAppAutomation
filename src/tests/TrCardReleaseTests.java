@@ -3674,6 +3674,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
         TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
+        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
@@ -3784,6 +3785,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
         TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
+        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
