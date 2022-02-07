@@ -130,15 +130,21 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
 
-        // Переименование карты (пустое имя > корректное имя)
+        // Переход на экран "Настройки карты"
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Переименовать карту");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+
+        // Переименование карты (пустое имя > корректное имя)
+        TrCardAct.clickTheUpperRightCornerOfTheButtonWithPic("Имя карты, отображаемое в личном кабинете");
         TrCardAct.enterCardNameAndCheckText("");
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
         TrCardAct.enterCardNameAndCheckTextAgain("Тестовая карта");
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
 
         // Проверка отображения нового имени карты на главном экране приложения
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
         TrCardAct.waitForButtonWithPicToAppear("Тестовая карта");
 
         // Удаление карты
@@ -3713,7 +3719,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка полноценности отображения информации о "нормальной" карте при наличии в аккаунте "проблемной" карты
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.waitForButtonToAppear("Информация о карте");
-        TrCardAct.waitForButtonToAppear("Переименовать карту");
+        TrCardAct.waitForButtonToAppear("Настройки карты");
         TrCardAct.waitForButtonToAppear("Удалить карту");
         TrCardAct.waitForButtonToAppear("Кассовый чек");
         TrCardAct.tapTheLowerEdgeOfTheScreen();
@@ -3727,7 +3733,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка отсутствия возможности просмотра информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.waitForButtonToDisappear("Информация о карте");
-        TrCardAct.waitForButtonToAppear("Переименовать карту");
+        TrCardAct.waitForButtonToAppear("Настройки карты");
         TrCardAct.waitForButtonToAppear("Удалить карту");
         TrCardAct.waitForButtonToAppear("Кассовый чек");
         TrCardAct.tapTheLowerEdgeOfTheScreen();

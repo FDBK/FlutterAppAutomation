@@ -944,6 +944,28 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
+
+    public void clickTheUpperRightCornerOfTheButtonWithPic(String button_with_pic_text)
+    {
+        String locator = replaceButtonWithPicTextAndGetLocator(button_with_pic_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_with_pic_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        int
+                width = element.getSize().getWidth(),
+                height = element.getSize().getHeight(),
+                left_x = element.getLocation().getX(),
+                upper_y = element.getLocation().getY(),
+                right_x = left_x + width,
+                lower_y = upper_y + height,
+
+                point_to_click_x = right_x - (width / 10),
+                point_to_click_y = upper_y + (height / 4);
+
+        this.tapByCoordinates(point_to_click_x, point_to_click_y);
+    }
     /* Нажатия на экран */
 
 
