@@ -3721,7 +3721,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonToAppear("Информация о карте");
         TrCardAct.waitForButtonToAppear("Настройки карты");
         TrCardAct.waitForButtonToAppear("Удалить карту");
-        TrCardAct.waitForButtonToAppear("Кассовый чек");
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
@@ -3733,9 +3732,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка отсутствия возможности просмотра информации о карте через меню
         TrCardAct.clickTheButton("Показать меню");
         TrCardAct.waitForButtonToDisappear("Информация о карте");
-        TrCardAct.waitForButtonToAppear("Настройки карты");
+        TrCardAct.waitForButtonToDisappear("Настройки карты");
         TrCardAct.waitForButtonToAppear("Удалить карту");
-        TrCardAct.waitForButtonToAppear("Кассовый чек");
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
         // Проверка появления сообщений "Ошибка загрузки..." на экранах с информацией о поездках и операциях
