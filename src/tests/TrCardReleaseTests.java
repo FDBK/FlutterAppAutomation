@@ -3676,7 +3676,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
         TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
         TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
         TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
         TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
@@ -3785,7 +3787,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
         TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
         TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
         TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
         TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
@@ -3842,10 +3846,13 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
         TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
         TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
         TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
         TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
+        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
 
         // Возврат на экран "Мои карты"
         TrCardAct.clickTheButton("Назад");
