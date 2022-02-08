@@ -2475,11 +2475,12 @@ public class TrCardReleaseTests extends TrCardTestCase
             card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
         }
 
-        // Возврат на экран "Мои карты" и переход в раздел "Кассовый чек на e-mail" через меню
+        // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Кассовый чек");
-        TrCardAct.waitForTextToAppear("включить функцию получения");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса
         String e_mail_step_1;
@@ -2488,6 +2489,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
 
         // Включение функции "Получать кассовый чек..."
         TrCardAct.clickTheSwitch("Получать кассовый чек");
@@ -2558,11 +2560,12 @@ public class TrCardReleaseTests extends TrCardTestCase
                 card_number_2
         );
 
-        // Возврат на экран "Мои карты" и переход в раздел "Кассовый чек на e-mail" через меню
+        // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Кассовый чек");
-        TrCardAct.waitForTextToAppear("включить функцию получения");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
@@ -2571,6 +2574,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
         assertEquals(
                 "Ошибка! Некорректно отображается скрытый почтовый адрес ('" + e_mail_step_2 + "' вместо '" + hidden_email + "').",
@@ -2614,6 +2618,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_3 = TrCardAct.getFirstWordFromTheString(e_mail_step_3);
         assertEquals(
                 "Ошибка! Некорректно отображается почтовый адрес ('" + e_mail_step_3 + "' вместо 'allcards@test.test').",
                 "allcards@test.test",
@@ -2665,20 +2670,21 @@ public class TrCardReleaseTests extends TrCardTestCase
             card_number_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
         }
 
-        // Возврат на экран "Мои карты" и переход в раздел "Кассовый чек на e-mail" через меню
+        // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Кассовый чек");
-        TrCardAct.waitForTextToAppear("включить функцию получения");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Изменение почтового адреса для получения чека
-        TrCardAct.clickTheBigButton("@");
+        TrCardAct.clickTheUpperRightCornerOfTheBigButton("Получение кассовых чеков по данной транспортной карте");
         TrCardAct.enterEmailAndCheckText("niko", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
-        TrCardAct.waitForTextToAppear("включить функцию получения");
+        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения
         String e_mail_step_1;
@@ -2687,6 +2693,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
         assertEquals(
                 "Ошибка! Некорректно отображается почтовый адрес ('" + e_mail_step_1 + "' вместо 'nikola-ag@ya.ru').",
                 "nikola-ag@ya.ru",
@@ -2759,11 +2766,12 @@ public class TrCardReleaseTests extends TrCardTestCase
                 card_number_2
         );
 
-        // Возврат на экран "Мои карты" и переход в раздел "Кассовый чек на e-mail" через меню
+        // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Кассовый чек");
-        TrCardAct.waitForTextToAppear("включить функцию получения");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
@@ -2772,6 +2780,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
         assertEquals(
                 "Ошибка! Некорректно отображается скрытый почтовый адрес ('" + e_mail_step_2 + "' вместо '" + hidden_email + "').",
@@ -2815,6 +2824,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_3 = TrCardAct.getFirstWordFromTheString(e_mail_step_3);
         assertEquals(
                 "Ошибка! Некорректно отображается почтовый адрес ('" + e_mail_step_3 + "' вместо 'allcards@test.test').",
                 "allcards@test.test",
@@ -3511,10 +3521,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка успешности входа в приложение (отображение экрана "Мои карты")
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
-        // Переход в раздел "Кассовый чек на e-mail" через меню
+        // Переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Кассовый чек");
-        TrCardAct.waitForTextToAppear("включить функцию получения");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -3526,10 +3537,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
 
         // Включение функции "Получать кассовый чек...", проверка появления сообщения об ошибке
         TrCardAct.clickTheSwitch("Получать кассовый чек");
-        TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка включения/выключения функции");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Произошла ошибка");
 
         // Проверка состояния функции "Получать кассовый чек..." (переключатель должен быть неактивен)
         String visible_switch_status;
@@ -3546,13 +3558,10 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Изменение почтового адреса для получения чека, проверка появления сообщения об ошибке
-        TrCardAct.clickTheBigButton("@");
+        TrCardAct.clickTheUpperRightCornerOfTheBigButton("Получение кассовых чеков по данной транспортной карте");
         TrCardAct.enterEmailAndCheckText("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
-        TrCardAct.waitForButtonWithPicToAppear("На данный момент функция редактирования email недоступна");
-
-        // Закрытие диалога изменения почтового адреса
-        TrCardAct.tapTheUpperEdgeOfTheScreen();
+        TrCardAct.waitForButtonWithPicToAppear("Произошла ошибка");
 
         // Копирование почтового адреса
         String e_mail_step_2;
@@ -3561,6 +3570,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         } else {
             e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
         }
+        e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
 
         // Проверка неизменности почтового адреса
         assertEquals(
@@ -3587,7 +3597,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Включение функции "Получать кассовый чек..." после восстановления доступа к сети
         TrCardAct.clickTheSwitch("Получать кассовый чек");
-        TrCardAct.waitForButtonWithPicToDisappear("Произошла ошибка включения/выключения функции");
+        TrCardAct.waitForButtonWithPicToDisappear("Произошла ошибка");
 
         // Проверка состояния функции "Получать кассовый чек..." (переключатель должен быть активен)
         if (TrCardPlatform.getInstance().isIOS()) {
@@ -3680,7 +3690,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
         TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
-        TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
         TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
 
@@ -3791,7 +3800,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
         TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
-        TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
         TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
 
@@ -3850,7 +3858,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
         TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
         TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
-        TrCardAct.swipeUpToFindBigButtonByText("Почему я не могу подключить услугу");
         TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
         TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
 

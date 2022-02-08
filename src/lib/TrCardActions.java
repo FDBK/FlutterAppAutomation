@@ -966,6 +966,28 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
+
+    public void clickTheUpperRightCornerOfTheBigButton(String big_button_text)
+    {
+        String locator = replaceBigButtonTextAndGetLocator(big_button_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        int
+                width = element.getSize().getWidth(),
+                height = element.getSize().getHeight(),
+                left_x = element.getLocation().getX(),
+                upper_y = element.getLocation().getY(),
+                right_x = left_x + width,
+                lower_y = upper_y + height,
+
+                point_to_click_x = right_x - (width / 10),
+                point_to_click_y = upper_y + (height / 6);
+
+        this.tapByCoordinates(point_to_click_x, point_to_click_y);
+    }
     /* Нажатия на экран */
 
 
@@ -1375,6 +1397,15 @@ abstract public class TrCardActions extends TrCardCoreMethods
         return hidden_email;
     }
     /* Маскировка почтового адреса в формат "aut***@test.test" */
+
+
+    /* Получение первого слова из строки (добыча почтового адреса из текста) */
+    public String getFirstWordFromTheString(String text)
+    {
+        String[] text_parts = text.split("\n", 2);
+        return text_parts[0];
+    }
+    /* Получение первого слова из строки (добыча почтового адреса из текста) */
 
 
     /* Определение ограничений при пополнении Транспортной карты и их проверка */
