@@ -5,7 +5,7 @@ Flutter Transport Card - Live.Inhouse:
   "udid": "auto",
   "platformName": "iOS",
   "platformVersion": "14.8",
-  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.385.ipa"
+  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.390.ipa"
 }
 
 bundleId = ru.ftc.zk.tc.TCard-inhouse
@@ -18,7 +18,7 @@ Flutter Transport Card - Develop.Inhouse:
   "udid": "auto",
   "platformName": "iOS",
   "platformVersion": "14.8",
-  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.develop.inhouse.385.ipa"
+  "app": "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.develop.inhouse.390.ipa"
 }
 
 bundleId = ru.ftc.zk.tc.TransportCard-Dev-inhouse
