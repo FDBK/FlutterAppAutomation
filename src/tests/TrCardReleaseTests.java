@@ -3041,6 +3041,114 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка корректности работы механизма включения и отключения функции "Push-уведомления" при выходе из аккаунта
+    @Test
+    public void testPushNotificationsSwitchAfterLogout()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+
+        // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForSwitchToAppear("Push-уведомления");
+
+        // Включение функции "Push-уведомления"
+        TrCardAct.clickTheLeftEighthPartOfTheSwitch("Push-уведомления");
+
+        // Проверка состояния функции "Push-уведомления" (переключатель должен быть активен)
+        String visible_switch_status;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Push-уведомления");
+            visible_switch_status = visible_switch_status.replace("1", "true");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Push-уведомления");
+        }
+        assertEquals(
+                "Ошибка! Некорректное состояние переключателя 'Push-уведомления' (должен быть активен).",
+                "true",
+                visible_switch_status
+        );
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Выход из приложения через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Выйти");
+        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
+        TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка возврата на экран входа по логину и паролю
+        TrCardAct.waitForTextToAppear("указанные при регистрации");
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+
+        // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheButton("Настройки карты");
+        TrCardAct.waitForScreenTitleToAppear("Настройки карты");
+        TrCardAct.waitForSwitchToAppear("Push-уведомления");
+
+        // Проверка состояния функции "Push-уведомления" (переключатель должен быть неактивен)
+        if (TrCardPlatform.getInstance().isIOS()) {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("value", "Push-уведомления");
+            visible_switch_status = visible_switch_status.replace("0", "false");
+        } else {
+            visible_switch_status = TrCardAct.waitForSwitchToAppearAndGetAttribute("checked", "Push-уведомления");
+        }
+        assertEquals(
+                "Ошибка! Некорректное состояние переключателя 'Push-уведомления' (должен быть неактивен).",
+                "false",
+                visible_switch_status
+        );
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
     // Проверка корректности отображения и работы кнопки "i" на поездках, совершённых по услуге
     @Test
     public void testTripServiceTooltip()
