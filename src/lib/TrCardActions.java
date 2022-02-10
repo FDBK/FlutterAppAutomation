@@ -896,7 +896,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
         this.tapByCoordinates(tap_x, tap_y);
     }
+    /* Нажатия на экран */
 
+
+    /* Нажатия на экран по координатам, вычисляемым относительно расположения различных элементов */
     public void clickToTheLeftOfTheButton(String button_name)
     {
         String locator = replaceButtonTextAndGetLocator(button_name);
@@ -917,6 +920,28 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
                 point_to_click_x = left_x - (width / 2),
                 point_to_click_y = middle_y;
+
+        this.tapByCoordinates(point_to_click_x, point_to_click_y);
+    }
+
+    public void clickTheUpperRightCornerOfTheBigButton(String big_button_text)
+    {
+        String locator = replaceBigButtonTextAndGetLocator(big_button_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        int
+                width = element.getSize().getWidth(),
+                height = element.getSize().getHeight(),
+                left_x = element.getLocation().getX(),
+                upper_y = element.getLocation().getY(),
+                right_x = left_x + width,
+                lower_y = upper_y + height,
+
+                point_to_click_x = right_x - (width / 10),
+                point_to_click_y = upper_y + (height / 6);
 
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
@@ -967,12 +992,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
 
-    public void clickTheUpperRightCornerOfTheBigButton(String big_button_text)
+    public void clickTheLowerLeftCornerOfTheButtonWithPic(String button_with_pic_text)
     {
-        String locator = replaceBigButtonTextAndGetLocator(big_button_text);
+        String locator = replaceButtonWithPicTextAndGetLocator(button_with_pic_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_with_pic_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         int
@@ -982,13 +1007,39 @@ abstract public class TrCardActions extends TrCardCoreMethods
                 upper_y = element.getLocation().getY(),
                 right_x = left_x + width,
                 lower_y = upper_y + height,
+                middle_x = (left_x + right_x) / 2,
+                middle_y = (upper_y + lower_y) / 2,
 
-                point_to_click_x = right_x - (width / 10),
-                point_to_click_y = upper_y + (height / 6);
+                point_to_click_x = middle_x / 2,
+                point_to_click_y = middle_y + (middle_y / 2);
 
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
-    /* Нажатия на экран */
+
+    public void clickTheLeftEighthPartOfTheSwitch(String switch_text)
+    {
+        String locator = replaceSwitchTextAndGetLocator(switch_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент Switch с текстом '" + switch_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        int
+                width = element.getSize().getWidth(),
+                height = element.getSize().getHeight(),
+                left_x = element.getLocation().getX(),
+                upper_y = element.getLocation().getY(),
+                right_x = left_x + width,
+                lower_y = upper_y + height,
+                middle_x = (left_x + right_x) / 2,
+                middle_y = (upper_y + lower_y) / 2,
+
+                point_to_click_x = middle_x / 4,
+                point_to_click_y = middle_y;
+
+        this.tapByCoordinates(point_to_click_x, point_to_click_y);
+    }
+    /* Нажатия на экран по координатам, вычисляемым относительно расположения различных элементов */
 
 
     /* Ввод e-mail и проверка отображения предупреждений (+ нажатие в верхнюю часть экрана для закрытия клавиатуры) */
