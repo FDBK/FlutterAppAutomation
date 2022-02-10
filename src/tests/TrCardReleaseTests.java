@@ -2962,6 +2962,274 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка работоспособности функции "Вопросы / Ответы"
+    @Test
+    public void testQuestionsAnswers()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Переход на экран "Вопрос/Ответ" через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
+        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
+
+        // Проверка отображения вопросов и ответов
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если транспортная карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
+        TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
+        TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
+        TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
+        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Просмотр информации о карте через меню
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheButton("Информация о карте");
+
+        // Копирование номера карты
+        String card_number;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
+        } else {
+            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
+        }
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Выход из приложения через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Выйти");
+        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
+        TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка возврата на экран входа по логину и паролю
+        TrCardAct.waitForTextToAppear("указанные при регистрации");
+
+        // Переход на экран входа по номеру карты
+        TrCardAct.swipeUpToFindButtonByText("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
+        TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
+
+        // Вход в приложение по номеру карты
+        TrCardAct.enterCardNumberAndCheckText(card_number, true);
+        TrCardAct.clickTheBigButton("ДОБАВИТЬ");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Переход на экран "Вопрос/Ответ" через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
+        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
+
+        // Проверка отображения вопросов и ответов
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если транспортная карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
+        TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
+        TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
+        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
+        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
+        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
+        TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
+        TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
+        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
+    // Проверка корректности работы приложения при наличии в аккаунте карты с несуществующим регионом
+    @Test
+    public void testCardFromNonExistentRegion()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("i.judin@cft.ru", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("i.judin@cft.ru");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Проверка полноценности отображения информации о "нормальной" карте при наличии в аккаунте "проблемной" карты
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.waitForButtonToAppear("Информация о карте");
+        TrCardAct.waitForButtonToAppear("Настройки карты");
+        TrCardAct.waitForButtonToAppear("Удалить карту");
+        TrCardAct.tapTheLowerEdgeOfTheScreen();
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
+        TrCardAct.swipeLeftToFindButtonWithPicByText("5215");
+
+        // Проверка появления сообщения "Ошибка загрузки..." на экране с информацией о карте
+        TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
+
+        // Проверка отсутствия возможности просмотра информации о карте через меню
+        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.waitForButtonToDisappear("Информация о карте");
+        TrCardAct.waitForButtonToDisappear("Настройки карты");
+        TrCardAct.waitForButtonToAppear("Удалить карту");
+        TrCardAct.tapTheLowerEdgeOfTheScreen();
+
+        // Проверка появления сообщений "Ошибка загрузки..." на экранах с информацией о поездках и операциях
+        TrCardAct.clickTheButtonWithPic("Поездки");
+        TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка поездок");
+        TrCardAct.clickTheButtonWithPic("Операции");
+        TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка операций");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
+    // Проверка экрана "О программе" и отображения версии приложения на разных экранах
+    @Test
+    public void testAboutScreen()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Захват информации о версии приложения с экрана-заставки
+        String app_version_temp;
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "V");
+        } else {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "V");
+        }
+        String app_version_start = app_version_temp.replace("V ", "");
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Переход в раздел "О программе" через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("О программе");
+        TrCardAct.waitForScreenTitleToAppear("О программе");
+
+        // Проверка отображения информации о приложении и получение его версии
+        TrCardAct.waitForTextToAppear("Техническая поддержка");
+        TrCardAct.waitForTextToAppear("E-mail службы поддержки");
+        TrCardAct.waitForTextToAppear("E-mail для обратной связи");
+        TrCardAct.waitForTextToAppear("Сайт системы");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Версия приложения");
+        } else {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
+        }
+        String app_version_login = app_version_temp.replace("Версия приложения\n", "");
+
+        // Возврат в главное меню и выход из учётной записи
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Выйти");
+        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
+        TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка возврата на экран входа по логину и паролю
+        TrCardAct.waitForTextToAppear("указанные при регистрации");
+
+        // Переход на экран входа по номеру карты
+        TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
+
+        // Вход в приложение по номеру карты
+        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210", true);
+        TrCardAct.clickTheBigButton("ДОБАВИТЬ");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Переход в раздел "О программе" через главное меню и получение версии приложения
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("О программе");
+        TrCardAct.waitForScreenTitleToAppear("О программе");
+
+        // Проверка отображения информации о приложении и получение его версии
+        TrCardAct.waitForTextToAppear("Техническая поддержка");
+        TrCardAct.waitForTextToAppear("E-mail службы поддержки");
+        TrCardAct.waitForTextToAppear("E-mail для обратной связи");
+        TrCardAct.waitForTextToAppear("Сайт системы");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Версия приложения");
+        } else {
+            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
+        }
+        String app_version_card = app_version_temp.replace("Версия приложения\n", "");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Проверка корректности отображения версии приложения на всех экранах
+        assertEquals("Ошибка! Номер версии отличается.", app_version_start, app_version_login);
+        assertEquals("Ошибка! Номер версии отличается.", app_version_start, app_version_card);
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
     // Проверка корректности работы приложения при потере соединения с сетью (авторизация по логину и паролю)
     @Test
     public void testNoConnectionLogin()
@@ -3824,274 +4092,6 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Назад");
         TrCardAct.clickTheButtonWithPic("Мои карты");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        System.out.println("Тест пройден без ошибок!");
-    }
-
-
-    // Проверка корректности работы приложения при наличии в аккаунте карты с несуществующим регионом
-    @Test
-    public void testCardFromNonExistentRegion()
-    {
-        // Инициализация библиотек методов, необходимых для прохождения теста
-        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
-        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
-
-        // Ввод логина
-        TrCardAct.enterEmailAndCheckText("i.judin@cft.ru", true);
-
-        // Получение пароля для учётной записи
-        String password = TrCardPass.getPasswordByLogin("i.judin@cft.ru");
-
-        // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password, true);
-        TrCardAct.clickTheBigButton("ВОЙТИ");
-
-        // Отказ от установки кода доступа
-        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
-        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
-
-        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Проверка полноценности отображения информации о "нормальной" карте при наличии в аккаунте "проблемной" карты
-        TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.waitForButtonToAppear("Информация о карте");
-        TrCardAct.waitForButtonToAppear("Настройки карты");
-        TrCardAct.waitForButtonToAppear("Удалить карту");
-        TrCardAct.tapTheLowerEdgeOfTheScreen();
-
-        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("5215");
-
-        // Проверка появления сообщения "Ошибка загрузки..." на экране с информацией о карте
-        TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
-
-        // Проверка отсутствия возможности просмотра информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.waitForButtonToDisappear("Информация о карте");
-        TrCardAct.waitForButtonToDisappear("Настройки карты");
-        TrCardAct.waitForButtonToAppear("Удалить карту");
-        TrCardAct.tapTheLowerEdgeOfTheScreen();
-
-        // Проверка появления сообщений "Ошибка загрузки..." на экранах с информацией о поездках и операциях
-        TrCardAct.clickTheButtonWithPic("Поездки");
-        TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка поездок");
-        TrCardAct.clickTheButtonWithPic("Операции");
-        TrCardAct.waitForTextToAppear("Произошла ошибка загрузки списка операций");
-
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        System.out.println("Тест пройден без ошибок!");
-    }
-
-
-    // Проверка работоспособности функции "Вопросы / Ответы"
-    @Test
-    public void testQuestionsAnswers()
-    {
-        // Инициализация библиотек методов, необходимых для прохождения теста
-        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
-        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
-
-        // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
-
-        // Получение пароля для учётной записи
-        String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password, true);
-        TrCardAct.clickTheBigButton("ВОЙТИ");
-
-        // Отказ от установки кода доступа
-        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
-        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
-
-        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Переход на экран "Вопрос/Ответ" через главное меню
-        TrCardAct.clickTheButtonWithPic("Меню");
-        TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
-        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
-
-        // Проверка отображения вопросов и ответов
-        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если транспортная карта заблокирована");
-        TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
-        TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
-        TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
-        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
-        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
-        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
-        TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
-        TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
-        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
-
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
-        TrCardAct.clickTheButton("Информация о карте");
-
-        // Копирование номера карты
-        String card_number;
-        if (TrCardPlatform.getInstance().isIOS()) {
-            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("name", "9643");
-        } else {
-            card_number = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "9643");
-        }
-
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButton("Назад");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Выход из приложения через главное меню
-        TrCardAct.clickTheButtonWithPic("Меню");
-        TrCardAct.clickTheButtonWithPic("Выйти");
-        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
-        TrCardAct.clickTheBigButton("ДА");
-
-        // Проверка возврата на экран входа по логину и паролю
-        TrCardAct.waitForTextToAppear("указанные при регистрации");
-
-        // Переход на экран входа по номеру карты
-        TrCardAct.swipeUpToFindButtonByText("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
-        TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
-
-        // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText(card_number, true);
-        TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-
-        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Переход на экран "Вопрос/Ответ" через главное меню
-        TrCardAct.clickTheButtonWithPic("Меню");
-        TrCardAct.clickTheButtonWithPic("Вопрос/ответ");
-        TrCardAct.waitForScreenTitleToAppear("Вопрос/ответ");
-
-        // Проверка отображения вопросов и ответов
-        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если транспортная карта заблокирована");
-        TrCardAct.swipeUpToFindBigButtonByText("разблокировать карту");
-        TrCardAct.swipeUpToFindBigButtonByText("Почему моя банковская карта заблокирована");
-        TrCardAct.swipeUpToFindBigButtonByText("образуется задолженность");
-        TrCardAct.swipeUpToFindButtonLinkByText("Личный кабинет пассажира");
-        TrCardAct.swipeUpToFindBigButtonByText("Что делать, если в мобильном приложении отображается неверный баланс");
-        TrCardAct.swipeUpToFindButtonLinkByText("support-tk@cft.ru");
-        TrCardAct.swipeUpToFindBigButtonByText("вкратце опишите ситуацию");
-        TrCardAct.swipeUpToFindBigButtonByText("можно посмотреть");
-        TrCardAct.swipeUpToFindButtonLinkByText("t-karta.ru");
-
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        System.out.println("Тест пройден без ошибок!");
-    }
-
-
-    // Проверка экрана "О программе" и отображения версии приложения на разных экранах
-    @Test
-    public void testAboutScreen()
-    {
-        // Инициализация библиотек методов, необходимых для прохождения теста
-        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
-        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
-
-        // Захват информации о версии приложения с экрана-заставки
-        String app_version_temp;
-        if (TrCardPlatform.getInstance().isIOS()) {
-            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "V");
-        } else {
-            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "V");
-        }
-        String app_version_start = app_version_temp.replace("V ", "");
-
-        // Ввод логина
-        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
-
-        // Получение пароля для учётной записи
-        String password = TrCardPass.getPasswordByLogin("automation@test.test");
-
-        // Ввод пароля и попытка войти в приложение
-        TrCardAct.enterPasswordAndCheckText(password, true);
-        TrCardAct.clickTheBigButton("ВОЙТИ");
-
-        // Отказ от установки кода доступа
-        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
-        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
-
-        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Переход в раздел "О программе" через главное меню
-        TrCardAct.clickTheButtonWithPic("Меню");
-        TrCardAct.clickTheButtonWithPic("О программе");
-        TrCardAct.waitForScreenTitleToAppear("О программе");
-
-        // Проверка отображения информации о приложении и получение его версии
-        TrCardAct.waitForTextToAppear("Техническая поддержка");
-        TrCardAct.waitForTextToAppear("E-mail службы поддержки");
-        TrCardAct.waitForTextToAppear("E-mail для обратной связи");
-        TrCardAct.waitForTextToAppear("Сайт системы");
-        if (TrCardPlatform.getInstance().isIOS()) {
-            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Версия приложения");
-        } else {
-            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
-        }
-        String app_version_login = app_version_temp.replace("Версия приложения\n", "");
-
-        // Возврат в главное меню и выход из учётной записи
-        TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButtonWithPic("Выйти");
-        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
-        TrCardAct.clickTheBigButton("ДА");
-
-        // Проверка возврата на экран входа по логину и паролю
-        TrCardAct.waitForTextToAppear("указанные при регистрации");
-
-        // Переход на экран входа по номеру карты
-        TrCardAct.clickTheButton("ПРОДОЛЖИТЬ БЕЗ АВТОРИЗАЦИИ");
-
-        // Вход в приложение по номеру карты
-        TrCardAct.enterCardNumberAndCheckText("9643 90540 33168 42210", true);
-        TrCardAct.clickTheBigButton("ДОБАВИТЬ");
-
-        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Переход в раздел "О программе" через главное меню и получение версии приложения
-        TrCardAct.clickTheButtonWithPic("Меню");
-        TrCardAct.clickTheButtonWithPic("О программе");
-        TrCardAct.waitForScreenTitleToAppear("О программе");
-
-        // Проверка отображения информации о приложении и получение его версии
-        TrCardAct.waitForTextToAppear("Техническая поддержка");
-        TrCardAct.waitForTextToAppear("E-mail службы поддержки");
-        TrCardAct.waitForTextToAppear("E-mail для обратной связи");
-        TrCardAct.waitForTextToAppear("Сайт системы");
-        if (TrCardPlatform.getInstance().isIOS()) {
-            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("name", "Версия приложения");
-        } else {
-            app_version_temp = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "Версия приложения");
-        }
-        String app_version_card = app_version_temp.replace("Версия приложения\n", "");
-
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButtonWithPic("Мои карты");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
-        // Проверка корректности отображения версии приложения на всех экранах
-        assertEquals("Ошибка! Номер версии отличается.", app_version_start, app_version_login);
-        assertEquals("Ошибка! Номер версии отличается.", app_version_start, app_version_card);
 
         System.out.println("Тест пройден без ошибок!");
     }
