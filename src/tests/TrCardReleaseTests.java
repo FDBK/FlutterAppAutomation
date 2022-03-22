@@ -2480,7 +2480,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
+        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса
         String e_mail_step_1;
@@ -2565,7 +2565,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
+        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
@@ -2675,7 +2675,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
+        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
 
         // Изменение почтового адреса для получения чека
         TrCardAct.clickTheUpperRightCornerOfTheReceiptEmailButton("Получение кассовых чеков по данной транспортной карте");
@@ -2684,7 +2684,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
-        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
+        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения
         String e_mail_step_1;
@@ -2771,7 +2771,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
+        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
@@ -4103,7 +4103,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForTextToAppear("Получение кассовых чеков");
+        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();

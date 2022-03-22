@@ -322,6 +322,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForReceiptEmailButtonToAppear(String receipt_email_button_text)
+    {
+        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ReceiptEmailButton с текстом '" + receipt_email_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForTooltipButtonToAppear(String tooltip_button_text)
     {
         String locator = replaceTooltipButtonTextAndGetLocator(tooltip_button_text);
@@ -408,6 +418,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementNotPresent(
                 locator,
                 "Ошибка! Элемент Switch с текстом '" + switch_text + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForReceiptEmailButtonToDisappear(String receipt_email_button_text)
+    {
+        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Элемент ReceiptEmailButton с текстом '" + receipt_email_button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
