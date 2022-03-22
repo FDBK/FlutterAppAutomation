@@ -51,6 +51,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             BIG_BUTTON_TEMPLATE,
             RADIO_BUTTON_TEMPLATE,
             SWITCH_TEMPLATE,
+            RECEIPT_EMAIL_BUTTON_TEMPLATE,
             TOOLTIP_BUTTON_TEMPLATE,
             ANY_ELEMENT_TEMPLATE;
 
@@ -128,6 +129,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceSwitchTextAndGetLocator(String switch_text)
     {
         return SWITCH_TEMPLATE.replace("{SWITCH_TEXT}", switch_text);
+    }
+
+    private static String replaceReceiptEmailButtonTextAndGetLocator(String receipt_email_button_text)
+    {
+        return RECEIPT_EMAIL_BUTTON_TEMPLATE.replace("{RECEIPT_EMAIL_BUTTON_TEXT}", receipt_email_button_text);
     }
 
     private static String replaceTooltipButtonTextAndGetLocator(String tooltip_button_text)
@@ -960,12 +966,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
 
-    public void clickTheUpperRightCornerOfTheBigButton(String big_button_text)
+    public void clickTheUpperRightCornerOfTheReceiptEmailButton(String receipt_email_button_text)
     {
-        String locator = replaceBigButtonTextAndGetLocator(big_button_text);
+        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент ReceiptEmailButton с текстом '" + receipt_email_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         int

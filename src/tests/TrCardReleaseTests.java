@@ -2678,7 +2678,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Получение кассовых чеков");
 
         // Изменение почтового адреса для получения чека
-        TrCardAct.clickTheUpperRightCornerOfTheBigButton("Получение кассовых чеков по данной транспортной карте");
+        TrCardAct.clickTheUpperRightCornerOfTheReceiptEmailButton("Получение кассовых чеков по данной транспортной карте");
         TrCardAct.enterEmailAndCheckText("niko", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.", false);
@@ -4136,7 +4136,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Изменение почтового адреса для получения чека, проверка появления сообщения об ошибке
-        TrCardAct.clickTheUpperRightCornerOfTheBigButton("Получение кассовых чеков по данной транспортной карте");
+        TrCardAct.clickTheUpperRightCornerOfTheReceiptEmailButton("Получение кассовых чеков по данной транспортной карте");
         TrCardAct.enterEmailAndCheckText("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
         TrCardAct.waitForButtonWithPicToAppear("Произошла ошибка");
