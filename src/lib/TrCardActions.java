@@ -498,6 +498,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
         return element.getAttribute(attribute);
     }
+
+    public String waitForReceiptEmailButtonToAppearAndGetAttribute(String attribute, String receipt_email_button_text)
+    {
+        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ReceiptEmailButton '" + receipt_email_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        return element.getAttribute(attribute);
+    }
     /* Поиск элементов и получение значений их атрибутов */
 
 

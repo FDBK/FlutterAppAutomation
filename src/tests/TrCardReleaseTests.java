@@ -2485,9 +2485,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса
         String e_mail_step_1;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
 
@@ -2570,9 +2570,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
@@ -2614,9 +2614,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения (должен отображаться адрес текущей учётной записи)
         String e_mail_step_3;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_3 = TrCardAct.getFirstWordFromTheString(e_mail_step_3);
         assertEquals(
@@ -2689,9 +2689,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения
         String e_mail_step_1;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
         assertEquals(
@@ -2776,9 +2776,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
@@ -2820,9 +2820,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения (должен отображаться адрес текущей учётной записи)
         String e_mail_step_3;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_3 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_3 = TrCardAct.getFirstWordFromTheString(e_mail_step_3);
         assertEquals(
@@ -4111,9 +4111,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса
         String e_mail_step_1;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_1 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
 
@@ -4144,9 +4144,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса
         String e_mail_step_2;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("name", "@");
+            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_2 = TrCardAct.waitForTextToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
 
