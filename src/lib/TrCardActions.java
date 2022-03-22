@@ -51,7 +51,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             BIG_BUTTON_TEMPLATE,
             RADIO_BUTTON_TEMPLATE,
             SWITCH_TEMPLATE,
-            RECEIPT_EMAIL_BUTTON_TEMPLATE,
+            CARD_EMAIL_BUTTON_TEMPLATE,
             TOOLTIP_BUTTON_TEMPLATE,
             ANY_ELEMENT_TEMPLATE;
 
@@ -131,9 +131,9 @@ abstract public class TrCardActions extends TrCardCoreMethods
         return SWITCH_TEMPLATE.replace("{SWITCH_TEXT}", switch_text);
     }
 
-    private static String replaceReceiptEmailButtonTextAndGetLocator(String receipt_email_button_text)
+    private static String replaceCardEmailButtonTextAndGetLocator(String card_email_button_text)
     {
-        return RECEIPT_EMAIL_BUTTON_TEMPLATE.replace("{RECEIPT_EMAIL_BUTTON_TEXT}", receipt_email_button_text);
+        return CARD_EMAIL_BUTTON_TEMPLATE.replace("{CARD_EMAIL_BUTTON_TEXT}", card_email_button_text);
     }
 
     private static String replaceTooltipButtonTextAndGetLocator(String tooltip_button_text)
@@ -322,12 +322,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void waitForReceiptEmailButtonToAppear(String receipt_email_button_text)
+    public void waitForCardEmailButtonToAppear(String card_email_button_text)
     {
-        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        String locator = replaceCardEmailButtonTextAndGetLocator(card_email_button_text);
         this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент ReceiptEmailButton с текстом '" + receipt_email_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент CardEmailButton с текстом '" + card_email_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -422,12 +422,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void waitForReceiptEmailButtonToDisappear(String receipt_email_button_text)
+    public void waitForCardEmailButtonToDisappear(String card_email_button_text)
     {
-        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        String locator = replaceCardEmailButtonTextAndGetLocator(card_email_button_text);
         this.waitForElementNotPresent(
                 locator,
-                "Ошибка! Элемент ReceiptEmailButton с текстом '" + receipt_email_button_text + "' всё ещё отображается на экране.",
+                "Ошибка! Элемент CardEmailButton с текстом '" + card_email_button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -499,12 +499,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         return element.getAttribute(attribute);
     }
 
-    public String waitForReceiptEmailButtonToAppearAndGetAttribute(String attribute, String receipt_email_button_text)
+    public String waitForCardEmailButtonToAppearAndGetAttribute(String attribute, String card_email_button_text)
     {
-        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        String locator = replaceCardEmailButtonTextAndGetLocator(card_email_button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент ReceiptEmailButton '" + receipt_email_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент CardEmailButton '" + card_email_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         return element.getAttribute(attribute);
@@ -997,12 +997,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
 
-    public void clickTheUpperRightCornerOfTheReceiptEmailButton(String receipt_email_button_text)
+    public void clickTheUpperRightCornerOfTheCardEmailButton(String card_email_button_text)
     {
-        String locator = replaceReceiptEmailButtonTextAndGetLocator(receipt_email_button_text);
+        String locator = replaceCardEmailButtonTextAndGetLocator(card_email_button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент ReceiptEmailButton с текстом '" + receipt_email_button_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент CardEmailButton с текстом '" + card_email_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         int

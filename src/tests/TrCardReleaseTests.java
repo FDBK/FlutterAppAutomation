@@ -2480,14 +2480,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
+        TrCardAct.waitForCardEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса
         String e_mail_step_1;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_1 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_1 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
 
@@ -2565,14 +2565,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
+        TrCardAct.waitForCardEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_2 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_2 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
@@ -2614,9 +2614,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения (должен отображаться адрес текущей учётной записи)
         String e_mail_step_3;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_3 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_3 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_3 = TrCardAct.getFirstWordFromTheString(e_mail_step_3);
         assertEquals(
@@ -2675,23 +2675,23 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
+        TrCardAct.waitForCardEmailButtonToAppear("Получение кассовых чеков");
 
         // Изменение почтового адреса для получения чека
-        TrCardAct.clickTheUpperRightCornerOfTheReceiptEmailButton("Получение кассовых чеков по данной транспортной карте");
+        TrCardAct.clickTheUpperRightCornerOfTheCardEmailButton("Получение кассовых чеков по данной транспортной карте");
         TrCardAct.enterEmailAndCheckText("niko", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.", false);
         TrCardAct.enterEmailAndCheckTextAgain("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
-        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
+        TrCardAct.waitForCardEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения
         String e_mail_step_1;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_1 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_1 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
         assertEquals(
@@ -2771,14 +2771,14 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
+        TrCardAct.waitForCardEmailButtonToAppear("Получение кассовых чеков");
 
         // Копирование почтового адреса, проверка корректности его отображения в формате "aut***@test.test"
         String e_mail_step_2;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_2 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_2 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
         String hidden_email = TrCardAct.hideEmail(e_mail_step_1);
@@ -2820,9 +2820,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса, проверка корректности его отображения (должен отображаться адрес текущей учётной записи)
         String e_mail_step_3;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_3 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_3 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_3 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_3 = TrCardAct.getFirstWordFromTheString(e_mail_step_3);
         assertEquals(
@@ -4103,7 +4103,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
-        TrCardAct.waitForReceiptEmailButtonToAppear("Получение кассовых чеков");
+        TrCardAct.waitForCardEmailButtonToAppear("Получение кассовых чеков");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
         TrCardAct.toggleAirplaneMode();
@@ -4111,9 +4111,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса
         String e_mail_step_1;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_1 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_1 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_1 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_1 = TrCardAct.getFirstWordFromTheString(e_mail_step_1);
 
@@ -4136,7 +4136,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         );
 
         // Изменение почтового адреса для получения чека, проверка появления сообщения об ошибке
-        TrCardAct.clickTheUpperRightCornerOfTheReceiptEmailButton("Получение кассовых чеков по данной транспортной карте");
+        TrCardAct.clickTheUpperRightCornerOfTheCardEmailButton("Получение кассовых чеков по данной транспортной карте");
         TrCardAct.enterEmailAndCheckText("nikola-ag@ya.ru", false);
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
         TrCardAct.waitForButtonWithPicToAppear("Произошла ошибка");
@@ -4144,9 +4144,9 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Копирование почтового адреса
         String e_mail_step_2;
         if (TrCardPlatform.getInstance().isIOS()) {
-            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("name", "@");
+            e_mail_step_2 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("name", "@");
         } else {
-            e_mail_step_2 = TrCardAct.waitForReceiptEmailButtonToAppearAndGetAttribute("content-desc", "@");
+            e_mail_step_2 = TrCardAct.waitForCardEmailButtonToAppearAndGetAttribute("content-desc", "@");
         }
         e_mail_step_2 = TrCardAct.getFirstWordFromTheString(e_mail_step_2);
 
