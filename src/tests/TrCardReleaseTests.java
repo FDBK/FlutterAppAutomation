@@ -58,7 +58,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -104,7 +104,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -131,7 +131,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.clickTheButton("Назад");
 
         // Переход на экран "Настройки карты"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
 
@@ -148,11 +148,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonWithPicToAppear("Тестовая карта");
 
         // Удаление карты
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту Тестовая карта?");
         TrCardAct.clickTheBigButton("НЕТ");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту Тестовая карта?");
         TrCardAct.clickTheBigButton("ДА");
@@ -248,7 +248,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
-        TrCardAct.clickTheButton("Добавить карту");
+        TrCardAct.clickTheTopButton("Добавить карту");
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Переход на вкладку "Банковская"
@@ -279,7 +279,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
-        TrCardAct.clickTheButton("Добавить карту");
+        TrCardAct.clickTheTopButton("Добавить карту");
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Переход на вкладку "Банковская"
@@ -336,7 +336,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Удаление карты
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***0915?");
         TrCardAct.clickTheBigButton("ДА");
@@ -586,7 +586,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка успешности добавления карты (отображение информации о карте и т.п.)
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
         TrCardAct.waitForTextToAppear("Статус");
         TrCardAct.waitForTextToAppear("Проездной");
@@ -612,7 +612,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Удаление карты
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту Транспортная карта?");
         TrCardAct.clickTheBigButton("ДА");
@@ -675,7 +675,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -702,7 +702,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню, проверка номера карты
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
         TrCardAct.waitForTextToAppear(card_number);
 
@@ -743,7 +743,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindBigButtonByText("***4714");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование параметров карты
@@ -780,7 +780,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню, проверка параметров карты
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
         TrCardAct.waitForTextToAppear(card_name);
         TrCardAct.waitForTextToAppear(card_status);
@@ -824,7 +824,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход на экран добавления новой карты
-        TrCardAct.clickTheButton("Добавить карту");
+        TrCardAct.clickTheTopButton("Добавить карту");
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Добавление карты
@@ -847,7 +847,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Новосибирск");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -919,7 +919,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
-        TrCardAct.clickTheButton("Добавить карту");
+        TrCardAct.clickTheTopButton("Добавить карту");
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Попытка добавить в учётную запись несуществующую карту
@@ -1034,7 +1034,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Проверка отсутствия баннера "Транспортный роуминг" и соответствующего пункта меню
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.waitForButtonToDisappear("роуминг");
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
@@ -1045,7 +1045,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
 
         // Просмотр информации о функции "Транспортный роуминг" через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
 
@@ -1095,7 +1095,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
 
         // Просмотр информации о функции "Транспортный роуминг" через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
         TrCardAct.waitForTextToAppear(roaming_text);
@@ -1468,7 +1468,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -2365,7 +2365,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Выход из учётной записи через меню на экране ввода пароля
         TrCardAct.waitForTextToAppear("Введите пароль");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Выйти");
         TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
         TrCardAct.clickTheBigButton("ДА");
@@ -2464,7 +2464,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -2477,7 +2477,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForTextToAppear("Получение кассовых чеков");
@@ -2542,7 +2542,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -2562,7 +2562,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForTextToAppear("Получение кассовых чеков");
@@ -2659,7 +2659,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -2672,7 +2672,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForTextToAppear("Получение кассовых чеков");
@@ -2748,7 +2748,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -2768,7 +2768,7 @@ public class TrCardReleaseTests extends TrCardTestCase
 
         // Возврат на экран "Мои карты" и переход в раздел "Настройки карты"
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForTextToAppear("Получение кассовых чеков");
@@ -2859,7 +2859,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки карты", проверка отсутствия переключателя "Push-уведомления" (без авторизации)
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToDisappear("Push-уведомления");
@@ -2897,7 +2897,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
@@ -2927,7 +2927,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeRightToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
@@ -2963,7 +2963,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
@@ -3015,7 +3015,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
@@ -3070,7 +3070,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
@@ -3123,7 +3123,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
@@ -3320,7 +3320,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Копирование номера карты
@@ -3407,7 +3407,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Проверка полноценности отображения информации о "нормальной" карте при наличии в аккаунте "проблемной" карты
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.waitForButtonToAppear("Информация о карте");
         TrCardAct.waitForButtonToAppear("Настройки карты");
         TrCardAct.waitForButtonToAppear("Удалить карту");
@@ -3420,7 +3420,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
 
         // Проверка отсутствия возможности просмотра информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.waitForButtonToDisappear("Информация о карте");
         TrCardAct.waitForButtonToDisappear("Настройки карты");
         TrCardAct.waitForButtonToAppear("Удалить карту");
@@ -3658,7 +3658,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
 
         // Проверка отсутствия возможности просмотра информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.waitForButtonToDisappear("Информация о карте");
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
@@ -3694,7 +3694,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForTextToDisappear("Ошибка загрузки деталей по карте");
 
         // Просмотр информации о карте через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Информация о карте");
 
         // Проверка отображения параметров карты и возврат на экран "Мои карты"
@@ -3740,7 +3740,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
 
         // Просмотр информации о функции "Транспортный роуминг" через меню
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("роуминг");
         TrCardAct.waitForScreenTitleToAppear("Транспортный роуминг");
 
@@ -4013,7 +4013,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход на экран добавления новой карты
-        TrCardAct.clickTheButton("Добавить карту");
+        TrCardAct.clickTheTopButton("Добавить карту");
         TrCardAct.waitForScreenTitleToAppear("Новая карта");
 
         // Активация режима полёта для имитации отсутствия подключения к сети
@@ -4057,7 +4057,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForBigButtonToAppear("Новосибирск");
 
         // Удаление карты и проверка перехода на предыдущую карту
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Удалить карту");
         TrCardAct.waitForTextToAppear("Вы уверены, что хотите удалить карту ***0915?");
         TrCardAct.clickTheBigButton("ДА");
@@ -4100,7 +4100,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки карты"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForTextToAppear("Получение кассовых чеков");
@@ -4234,7 +4234,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Переход в раздел "Настройки карты", проверка отсутствия переключателя "Push-уведомления" (без авторизации)
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToDisappear("Push-уведомления");
@@ -4269,7 +4269,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
-        TrCardAct.clickTheButton("Показать меню");
+        TrCardAct.clickTheTopButton("Показать меню");
         TrCardAct.clickTheButton("Настройки карты");
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
         TrCardAct.waitForSwitchToAppear("Push-уведомления");
