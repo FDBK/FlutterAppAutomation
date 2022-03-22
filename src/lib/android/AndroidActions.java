@@ -39,6 +39,7 @@ public class AndroidActions extends TrCardActions
         BOTTOM_BANNER_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{BOTTOM_BANNER_TEXT}')]";
         INPUT_FIELD_TEMPLATE = "xpath://android.widget.EditText[contains(@text, '{INPUT_FIELD_TEXT}')]";
         BUTTON_TEMPLATE = "xpath://android.widget.Button[contains(@content-desc, '{BUTTON_NAME}')]";
+        TOP_BUTTON_TEMPLATE = "xpath://android.widget.ImageView[contains(@content-desc, '{TOP_BUTTON_NAME}')]";
         BUTTON_LINK_TEMPLATE = "xpath://android.widget.Button[contains(@content-desc, '{BUTTON_LINK_TEXT}')]";
         BUTTON_WITH_PIC_TEMPLATE = "xpath://android.widget.ImageView[contains(@content-desc, '{BUTTON_TEXT}')]";
         BIG_BUTTON_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{BIG_BUTTON_TEXT}')]";

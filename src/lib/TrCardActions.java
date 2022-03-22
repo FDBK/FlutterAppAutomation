@@ -45,6 +45,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             BOTTOM_BANNER_TEMPLATE,
             INPUT_FIELD_TEMPLATE,
             BUTTON_TEMPLATE,
+            TOP_BUTTON_TEMPLATE,
             BUTTON_LINK_TEMPLATE,
             BUTTON_WITH_PIC_TEMPLATE,
             BIG_BUTTON_TEMPLATE,
@@ -97,6 +98,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceButtonTextAndGetLocator(String button_name)
     {
         return BUTTON_TEMPLATE.replace("{BUTTON_NAME}", button_name);
+    }
+
+    private static String replaceTopButtonTextAndGetLocator(String top_button_name)
+    {
+        return TOP_BUTTON_TEMPLATE.replace("{TOP_BUTTON_NAME}", top_button_name);
     }
 
     private static String replaceButtonLinkTextAndGetLocator(String button_link_text)
@@ -250,6 +256,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForTopButtonToAppear(String top_button_name)
+    {
+        String locator = replaceTopButtonTextAndGetLocator(top_button_name);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент TopButton с текстом '" + top_button_name + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForButtonLinkToAppear(String button_link_text)
     {
         String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
@@ -326,6 +342,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementNotPresent(
                 locator,
                 "Ошибка! Элемент Button с текстом '" + button_name + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForTopButtonToDisappear(String top_button_name)
+    {
+        String locator = replaceTopButtonTextAndGetLocator(top_button_name);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Элемент TopButton с текстом '" + top_button_name + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -456,6 +482,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementAndClick(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void clickTheTopButton(String top_button_name)
+    {
+        String locator = replaceTopButtonTextAndGetLocator(top_button_name);
+        this.waitForElementAndClick(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент TopButton с текстом '" + top_button_name + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }
