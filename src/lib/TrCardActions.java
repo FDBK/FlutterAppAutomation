@@ -51,6 +51,7 @@ abstract public class TrCardActions extends TrCardCoreMethods
             BIG_BUTTON_TEMPLATE,
             RADIO_BUTTON_TEMPLATE,
             SWITCH_TEMPLATE,
+            CARD_NAME_BUTTON_TEMPLATE,
             CARD_EMAIL_BUTTON_TEMPLATE,
             TOOLTIP_BUTTON_TEMPLATE,
             ANY_ELEMENT_TEMPLATE;
@@ -129,6 +130,11 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceSwitchTextAndGetLocator(String switch_text)
     {
         return SWITCH_TEMPLATE.replace("{SWITCH_TEXT}", switch_text);
+    }
+
+    private static String replaceCardNameButtonTextAndGetLocator(String card_name_button_text)
+    {
+        return CARD_NAME_BUTTON_TEMPLATE.replace("{CARD_NAME_BUTTON_TEXT}", card_name_button_text);
     }
 
     private static String replaceCardEmailButtonTextAndGetLocator(String card_email_button_text)
@@ -322,6 +328,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForCardNameButtonToAppear(String card_name_button_text)
+    {
+        String locator = replaceCardNameButtonTextAndGetLocator(card_name_button_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент CardNameButton с текстом '" + card_name_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForCardEmailButtonToAppear(String card_email_button_text)
     {
         String locator = replaceCardEmailButtonTextAndGetLocator(card_email_button_text);
@@ -422,6 +438,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForCardNameButtonToDisappear(String card_name_button_text)
+    {
+        String locator = replaceCardNameButtonTextAndGetLocator(card_name_button_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Элемент CardNameButton с текстом '" + card_name_button_text + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForCardEmailButtonToDisappear(String card_email_button_text)
     {
         String locator = replaceCardEmailButtonTextAndGetLocator(card_email_button_text);
@@ -494,6 +520,17 @@ abstract public class TrCardActions extends TrCardCoreMethods
         WebElement element = this.waitForElementPresent(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Switch '" + switch_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+        return element.getAttribute(attribute);
+    }
+
+    public String waitForCardNameButtonToAppearAndGetAttribute(String attribute, String card_name_button_text)
+    {
+        String locator = replaceCardNameButtonTextAndGetLocator(card_name_button_text);
+        WebElement element = this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент CardNameButton '" + card_name_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         return element.getAttribute(attribute);
@@ -1043,12 +1080,12 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.tapByCoordinates(point_to_click_x, point_to_click_y);
     }
 
-    public void clickTheUpperRightCornerOfTheButtonWithPic(String button_with_pic_text)
+    public void clickTheUpperRightCornerOfTheCardNameButton(String card_name_button_text)
     {
-        String locator = replaceButtonWithPicTextAndGetLocator(button_with_pic_text);
+        String locator = replaceCardNameButtonTextAndGetLocator(card_name_button_text);
         WebElement element = this.waitForElementPresent(
                 locator,
-                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_with_pic_text + "'.",
+                "Ошибка! Не удалось обнаружить элемент CardNameButton с текстом '" + card_name_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
         int

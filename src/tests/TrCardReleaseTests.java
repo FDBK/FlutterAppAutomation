@@ -136,7 +136,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Настройки карты");
 
         // Переименование карты (пустое имя > корректное имя)
-        TrCardAct.clickTheUpperRightCornerOfTheButtonWithPic("Имя карты, отображаемое в личном кабинете");
+        TrCardAct.clickTheUpperRightCornerOfTheCardNameButton("Имя карты, отображаемое в личном кабинете");
         TrCardAct.enterCardNameAndCheckText("");
         TrCardAct.clickTheBigButton("СОХРАНИТЬ");
         TrCardAct.enterCardNameAndCheckTextAgain("Тестовая карта");
