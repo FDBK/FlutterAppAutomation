@@ -14,8 +14,8 @@ public class TrCardPlatform
             APPIUM_URL = "http://127.0.0.1:4723/wd/hub",
             PLATFORM_ANDROID = "android",
             PLATFORM_IOS = "ios",
-            APP_ANDROID = "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.release.414.apk",
-            APP_IOS = "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.414.ipa",
+            APP_ANDROID = "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.release.252.apk",
+            APP_IOS = "/Users/ebakarev/Documents/TrCardAutomation/apks/T-Card.live.inhouse.252.ipa",
             PACKAGE = "ru.ftc.tc",
             ACTIVITY = "io.flutter.embedding.android.FlutterFragmentActivity";
 
@@ -72,7 +72,7 @@ public class TrCardPlatform
 
         capabilities.setCapability("platformName","Android");
         capabilities.setCapability("deviceName","AndroidTestDevice");
-        capabilities.setCapability("platformVersion","10");
+        capabilities.setCapability("platformVersion","9");
         capabilities.setCapability("automationName","Appium");
         capabilities.setCapability("appPackage", PACKAGE);
         capabilities.setCapability("appActivity", ACTIVITY);

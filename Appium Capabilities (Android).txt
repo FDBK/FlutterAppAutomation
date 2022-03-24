@@ -3,10 +3,10 @@ Flutter Transport Card - Live.Release:
 {
   "platformName": "Android",
   "deviceName": "AndroidTestDevice",
-  "platformVersion": "10",
+  "platformVersion": "9",
   "appPackage": "ru.ftc.tc",
   "appActivity": "io.flutter.embedding.android.FlutterFragmentActivity",
-  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.release.414.apk"
+  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.release.252.apk"
 }
 
 
@@ -15,10 +15,10 @@ Flutter Transport Card - Live.Debug:
 {
   "platformName": "Android",
   "deviceName": "AndroidTestDevice",
-  "platformVersion": "10",
+  "platformVersion": "9",
   "appPackage": "ru.ftc.tc.debug",
   "appActivity": "io.flutter.embedding.android.FlutterFragmentActivity",
-  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.debug.414.apk"
+  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.live.debug.252.apk"
 }
 
 
@@ -27,10 +27,10 @@ Flutter Transport Card - Develop.Release:
 {
   "platformName": "Android",
   "deviceName": "AndroidTestDevice",
-  "platformVersion": "10",
+  "platformVersion": "9",
   "appPackage": "ru.ftc.tc.develop",
   "appActivity": "io.flutter.embedding.android.FlutterFragmentActivity",
-  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.develop.release.414.apk"
+  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.develop.release.252.apk"
 }
 
 
@@ -39,8 +39,8 @@ Flutter Transport Card - Develop.Debug:
 {
   "platformName": "Android",
   "deviceName": "AndroidTestDevice",
-  "platformVersion": "10",
+  "platformVersion": "9",
   "appPackage": "ru.ftc.tc.develop.debug",
   "appActivity": "io.flutter.embedding.android.FlutterFragmentActivity",
-  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.develop.debug.414.apk"
+  "app": "C:/IntelliJ Projects/TrCardAutomation/apks/T-Card.develop.debug.252.apk"
 }
