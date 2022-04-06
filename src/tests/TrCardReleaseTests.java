@@ -1181,18 +1181,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Проверка наличия баннера с информационным сообщением
         TrCardAct.swipeLowerLeftToFindButtonWithPicByText("Продлите срок действия");
 
-        // Просмотр информационного сообщения
-        TrCardAct.clickTheButton("Подробнее");
-        TrCardAct.waitForScreenTitleToAppear("Информация");
-        TrCardAct.waitForTextToAppear("Напоминаем вам, что");
-
-        // Возврат на экран "Мои карты" (с помощью кнопки "Понятно")
-        TrCardAct.swipeUpToFindBigButtonByText("ПОНЯТНО");
-        TrCardAct.clickTheBigButton("ПОНЯТНО");
-        TrCardAct.waitForScreenTitleToAppear("Мои карты");
-
         // Закрытие баннера с информационным сообщением
-        TrCardAct.swipeLowerLeftToFindButtonWithPicByText("Продлите срок действия");
         if (TrCardPlatform.getInstance().isIOS()) {
             TrCardAct.clickTheButton("Закрыть");
         } else {
@@ -1242,14 +1231,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с информационным сообщением)
         TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
-        // Проверка наличия баннера с информационным сообщением, а также просмотр информационного сообщения
+        // Проверка наличия баннера с информационным сообщением
         TrCardAct.swipeLowerLeftToFindButtonWithPicByText("Продлите срок действия");
-        TrCardAct.clickTheButton("Подробнее");
-        TrCardAct.waitForScreenTitleToAppear("Информация");
-        TrCardAct.waitForTextToAppear("Напоминаем вам, что");
-
-        // Возврат на экран "Мои карты"
-        TrCardAct.clickTheButton("Назад");
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         System.out.println("Тест пройден без ошибок!");
