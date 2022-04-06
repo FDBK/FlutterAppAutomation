@@ -164,6 +164,30 @@ public class TrCardCoreMethods
         }
     }
 
+    public void swipeLowerLeft(int time_of_swipe)
+    {
+        TouchAction action = new TouchAction(driver);
+        Dimension size = driver.manage().window().getSize();
+
+        int start_x = (int) (size.width * 0.6);
+        int end_x = (int) (size.width * 0.4);
+        int y = (int) (size.height * 0.6);
+
+        action.press(PointOption.point(start_x, y));
+        action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(time_of_swipe)));
+        if (TrCardPlatform.getInstance().isIOS()) {
+            int offset_x = (int) (size.width * 0.2);
+            action.moveTo(PointOption.point(-offset_x, 0));
+        } else {
+            action.moveTo(PointOption.point(end_x, y));
+        }
+        action.release();
+        action.perform();
+        if (TrCardPlatform.getInstance().isIOS()) {
+            sleepFor(500);
+        }
+    }
+
     public void swipeUpperRight(int time_of_swipe)
     {
         TouchAction action = new TouchAction(driver);
@@ -172,6 +196,30 @@ public class TrCardCoreMethods
         int start_x = (int) (size.width * 0.4);
         int end_x = (int) (size.width * 0.6);
         int y = size.height / 4;
+
+        action.press(PointOption.point(start_x, y));
+        action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(time_of_swipe)));
+        if (TrCardPlatform.getInstance().isIOS()) {
+            int offset_x = (int) (size.width * 0.2);
+            action.moveTo(PointOption.point(offset_x, 0));
+        } else {
+            action.moveTo(PointOption.point(end_x, y));
+        }
+        action.release();
+        action.perform();
+        if (TrCardPlatform.getInstance().isIOS()) {
+            sleepFor(500);
+        }
+    }
+
+    public void swipeLowerRight(int time_of_swipe)
+    {
+        TouchAction action = new TouchAction(driver);
+        Dimension size = driver.manage().window().getSize();
+
+        int start_x = (int) (size.width * 0.4);
+        int end_x = (int) (size.width * 0.6);
+        int y = (int) (size.height * 0.6);
 
         action.press(PointOption.point(start_x, y));
         action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(time_of_swipe)));
