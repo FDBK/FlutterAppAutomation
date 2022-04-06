@@ -853,10 +853,34 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLowerLeftToFindText(String text)
+    {
+        String locator = replaceTextAndGetLocator(text);
+        this.swipeLowerLeftToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить текст '" + text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void swipeUpperLeftToFindButtonByText(String button_name)
     {
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.swipeUpperLeftToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void swipeLowerLeftToFindButtonByText(String button_name)
+    {
+        String locator = replaceButtonTextAndGetLocator(button_name);
+        this.swipeLowerLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
@@ -877,6 +901,18 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLowerLeftToFindButtonLinkByText(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.swipeLowerLeftToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void swipeUpperLeftToFindButtonWithPicByText(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
@@ -889,10 +925,34 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLowerLeftToFindButtonWithPicByText(String button_text)
+    {
+        String locator = replaceButtonWithPicTextAndGetLocator(button_text);
+        this.swipeLowerLeftToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void swipeUpperLeftToFindBigButtonByText(String big_button_text)
     {
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.swipeUpperLeftToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void swipeLowerLeftToFindBigButtonByText(String big_button_text)
+    {
+        String locator = replaceBigButtonTextAndGetLocator(big_button_text);
+        this.swipeLowerLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
@@ -916,10 +976,34 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLowerRightToFindText(String text)
+    {
+        String locator = replaceTextAndGetLocator(text);
+        this.swipeLowerRightToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить текст '" + text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void swipeUpperRightToFindButtonByText(String button_name)
     {
         String locator = replaceButtonTextAndGetLocator(button_name);
         this.swipeUpperRightToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void swipeLowerRightToFindButtonByText(String button_name)
+    {
+        String locator = replaceButtonTextAndGetLocator(button_name);
+        this.swipeLowerRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
@@ -940,6 +1024,18 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLowerRightToFindButtonLinkByText(String button_link_text)
+    {
+        String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
+        this.swipeLowerRightToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void swipeUpperRightToFindButtonWithPicByText(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
@@ -952,10 +1048,34 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void swipeLowerRightToFindButtonWithPicByText(String button_text)
+    {
+        String locator = replaceButtonWithPicTextAndGetLocator(button_text);
+        this.swipeLowerRightToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void swipeUpperRightToFindBigButtonByText(String big_button_text)
     {
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
         this.swipeUpperRightToFindElement(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
+                MAX_SWIPES,
+                TIME_OF_SWIPE,
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void swipeLowerRightToFindBigButtonByText(String big_button_text)
+    {
+        String locator = replaceBigButtonTextAndGetLocator(big_button_text);
+        this.swipeLowerRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,

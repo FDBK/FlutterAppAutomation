@@ -361,6 +361,26 @@ public class TrCardCoreMethods
         }
     }
 
+    public void swipeLowerLeftToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
+    {
+        By by = getLocatorByString(locator);
+        int already_swiped = 0;
+        while (driver.findElements(by).size() == 0) {
+
+            if (already_swiped > max_swipes) {
+                waitForElementPresent(
+                        locator,
+                        error_message,
+                        timeout_in_seconds
+                );
+                return;
+            }
+
+            swipeLowerLeft(time_of_swipe);
+            ++already_swiped;
+        }
+    }
+
     public void swipeUpperRightToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
         By by = getLocatorByString(locator);
@@ -377,6 +397,26 @@ public class TrCardCoreMethods
             }
 
             swipeUpperRight(time_of_swipe);
+            ++already_swiped;
+        }
+    }
+
+    public void swipeLowerRightToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
+    {
+        By by = getLocatorByString(locator);
+        int already_swiped = 0;
+        while (driver.findElements(by).size() == 0) {
+
+            if (already_swiped > max_swipes) {
+                waitForElementPresent(
+                        locator,
+                        error_message,
+                        timeout_in_seconds
+                );
+                return;
+            }
+
+            swipeLowerRight(time_of_swipe);
             ++already_swiped;
         }
     }
