@@ -1147,6 +1147,115 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка механизма отображения информационной карусели
+    @Test
+    public void testCardMessages()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Установка кода доступа
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+
+        // Пропуск установки входа по отпечатку пальца или по FaceID при появлении соответствующего предложения
+        TrCardAct.checkAndSkipFingerprintsOrFaceID();
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с информационным сообщением)
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
+
+        // Проверка наличия баннера с информационным сообщением
+        TrCardAct.swipeLowerLeftToFindButtonWithPicByText("Продлите срок действия");
+
+        // Просмотр информационного сообщения
+        TrCardAct.clickTheButton("Подробнее");
+        TrCardAct.waitForScreenTitleToAppear("Информация");
+        TrCardAct.waitForTextToAppear("Напоминаем вам, что");
+
+        // Возврат на экран "Мои карты" (с помощью кнопки "Понятно")
+        TrCardAct.swipeUpToFindBigButtonByText("ПОНЯТНО");
+        TrCardAct.clickTheBigButton("ПОНЯТНО");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Закрытие баннера с информационным сообщением
+        TrCardAct.swipeLowerLeftToFindButtonWithPicByText("Продлите срок действия");
+        if (TrCardPlatform.getInstance().isIOS()) {
+            TrCardAct.clickTheButton("Закрыть");
+        } else {
+            TrCardAct.clickTheButtonWithPic("Закрыть");
+        }
+        TrCardAct.waitForButtonWithPicToDisappear("Продлите срок действия");
+
+        // Перезапуск приложения без потери пользовательских данных
+        TrCardAct.restartApp();
+
+        // Повторный вход в приложение с использованием кода доступа
+        TrCardAct.waitForTextToAppear("automation@test.test");
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+
+        // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Проверка отсутствия баннера с информационным сообщением
+        TrCardAct.waitForButtonWithPicToDisappear("Продлите срок действия");
+
+        // Выход из приложения через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Выйти");
+        TrCardAct.waitForTextToAppear("Вы действительно хотите выйти из аккаунта automation@test.test?");
+        TrCardAct.clickTheBigButton("ДА");
+
+        // Проверка возврата на экран входа по логину и паролю
+        TrCardAct.waitForTextToAppear("указанные при регистрации");
+
+        // Ввод логина для повторного входа в приложение
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Установка кода доступа
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+        TrCardAct.enterPassCode("5", "8", "3", "5");
+
+        // Пропуск установки входа по отпечатку пальца или по FaceID при появлении соответствующего предложения
+        TrCardAct.checkAndSkipFingerprintsOrFaceID();
+
+        // Проверка успешности повторного входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с информационным сообщением)
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
+
+        // Проверка наличия баннера с информационным сообщением, а также просмотр информационного сообщения
+        TrCardAct.swipeLowerLeftToFindButtonWithPicByText("Продлите срок действия");
+        TrCardAct.clickTheButton("Подробнее");
+        TrCardAct.waitForScreenTitleToAppear("Информация");
+        TrCardAct.waitForTextToAppear("Напоминаем вам, что");
+
+        // Возврат на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
     // Проверка отображения информации об операциях типа *_TRANSFER
     @Test
     public void testFindAndCheckTransferOperations()
