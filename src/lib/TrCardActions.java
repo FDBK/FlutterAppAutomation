@@ -841,10 +841,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
 
     /* Свайпы влево для поиска элементов */
-    public void swipeLeftToFindText(String text)
+    public void swipeUpperLeftToFindText(String text)
     {
         String locator = replaceTextAndGetLocator(text);
-        this.swipeLeftToFindElement(
+        this.swipeUpperLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
@@ -853,10 +853,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeLeftToFindButtonByText(String button_name)
+    public void swipeUpperLeftToFindButtonByText(String button_name)
     {
         String locator = replaceButtonTextAndGetLocator(button_name);
-        this.swipeLeftToFindElement(
+        this.swipeUpperLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
@@ -865,10 +865,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeLeftToFindButtonLinkByText(String button_link_text)
+    public void swipeUpperLeftToFindButtonLinkByText(String button_link_text)
     {
         String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
-        this.swipeLeftToFindElement(
+        this.swipeUpperLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
@@ -877,10 +877,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeLeftToFindButtonWithPicByText(String button_text)
+    public void swipeUpperLeftToFindButtonWithPicByText(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
-        this.swipeLeftToFindElement(
+        this.swipeUpperLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
@@ -889,10 +889,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeLeftToFindBigButtonByText(String big_button_text)
+    public void swipeUpperLeftToFindBigButtonByText(String big_button_text)
     {
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
-        this.swipeLeftToFindElement(
+        this.swipeUpperLeftToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,
@@ -904,10 +904,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
 
 
     /* Свайпы вправо для поиска элементов */
-    public void swipeRightToFindText(String text)
+    public void swipeUpperRightToFindText(String text)
     {
         String locator = replaceTextAndGetLocator(text);
-        this.swipeRightToFindElement(
+        this.swipeUpperRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить текст '" + text + "'.",
                 MAX_SWIPES,
@@ -916,10 +916,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeRightToFindButtonByText(String button_name)
+    public void swipeUpperRightToFindButtonByText(String button_name)
     {
         String locator = replaceButtonTextAndGetLocator(button_name);
-        this.swipeRightToFindElement(
+        this.swipeUpperRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент Button с текстом '" + button_name + "'.",
                 MAX_SWIPES,
@@ -928,10 +928,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeRightToFindButtonLinkByText(String button_link_text)
+    public void swipeUpperRightToFindButtonLinkByText(String button_link_text)
     {
         String locator = replaceButtonLinkTextAndGetLocator(button_link_text);
-        this.swipeRightToFindElement(
+        this.swipeUpperRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonLink с текстом '" + button_link_text + "'.",
                 MAX_SWIPES,
@@ -940,10 +940,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeRightToFindButtonWithPicByText(String button_text)
+    public void swipeUpperRightToFindButtonWithPicByText(String button_text)
     {
         String locator = replaceButtonWithPicTextAndGetLocator(button_text);
-        this.swipeRightToFindElement(
+        this.swipeUpperRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент ButtonWithPic с текстом '" + button_text + "'.",
                 MAX_SWIPES,
@@ -952,10 +952,10 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
-    public void swipeRightToFindBigButtonByText(String big_button_text)
+    public void swipeUpperRightToFindBigButtonByText(String big_button_text)
     {
         String locator = replaceBigButtonTextAndGetLocator(big_button_text);
-        this.swipeRightToFindElement(
+        this.swipeUpperRightToFindElement(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент BigButton с текстом '" + big_button_text + "'.",
                 MAX_SWIPES,

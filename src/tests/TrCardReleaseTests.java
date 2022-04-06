@@ -324,7 +324,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("***0915");
+        TrCardAct.swipeUpperLeftToFindBigButtonByText("***0915");
 
         // Переход в раздел "Поездки" и проверка наличия поездок
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -499,7 +499,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("8322");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("8322");
 
         // Переход на экран пополнения карты
         TrCardAct.waitForBigButtonToAppear("ПОПОЛНИТЬ");
@@ -672,7 +672,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheTopButton("Показать меню");
@@ -740,7 +740,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("***4714");
+        TrCardAct.swipeUpperLeftToFindBigButtonByText("***4714");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheTopButton("Показать меню");
@@ -821,7 +821,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход на экран добавления новой карты
         TrCardAct.clickTheTopButton("Добавить карту");
@@ -968,7 +968,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("***9794");
+        TrCardAct.swipeUpperLeftToFindBigButtonByText("***9794");
 
         // Изменение региона карты (выбор из всего списка)
         TrCardAct.clickTheLeftQuarterOfTheBigButton("Новосибирск");
@@ -1030,7 +1030,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (без функции "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1375");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1375");
 
         // Проверка отсутствия баннера "Транспортный роуминг" и соответствующего пункта меню
         TrCardAct.waitForButtonWithPicToDisappear("Доступен проезд в других городах");
@@ -1039,7 +1039,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("3568");
 
         // Проверка наличия баннера "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
@@ -1131,7 +1131,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("3568");
 
         // Проверка наличия баннера и просмотр информации о функции "Транспортный роуминг" через кнопку "Подробнее"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
@@ -1176,11 +1176,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("7902");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("7902");
         TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("6930");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("6930");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
@@ -1200,11 +1200,11 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1716");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1716");
         TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("7150");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("7150");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
@@ -1224,7 +1224,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("0987");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("0987");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
@@ -1244,7 +1244,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1308");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1308");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
@@ -1273,19 +1273,19 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("6994");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("6994");
         TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("3906");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("3906");
         TrCardAct.waitForWarningTextToAppear("Карта заблокирована");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("[-услуги]");
+        TrCardAct.swipeUpperLeftToFindBigButtonByText("[-услуги]");
         TrCardAct.waitForButtonWithPicToDisappear("Льготы");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("[+услуги]");
+        TrCardAct.swipeUpperLeftToFindBigButtonByText("[+услуги]");
 
         // Открытие списка подключенных к карте льгот и проверка отображения информации о них
         TrCardAct.waitForButtonWithPicToAppear("Льготы");
@@ -1349,7 +1349,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -1407,7 +1407,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
@@ -1465,7 +1465,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheTopButton("Показать меню");
@@ -1664,7 +1664,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Поиск карты с подключенными услугами, открытие списка подключенных к карте услуг
-        TrCardAct.swipeLeftToFindButtonWithPicByText("Подключенные услуги");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("Подключенные услуги");
         TrCardAct.clickTheButtonWithPic("Подключенные услуги");
         TrCardAct.waitForScreenTitleToDisappear("Мои карты");
         TrCardAct.waitForScreenTitleToAppear("Подключенные услуги");
@@ -1674,7 +1674,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Поиск карты с подключенными льготами, открытие списка подключенных к карте льгот
-        TrCardAct.swipeLeftToFindButtonWithPicByText("Льготы");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("Льготы");
         TrCardAct.clickTheButtonWithPic("Льготы");
         TrCardAct.waitForScreenTitleToDisappear("Мои карты");
         TrCardAct.waitForScreenTitleToAppear("Подключенные льготы");
@@ -1726,7 +1726,7 @@ public class TrCardReleaseTests extends TrCardTestCase
                     is_online = card_parameters[i][3];
 
             // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-            TrCardAct.swipeLeftToFindButtonWithPicByText(card_number);
+            TrCardAct.swipeUpperLeftToFindButtonWithPicByText(card_number);
 
             // Проверка наличия и работоспособности кнопки "Пополнить" (или её отсутствия)
             if (is_replenishable.equals("Y")) {
@@ -2539,7 +2539,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheTopButton("Показать меню");
@@ -2745,7 +2745,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText(card_number_1.substring(card_number_1.length()-4));
 
         // Просмотр информации о карте через меню
         TrCardAct.clickTheTopButton("Показать меню");
@@ -2894,7 +2894,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");
@@ -2924,7 +2924,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeRightToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperRightToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");
@@ -2960,7 +2960,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");
@@ -3012,7 +3012,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");
@@ -3067,7 +3067,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");
@@ -3120,7 +3120,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");
@@ -3175,7 +3175,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("0509");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("0509");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -3224,7 +3224,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная банковская карта
-        TrCardAct.swipeLeftToFindBigButtonByText("is_discount_1");
+        TrCardAct.swipeUpperLeftToFindBigButtonByText("is_discount_1");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -3414,7 +3414,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.tapTheLowerEdgeOfTheScreen();
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("5215");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("5215");
 
         // Проверка появления сообщения "Ошибка загрузки..." на экране с информацией о карте
         TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
@@ -3652,7 +3652,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.toggleAirplaneMode();
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1370");
 
         // Проверка появления сообщения "Ошибка загрузки..." на экране с информацией о карте
         TrCardAct.waitForTextToAppear("Ошибка загрузки деталей по карте");
@@ -3734,7 +3734,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта (с функцией "Транспортный роуминг")
-        TrCardAct.swipeLeftToFindButtonWithPicByText("3568");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("3568");
 
         // Проверка наличия баннера "Транспортный роуминг"
         TrCardAct.waitForButtonWithPicToAppear("Доступен проезд в других городах");
@@ -3811,7 +3811,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Поездки"
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -3872,7 +3872,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Операции"
         TrCardAct.clickTheButtonWithPic("Операции");
@@ -3933,7 +3933,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("1370");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("1370");
 
         // Переход в раздел "Поездки", проверка наличия данных о поездках
         TrCardAct.clickTheButtonWithPic("Поездки");
@@ -4266,7 +4266,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitForScreenTitleToAppear("Мои карты");
 
         // Пролистывание списка карт до тех пор, пока не найдётся нужная карта
-        TrCardAct.swipeLeftToFindButtonWithPicByText("2210");
+        TrCardAct.swipeUpperLeftToFindButtonWithPicByText("2210");
 
         // Переход в раздел "Настройки карты", проверка наличия переключателя "Push-уведомления"
         TrCardAct.clickTheTopButton("Показать меню");

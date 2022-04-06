@@ -140,7 +140,7 @@ public class TrCardCoreMethods
         }
     }
 
-    public void swipeLeft(int time_of_swipe)
+    public void swipeUpperLeft(int time_of_swipe)
     {
         TouchAction action = new TouchAction(driver);
         Dimension size = driver.manage().window().getSize();
@@ -164,7 +164,7 @@ public class TrCardCoreMethods
         }
     }
 
-    public void swipeRight(int time_of_swipe)
+    public void swipeUpperRight(int time_of_swipe)
     {
         TouchAction action = new TouchAction(driver);
         Dimension size = driver.manage().window().getSize();
@@ -293,7 +293,7 @@ public class TrCardCoreMethods
         }
     }
 
-    public void swipeLeftToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
+    public void swipeUpperLeftToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
         By by = getLocatorByString(locator);
         int already_swiped = 0;
@@ -308,12 +308,12 @@ public class TrCardCoreMethods
                 return;
             }
 
-            swipeLeft(time_of_swipe);
+            swipeUpperLeft(time_of_swipe);
             ++already_swiped;
         }
     }
 
-    public void swipeRightToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
+    public void swipeUpperRightToFindElement(String locator, String error_message, int max_swipes, int time_of_swipe, long timeout_in_seconds)
     {
         By by = getLocatorByString(locator);
         int already_swiped = 0;
@@ -328,7 +328,7 @@ public class TrCardCoreMethods
                 return;
             }
 
-            swipeRight(time_of_swipe);
+            swipeUpperRight(time_of_swipe);
             ++already_swiped;
         }
     }
