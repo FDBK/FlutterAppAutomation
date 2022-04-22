@@ -2144,6 +2144,213 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка отображения чеков по поездкам (СБП)
+    @Test
+    public void testCheckTripReceiptSBP()
+    {
+        // Инициализация библиотек методов, необходимых для прохождения теста
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Переход в раздел "Получение чека" через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Получение чека");
+        TrCardAct.checkForPermissionNotification();
+        TrCardAct.clickTheBigButton("ВВЕСТИ ПАРАМЕТРЫ ВРУЧНУЮ");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
+
+        // ПРОВЕРКА ПОВЕДЕНИЯ ПРИЛОЖЕНИЯ ПРИ НАЛИЧИИ НЕСКОЛЬКИХ ПОЕЗДОК
+        // Выбор города
+        TrCardAct.clickTheBigButton("Город");
+        TrCardAct.chooseTheCity("Новосибирск");
+        TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+        // Выбор способа оплаты поездки
+        TrCardAct.waitForRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheRadioButton("sbp label");
+
+        // Поиск полей и ввод данных о поездке
+        TrCardAct.enterText("Дата поездки", "13.04.2022", true);
+        TrCardAct.enterText("Последние 4 цифры", "4444", true);
+        TrCardAct.enterText("Номер маршрута", "2", true);
+
+        // Получение чека
+        TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+
+        // Проверка корректности отображения списка поездок
+        TrCardAct.waitForScreenTitleToAppear("Поиск чека");
+        TrCardAct.waitForTextToAppear("Список найденных чеков");
+        TrCardAct.waitForTextToAppear("Номер маршрута: 2");
+        TrCardAct.waitForTextToAppear("Номер телефона: *******4444");
+        TrCardAct.waitForTextToAppear("Номер транзакции: не указано");
+        TrCardAct.waitForButtonWithPicToAppear("Троллейбус 2");
+        TrCardAct.waitForButtonWithPicToAppear("25");
+        TrCardAct.waitForButtonWithPicToAppear("10:04:09");
+        TrCardAct.waitForButtonWithPicToAppear("10:06:06");
+        TrCardAct.waitForButtonWithPicToAppear("10:06:41");
+        TrCardAct.waitForButtonWithPicToAppear("10:29:00");
+
+        // Переход к конкретной поездке
+        TrCardAct.clickTheButtonWithPic("10:29:00");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
+
+        // Проверка корректности отображения чека
+        TrCardAct.waitForButtonWithPicToAppear("Проездной билет");
+        TrCardAct.waitForButtonWithPicToAppear("Время поездки");
+        TrCardAct.waitForButtonWithPicToAppear("13.04.2022");
+        TrCardAct.waitForButtonWithPicToAppear("Маршрут");
+        TrCardAct.waitForButtonWithPicToAppear("T020218");
+        TrCardAct.waitForButtonWithPicToAppear("A2103032900331030000071F3BA8E1BC");
+        TrCardAct.waitForButtonWithPicToAppear("913***4444");
+        TrCardAct.waitForButtonWithPicToAppear("СБП");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Приход");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Номер чека за смену");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Поездка по СБП");
+        TrCardAct.swipeUpToFindButtonWithPicByText("РН ККТ");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Автомат");
+        TrCardAct.swipeUpToFindButtonWithPicByText("ФН");
+        TrCardAct.swipeUpToFindButtonWithPicByText("qr code");
+
+        // Проверка работоспособности кнопки "Поделиться чеком"
+        if (TrCardPlatform.getInstance().isIOS()) {
+            TrCardAct.clickTheButton("Поделиться");
+        } else {
+            TrCardAct.clickTheButtonWithPic("Поделиться");
+        }
+        TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+        // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.swipeDownToFindBigButtonByText("Город");
+
+        // ПРОВЕРКА ПОВЕДЕНИЯ ПРИЛОЖЕНИЯ ПРИ НАЛИЧИИ ОДНОЙ ПОЕЗДКИ
+        // Выбор города
+        TrCardAct.clickTheBigButton("Город");
+        TrCardAct.chooseTheCity("Новосибирск");
+        TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+        // Выбор способа оплаты поездки
+        TrCardAct.waitForRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheRadioButton("sbp label");
+
+        // Поиск полей и ввод данных о поездке
+        TrCardAct.enterText("Дата поездки", "13.04.2022", true);
+        TrCardAct.enterText("Последние 4 цифры", "4444", true);
+        TrCardAct.enterText("Номер маршрута", "2", true);
+        TrCardAct.enterText("Номер транзакции", "A2103032900331030000071F3BA8E", true);
+
+        // Получение чека
+        TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+
+        // Проверка корректности перехода к конкретной поездке (без отображения списка, состоящего из одной поездки)
+        TrCardAct.waitForScreenTitleToDisappear("Поиск чека");
+        TrCardAct.waitForTextToDisappear("Список найденных чеков");
+        TrCardAct.waitForTextToDisappear("Номер маршрута: 2");
+        TrCardAct.waitForTextToDisappear("Номер телефона: *******4444");
+        TrCardAct.waitForTextToDisappear("Номер транзакции: не указано");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
+
+        // Проверка корректности отображения чека по поездке
+        TrCardAct.waitForButtonWithPicToAppear("Проездной билет");
+        TrCardAct.waitForButtonWithPicToAppear("Время поездки");
+        TrCardAct.waitForButtonWithPicToAppear("13.04.2022");
+        TrCardAct.waitForButtonWithPicToAppear("Маршрут");
+        TrCardAct.waitForButtonWithPicToAppear("T020218");
+        TrCardAct.waitForButtonWithPicToAppear("A2103032900331030000071F3BA8E1BC");
+        TrCardAct.waitForButtonWithPicToAppear("913***4444");
+        TrCardAct.waitForButtonWithPicToAppear("СБП");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Приход");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Номер чека за смену");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Поездка по СБП");
+        TrCardAct.swipeUpToFindButtonWithPicByText("РН ККТ");
+        TrCardAct.swipeUpToFindButtonWithPicByText("Автомат");
+        TrCardAct.swipeUpToFindButtonWithPicByText("ФН");
+        TrCardAct.swipeUpToFindButtonWithPicByText("qr code");
+
+        // Проверка работоспособности кнопки "Поделиться чеком"
+        if (TrCardPlatform.getInstance().isIOS()) {
+            TrCardAct.clickTheButton("Поделиться");
+        } else {
+            TrCardAct.clickTheButtonWithPic("Поделиться");
+        }
+        TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+        // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.swipeDownToFindBigButtonByText("Город");
+
+        // ПРОВЕРКА ПОВЕДЕНИЯ ПРИЛОЖЕНИЯ ПРИ ОТСУТСТВИИ ПОЕЗДОК
+        // Выбор города
+        TrCardAct.clickTheBigButton("Город");
+        TrCardAct.chooseTheCity("Новосибирск");
+        TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+        // Выбор способа оплаты поездки
+        TrCardAct.waitForRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheRadioButton("sbp label");
+
+        // Поиск полей, ввод данных, попытка получить чек и проверка отображения сообщения об ошибке
+        TrCardAct.enterText("Дата поездки", "29.07.2021", true);
+        TrCardAct.enterText("Последние 4 цифры", "6666", true);
+        TrCardAct.enterText("Номер маршрута", "72", true);
+        TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.waitForScreenTitleToAppear("Поиск чека");
+        TrCardAct.waitForTextToAppear("Поездок не найдено");
+        TrCardAct.waitForTextToAppear("Пожалуйста, проверьте корректность");
+
+        // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
+        TrCardAct.waitForBigButtonToAppear("НАЗАД");
+        TrCardAct.clickTheBigButton("НАЗАД");
+        TrCardAct.swipeDownToFindBigButtonByText("Город");
+
+        // ПРОВЕРКА ПОВЕДЕНИЯ ПРИЛОЖЕНИЯ ПРИ НАЖАТИИ КНОПКИ "ПОЛУЧИТЬ ЧЕК" БЕЗ ВВОДА ДАННЫХ
+        // Выбор города
+        TrCardAct.clickTheBigButton("Город");
+        TrCardAct.chooseTheCity("Новосибирск");
+        TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+        // Выбор способа оплаты поездки
+        TrCardAct.waitForRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheRadioButton("sbp label");
+
+        // Поиск полей и их очистка, попытка получить чек
+        TrCardAct.enterText("Дата поездки", "", true);
+        TrCardAct.enterText("Последние 4 цифры", "", true);
+        TrCardAct.enterText("Номер маршрута", "", true);
+        TrCardAct.enterText("Номер транзакции", "", true);
+        TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
+
+        // Возврат в главное меню и переход на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+    }
+
+
     // Установка кода доступа при первичном входе и его последующее отключение
     @Test
     public void testPassCodeDisableAndCheck()
