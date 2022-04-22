@@ -117,6 +117,23 @@ public class TrCardDataMethods extends TrCardCoreMethods
     /* Хранение и выдача информации о печатных билетах из "боевой" базы данных */
 
 
+    /* Хранение и выдача информации о рулонных билетах из "боевой" базы данных */
+    public String[][] getRealRollTickets()
+    {
+        // 0 - номер рулонного билета
+        // 1 - серия рулонного билета
+        // 2 - ИНН перевозчика
+        // 3 - город
+        // 4 - статус (OK / FISCALIZATION_PROGRESS / CONTACT_CARRIER / NOT_REQUIRED)
+        String[][] real_roll_tickets = {
+
+        };
+
+        return real_roll_tickets;
+    }
+    /* Хранение и выдача информации о рулонных билетах из "боевой" базы данных */
+
+
     /* Хранение и выдача информации о печатных билетах из тестовой базы данных TK-Punk */
     public String[][] getTKPunkTickets()
     {

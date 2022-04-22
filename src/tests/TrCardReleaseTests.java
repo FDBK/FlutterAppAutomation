@@ -2015,6 +2015,135 @@ public class TrCardReleaseTests extends TrCardTestCase
     }
 
 
+    // Проверка отображения чеков по поездкам (рулонные билеты)
+    @Test
+    public void testCheckTripReceiptRoll()
+    {
+        // Инициализация библиотеки методов TrCardActions
+        TrCardActions TrCardAct = TrCardActionsFactory.get(driver);
+        TrCardPassMethods TrCardPass = new TrCardPassMethods(driver);
+        TrCardDataMethods TrCardData = new TrCardDataMethods(driver);
+
+        // Инициализация массива с параметрами рулонного билета
+        String[][] real_roll_tickets = TrCardData.getRealRollTickets();
+
+        // Ввод логина
+        TrCardAct.enterEmailAndCheckText("automation@test.test", true);
+
+        // Получение пароля для учётной записи
+        String password = TrCardPass.getPasswordByLogin("automation@test.test");
+
+        // Ввод пароля и попытка войти в приложение
+        TrCardAct.enterPasswordAndCheckText(password, true);
+        TrCardAct.clickTheBigButton("ВОЙТИ");
+
+        // Отказ от установки кода доступа
+        TrCardAct.swipeUpToFindButtonByText("СПАСИБО, НЕ НАДО");
+        TrCardAct.clickTheButton("СПАСИБО, НЕ НАДО");
+
+        // Проверка успешности входа в приложение (отображение экрана "Мои карты")
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        // Переход в раздел "Получение чека" через главное меню
+        TrCardAct.clickTheButtonWithPic("Меню");
+        TrCardAct.clickTheButtonWithPic("Получение чека");
+        TrCardAct.checkForPermissionNotification();
+        TrCardAct.clickTheBigButton("ВВЕСТИ ПАРАМЕТРЫ ВРУЧНУЮ");
+        TrCardAct.waitForScreenTitleToAppear("Кассовый чек");
+
+        // Переход на вкладку "Рулонный билет" (и ожидание, чтобы не перепутались поля "Город" на разных вкладках)
+        TrCardAct.clickTheBigButton("РУЛОННЫЙ БИЛЕТ");
+        TrCardAct.waitForMilliseconds(500);
+
+        // Обработка значений массива: выбор города, способа оплаты поездки, заполнение полей данными
+        for (int i = 0; i < real_roll_tickets.length; i++) {
+            String
+                    ticket_number = real_roll_tickets[i][0],
+                    ticket_series = real_roll_tickets[i][1],
+                    transport_co_inn = real_roll_tickets[i][2],
+                    trip_city = real_roll_tickets[i][3],
+                    trip_receipt_status = real_roll_tickets[i][4];
+
+            // Выбор города
+            TrCardAct.clickTheBigButton("Город");
+            TrCardAct.chooseTheCity(trip_city);
+            TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+            // Поиск полей и ввод данных о поездке
+            TrCardAct.enterText("Номер билета", ticket_number, true);
+            TrCardAct.enterText("Серия билета", ticket_series, true);
+            TrCardAct.enterText("ИНН перевозчика", transport_co_inn, true);
+
+            // Получение чека
+            TrCardAct.swipeUpToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
+            TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+
+            // Проверка корректности отображения информации о билете
+            TrCardAct.waitForButtonWithPicToAppear("Проездной билет");
+            TrCardAct.waitForButtonWithPicToAppear("Время поездки");
+            TrCardAct.waitForButtonWithPicToAppear("Маршрут");
+            TrCardAct.waitForButtonWithPicToAppear("Средство оплаты");
+
+            // Проверка корректности отображения статуса кассового чека и информации о чеке (при его наличии)
+            if (trip_receipt_status.equals("NR")) {
+                TrCardAct.swipeUpToFindBigButtonByText("Кассовый чек не требуется!");
+            } else if (trip_receipt_status.equals("CC")) {
+                TrCardAct.swipeUpToFindBigButtonByText("За кассовым чеком обратитесь к перевозчику!");
+            } else if (trip_receipt_status.equals("FP")) {
+                TrCardAct.swipeUpToFindBigButtonByText("Проездной билет в процессе фискализации!");
+                TrCardAct.swipeUpToFindBigButtonByText("Попробуйте получить кассовый чек позже!");
+            } else {
+                TrCardAct.swipeUpToFindButtonWithPicByText("Приход");
+                TrCardAct.swipeUpToFindButtonWithPicByText("Номер чека за смену");
+                TrCardAct.swipeUpToFindButtonWithPicByText("Цена");
+                TrCardAct.swipeUpToFindButtonWithPicByText("РН ККТ");
+                TrCardAct.swipeUpToFindButtonWithPicByText("Автомат");
+                TrCardAct.swipeUpToFindButtonWithPicByText("ФН");
+                TrCardAct.swipeUpToFindButtonWithPicByText("qr code");
+            }
+
+            // Проверка работоспособности кнопки "Поделиться чеком"
+            if (TrCardPlatform.getInstance().isIOS()) {
+                TrCardAct.clickTheButton("Поделиться");
+            } else {
+                TrCardAct.clickTheButtonWithPic("Поделиться");
+            }
+            TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
+
+            // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
+            TrCardAct.clickTheButton("Назад");
+            TrCardAct.swipeDownToFindBigButtonByText("Город");
+        }
+
+        // Проверка поведения приложения в случае ввода данных о несуществующей поездке
+        TrCardAct.enterText("Номер билета", "000666", true);
+        TrCardAct.enterText("Серия билета", "0110", true);
+        TrCardAct.enterText("ИНН перевозчика", "6300551221", true);
+        TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.waitForBottomBannerToAppear("Поездка не найдена, проверьте корректность введенных данных");
+        TrCardAct.waitForBottomBannerToDisappear("Поездка не найдена, проверьте корректность введенных данных");
+        TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
+
+        // Проверка поведения приложения в случае нажатия кнопки "Получить чек" без ввода данных
+        TrCardAct.enterText("Номер билета", "", true);
+        TrCardAct.enterText("Серия билета", "", true);
+        TrCardAct.enterText("ИНН перевозчика", "", true);
+        TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
+        TrCardAct.waitForBigButtonToAppear("ПОЛУЧИТЬ ЧЕК");
+
+        // Возврат в главное меню и переход на экран "Мои карты"
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButton("Назад");
+        TrCardAct.clickTheButtonWithPic("Мои карты");
+        TrCardAct.waitForScreenTitleToAppear("Мои карты");
+
+        System.out.println("Тест пройден без ошибок!");
+
+    }
+
+
     // Установка кода доступа при первичном входе и его последующее отключение
     @Test
     public void testPassCodeDisableAndCheck()
