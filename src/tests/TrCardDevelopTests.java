@@ -485,7 +485,6 @@ public class TrCardDevelopTests extends TrCardTestCase {
 
         // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
         TrCardAct.clickTheButton("Назад");
-        TrCardAct.clickTheButton("Назад");
         TrCardAct.swipeDownToFindBigButtonByText("Город");
 
         // ПРОВЕРКА ПОВЕДЕНИЯ ПРИЛОЖЕНИЯ ПРИ ОТСУТСТВИИ ПОЕЗДОК
