@@ -44,6 +44,8 @@ public class iOSActions extends TrCardActions
         BUTTON_WITH_PIC_TEMPLATE = "xpath://XCUIElementTypeImage[contains(@name, '{BUTTON_TEXT}')]";
         BIG_BUTTON_TEMPLATE = "xpath://XCUIElementTypeStaticText[contains(@name, '{BIG_BUTTON_TEXT}')]";
         RADIO_BUTTON_TEMPLATE = "xpath://XCUIElementTypeSwitch[contains(@name, '{RADIO_BUTTON_TEXT}')]";
+        PAYMENT_RADIO_BUTTON_TEMPLATE = "xpath://XCUIElementTypeOther[contains(@name, '{PAYMENT_RADIO_BUTTON_TEXT}')]";
+        SBP_PAYMENT_RADIO_BUTTON_TEMPLATE = "xpath://XCUIElementTypeImage[contains(@name, '{SBP_PAYMENT_RADIO_BUTTON_TEXT}')]";
         SWITCH_TEMPLATE = "xpath://XCUIElementTypeSwitch[contains(@name, '{SWITCH_TEXT}')]";
         CARD_NAME_BUTTON_TEMPLATE = "xpath://XCUIElementTypeButton[contains(@name, '{CARD_NAME_BUTTON_TEXT}')]";
         CARD_EMAIL_BUTTON_TEMPLATE = "xpath://XCUIElementTypeOther[contains(@name, '{CARD_EMAIL_BUTTON_TEXT}')]";

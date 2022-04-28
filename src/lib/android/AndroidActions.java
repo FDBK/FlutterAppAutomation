@@ -44,6 +44,8 @@ public class AndroidActions extends TrCardActions
         BUTTON_WITH_PIC_TEMPLATE = "xpath://android.widget.ImageView[contains(@content-desc, '{BUTTON_TEXT}')]";
         BIG_BUTTON_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{BIG_BUTTON_TEXT}')]";
         RADIO_BUTTON_TEMPLATE = "xpath://android.widget.RadioButton[contains(@content-desc, '{RADIO_BUTTON_TEXT}')]";
+        PAYMENT_RADIO_BUTTON_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{PAYMENT_RADIO_BUTTON_TEXT}')]";
+        SBP_PAYMENT_RADIO_BUTTON_TEMPLATE = "xpath://android.widget.ImageView[contains(@content-desc, '{SBP_PAYMENT_RADIO_BUTTON_TEXT}')]";
         SWITCH_TEMPLATE = "xpath://android.widget.Switch[contains(@content-desc, '{SWITCH_TEXT}')]";
         CARD_NAME_BUTTON_TEMPLATE = "xpath://android.widget.ImageView[contains(@content-desc, '{CARD_NAME_BUTTON_TEXT}')]";
         CARD_EMAIL_BUTTON_TEMPLATE = "xpath://android.view.View[contains(@content-desc, '{CARD_EMAIL_BUTTON_TEXT}')]";

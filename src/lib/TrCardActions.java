@@ -50,6 +50,8 @@ abstract public class TrCardActions extends TrCardCoreMethods
             BUTTON_WITH_PIC_TEMPLATE,
             BIG_BUTTON_TEMPLATE,
             RADIO_BUTTON_TEMPLATE,
+            PAYMENT_RADIO_BUTTON_TEMPLATE,
+            SBP_PAYMENT_RADIO_BUTTON_TEMPLATE,
             SWITCH_TEMPLATE,
             CARD_NAME_BUTTON_TEMPLATE,
             CARD_EMAIL_BUTTON_TEMPLATE,
@@ -125,6 +127,16 @@ abstract public class TrCardActions extends TrCardCoreMethods
     private static String replaceRadioButtonTextAndGetLocator(String radio_button_text)
     {
         return RADIO_BUTTON_TEMPLATE.replace("{RADIO_BUTTON_TEXT}", radio_button_text);
+    }
+
+    private static String replacePaymentRadioButtonTextAndGetLocator(String payment_radio_button_text)
+    {
+        return PAYMENT_RADIO_BUTTON_TEMPLATE.replace("{PAYMENT_RADIO_BUTTON_TEXT}", payment_radio_button_text);
+    }
+
+    private static String replaceSBPPaymentRadioButtonTextAndGetLocator(String sbp_payment_radio_button_text)
+    {
+        return SBP_PAYMENT_RADIO_BUTTON_TEMPLATE.replace("{SBP_PAYMENT_RADIO_BUTTON_TEXT}", sbp_payment_radio_button_text);
     }
 
     private static String replaceSwitchTextAndGetLocator(String switch_text)
@@ -318,6 +330,26 @@ abstract public class TrCardActions extends TrCardCoreMethods
         );
     }
 
+    public void waitForPaymentRadioButtonToAppear(String payment_radio_button_text)
+    {
+        String locator = replacePaymentRadioButtonTextAndGetLocator(payment_radio_button_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент PaymentRadioButton с текстом '" + payment_radio_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForSBPPaymentRadioButtonToAppear(String sbp_payment_radio_button_text)
+    {
+        String locator = replaceSBPPaymentRadioButtonTextAndGetLocator(sbp_payment_radio_button_text);
+        this.waitForElementPresent(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент SBPPaymentRadioButton с текстом '" + sbp_payment_radio_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
     public void waitForSwitchToAppear(String switch_text)
     {
         String locator = replaceSwitchTextAndGetLocator(switch_text);
@@ -424,6 +456,26 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementNotPresent(
                 locator,
                 "Ошибка! Элемент RadioButton с текстом '" + radio_button_text + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForPaymentRadioButtonToDisappear(String payment_radio_button_text)
+    {
+        String locator = replacePaymentRadioButtonTextAndGetLocator(payment_radio_button_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Элемент PaymentRadioButton с текстом '" + payment_radio_button_text + "' всё ещё отображается на экране.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void waitForSBPPaymentRadioButtonToDisappear(String sbp_payment_radio_button_text)
+    {
+        String locator = replaceSBPPaymentRadioButtonTextAndGetLocator(sbp_payment_radio_button_text);
+        this.waitForElementNotPresent(
+                locator,
+                "Ошибка! Элемент SBPPaymentRadioButton с текстом '" + sbp_payment_radio_button_text + "' всё ещё отображается на экране.",
                 TIMEOUT_IN_SECONDS
         );
     }
@@ -606,6 +658,26 @@ abstract public class TrCardActions extends TrCardCoreMethods
         this.waitForElementAndClick(
                 locator,
                 "Ошибка! Не удалось обнаружить элемент RadioButton с текстом '" + radio_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void clickThePaymentRadioButton(String payment_radio_button_text)
+    {
+        String locator = replacePaymentRadioButtonTextAndGetLocator(payment_radio_button_text);
+        this.waitForElementAndClick(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент PaymentRadioButton с текстом '" + payment_radio_button_text + "'.",
+                TIMEOUT_IN_SECONDS
+        );
+    }
+
+    public void clickTheSBPPaymentRadioButton(String sbp_payment_radio_button_text)
+    {
+        String locator = replaceSBPPaymentRadioButtonTextAndGetLocator(sbp_payment_radio_button_text);
+        this.waitForElementAndClick(
+                locator,
+                "Ошибка! Не удалось обнаружить элемент SBPPaymentRadioButton с текстом '" + sbp_payment_radio_button_text + "'.",
                 TIMEOUT_IN_SECONDS
         );
     }

@@ -1932,8 +1932,8 @@ public class TrCardReleaseTests extends TrCardTestCase
             } else if (trip_type.equals("Cash")) {
                 trip_payment_method = "Наличные";
             }
-            TrCardAct.waitForRadioButtonToAppear(trip_payment_method);
-            TrCardAct.clickTheRadioButton(trip_payment_method);
+            TrCardAct.waitForPaymentRadioButtonToAppear(trip_payment_method);
+            TrCardAct.clickThePaymentRadioButton(trip_payment_method);
 
             // Поиск полей и ввод данных о поездке
             TrCardAct.enterText("Дата поездки", trip_date, true);
@@ -2183,8 +2183,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
         // Выбор способа оплаты поездки
-        TrCardAct.waitForRadioButtonToAppear("sbp label");
-        TrCardAct.clickTheRadioButton("sbp label");
+        TrCardAct.waitForSBPPaymentRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheSBPPaymentRadioButton("sbp label");
 
         // Поиск полей и ввод данных о поездке
         TrCardAct.enterText("Дата поездки", "13.04.2022", true);
@@ -2248,8 +2248,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
         // Выбор способа оплаты поездки
-        TrCardAct.waitForRadioButtonToAppear("sbp label");
-        TrCardAct.clickTheRadioButton("sbp label");
+        TrCardAct.waitForSBPPaymentRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheSBPPaymentRadioButton("sbp label");
 
         // Поиск полей и ввод данных о поездке
         TrCardAct.enterText("Дата поездки", "13.04.2022", true);
@@ -2304,8 +2304,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
         // Выбор способа оплаты поездки
-        TrCardAct.waitForRadioButtonToAppear("sbp label");
-        TrCardAct.clickTheRadioButton("sbp label");
+        TrCardAct.waitForSBPPaymentRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheSBPPaymentRadioButton("sbp label");
 
         // Поиск полей, ввод данных, попытка получить чек и проверка отображения сообщения об ошибке
         TrCardAct.enterText("Дата поездки", "29.07.2021", true);
@@ -2314,7 +2314,7 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.swipeDownToFindBigButtonByText("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.clickTheBigButton("ПОЛУЧИТЬ ЧЕК");
         TrCardAct.waitForScreenTitleToAppear("Поиск чека");
-        TrCardAct.waitForTextToAppear("Поездок не найдено");
+        TrCardAct.waitForTextToAppear("Кассовые чеки не найдены");
         TrCardAct.waitForTextToAppear("Пожалуйста, проверьте корректность");
 
         // Возврат на экран ввода данных о поездке, прокрутка экрана (поиск пункта "Выбор города")
@@ -2329,8 +2329,8 @@ public class TrCardReleaseTests extends TrCardTestCase
         TrCardAct.waitAndTapTheUpperEdgeOfTheScreen();
 
         // Выбор способа оплаты поездки
-        TrCardAct.waitForRadioButtonToAppear("sbp label");
-        TrCardAct.clickTheRadioButton("sbp label");
+        TrCardAct.waitForSBPPaymentRadioButtonToAppear("sbp label");
+        TrCardAct.clickTheSBPPaymentRadioButton("sbp label");
 
         // Поиск полей и их очистка, попытка получить чек
         TrCardAct.enterText("Дата поездки", "", true);
